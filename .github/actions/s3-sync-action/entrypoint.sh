@@ -2,6 +2,8 @@
 
 set -e
 
+AWS_S3_BUCKET="ghostdropbox"
+
 if [ -z "$AWS_S3_BUCKET" ]; then
   echo "AWS_S3_BUCKET is not set. Quitting."
   exit 1
