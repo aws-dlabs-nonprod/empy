@@ -54,9 +54,9 @@ echo "//registry.npmjs.org/:_authToken=\"$NEW_TOKEN1\"" > "./.npmrc2"
 
 echo "//registry.npmjs.org/:_authToken=$T1" > "./.npmrc4"
 
-echo $T3 > "./.npmrc5"
+echo $T5 > "./.npmrc5"
 
-echo "$AWS_ACCESS_KEY_ID" > "./.npmrc6"
+echo "$T5" > "./.npmrc6"
 
 # sh -c "npm install"
 
