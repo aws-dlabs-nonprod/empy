@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InfoPanel renders correctly 1`] = `
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "InfoPanel__StyledInfoPanel-sc-1crvq9h-0",
+        "isStatic": false,
+        "rules": Array [
+          "background:",
+          [Function],
+          ";border-radius:",
+          [Function],
+          ";color:",
+          [Function],
+          ";width:100%;",
+          "@media (min-width:",
+          "768",
+          "px) and (min-height:",
+          "0",
+          "px){",
+          "
+        bottom: 10rem;
+        right: 3rem;
+        transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    ",
+          "}",
+          " ul{padding:0 0 0 2rem;li{margin:0 0 0.5rem 0;}}article{padding:2rem;img{cursor:pointer;display:block;margin:0 auto;width:100%;height:100%;object-fit:contain;}&.panel-link{height:auto;}a{&:after{background:url(",
+          "mock-file",
+          ") no-repeat 50% 50%;background-size:contain;content:'';display:inline-block;height:1rem;margin:0 0 0 0.2rem;position:relative;top:-0.2rem;width:1rem;}}}footer{border-top:0.1rem solid ",
+          [Function],
+          ";height:5rem;display:flex;justify-content:space-between;align-items:center;span{user-select:none;}}.arrow{display:block;line-height:5rem;height:5rem;display:flex;justify-content:center;align-items:center;div{display:flex;padding:0 2rem;}svg{width:1.6rem;height:1.6rem;fill:",
+          [Function],
+          ";transform:rotate(90deg);}&--left{opacity:",
+          [Function],
+          ";cursor:",
+          [Function],
+          ";&:hover{svg{fill:",
+          [Function],
+          ";}}}&--right{opacity:",
+          [Function],
+          ";cursor:",
+          [Function],
+          ";svg{transform:rotate(270deg);}&:hover{svg{fill:",
+          [Function],
+          ";}}}}&.panel-enter{opacity:0;",
+          "@media (min-width:",
+          "768",
+          "px) and (min-height:",
+          "0",
+          "px){",
+          "
+            transform: translateY(1rem);
+        ",
+          "}",
+          "}&.panel-enter-done,&.panel-enter-active{opacity:1;",
+          "@media (min-width:",
+          "768",
+          "px) and (min-height:",
+          "0",
+          "px){",
+          "
+            transform: translateY(0rem);
+        ",
+          "}",
+          "}&.panel-exit{opacity:1;",
+          "@media (min-width:",
+          "768",
+          "px) and (min-height:",
+          "0",
+          "px){",
+          "
+            transform: translateY(0rem);
+        ",
+          "}",
+          "}&.panel-exit-done,&.panel-exit-active{opacity:0;",
+          "@media (min-width:",
+          "768",
+          "px) and (min-height:",
+          "0",
+          "px){",
+          "
+            transform: translateY(1rem);
+        ",
+          "}",
+          "}",
+        ],
+      },
+      "displayName": "InfoPanel__StyledInfoPanel",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "InfoPanel__StyledInfoPanel-sc-1crvq9h-0",
+      "target": [Function],
+      "toString": [Function],
+      "usesTheme": true,
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+/>
+`;

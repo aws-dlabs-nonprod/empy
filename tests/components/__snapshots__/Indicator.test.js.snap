@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Indicator renders correctly 1`] = `
+<Indicator__StyledIndicator
+  isAnimating={false}
+>
+  <span />
+  <span />
+  <span />
+  <span />
+  <span />
+  <span />
+</Indicator__StyledIndicator>
+`;
+
+exports[`Indicator renders speaking 1`] = `
+<Indicator__StyledIndicator
+  isAnimating={true}
+>
+  <span />
+  <span />
+  <span />
+  <span />
+  <span />
+  <span />
+</Indicator__StyledIndicator>
+`;

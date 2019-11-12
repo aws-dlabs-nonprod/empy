@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TranscriptMessage renders content 1`] = `
+<TranscriptMessage__StyledTranscriptMessage
+  isInfoPanel={null}
+  isLoading={false}
+  isMine={false}
+>
+  <div
+    className="avatar"
+  />
+  <div
+    className="body"
+  >
+    <p>
+      message
+    </p>
+  </div>
+</TranscriptMessage__StyledTranscriptMessage>
+`;
+
+exports[`TranscriptMessage renders correctly 1`] = `
+<TranscriptMessage__StyledTranscriptMessage
+  isInfoPanel={null}
+  isLoading={false}
+  isMine={false}
+>
+  <div
+    className="avatar"
+  />
+  <div
+    className="body"
+  >
+    <p />
+  </div>
+</TranscriptMessage__StyledTranscriptMessage>
+`;
+
+exports[`TranscriptMessage renders loading 1`] = `
+<TranscriptMessage__StyledTranscriptMessage
+  isInfoPanel={null}
+  isLoading={true}
+  isMine={false}
+>
+  <div
+    className="avatar"
+  />
+  <div
+    className="loading"
+  >
+    <span />
+    <span />
+    <span />
+  </div>
+</TranscriptMessage__StyledTranscriptMessage>
+`;

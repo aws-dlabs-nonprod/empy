@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="version" content="${VERSION}">
+
+    <title>Wendy</title>
+
+    <link rel="icon" type="image/x-icon" href="${require('@img/favicon.ico')}">
+
+    <link rel="preconnect" href="${TOKEN_ISSUER}">
+
+    <style>
+        @font-face {
+            font-family: 'ChronicleDisplay';
+            src: url("${require('@fonts/7FF5B4E46E46717F5.eot')}");
+            src: url("${require('@fonts/7FF5B4E46E46717F5.eot?#iefix')}") format('embedded-opentype'),
+                url("${require('@fonts/7FF5B4E46E46717F5.woff2')}") format('woff2'),
+                url("${require('@fonts/7FF5B4E46E46717F5.woff')}") format('woff'),
+                url("${require('@fonts/7FF5B4E46E46717F5.ttf')}") format('truetype'),
+                url("${require('@fonts/7FF5B4E46E46717F5.svg')}#ChronicleDisplay-Semi") format('svg');
+            font-weight: 600;
+            font-weight: normal;
+            font-style: normal
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+</html>

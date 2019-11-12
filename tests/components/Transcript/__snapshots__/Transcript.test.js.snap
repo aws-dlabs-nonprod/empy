@@ -1,0 +1,3585 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Transcript handles connection 1`] = `
+.c2 {
+  background: #D5002B;
+  border-radius: 0.3rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  height: 4.8rem;
+  border: 0.1rem solid #D5002B;
+  margin: 0 0 2rem 0;
+  outline: none;
+  padding: 0 1.8rem;
+  position: relative;
+  width: 100%;
+  z-index: 3;
+  -webkit-transition: background 0.2s ease,color 0.2s ease;
+  transition: background 0.2s ease,color 0.2s ease;
+  background: #F9F9F8;
+  border-color: #D5002B;
+  padding: 1.4rem 1.3rem;
+}
+
+.c2 svg {
+  fill: #D5002B;
+  height: 2rem;
+  position: relative;
+  width: 2rem;
+}
+
+.c9 {
+  background: #D5002B;
+  border-radius: 0.3rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  height: 4.8rem;
+  border: 0.1rem solid #D5002B;
+  margin: 0 0 2rem 0;
+  outline: none;
+  padding: 0 1.8rem;
+  position: relative;
+  width: 100%;
+  z-index: 3;
+  -webkit-transition: background 0.2s ease,color 0.2s ease;
+  transition: background 0.2s ease,color 0.2s ease;
+  background: #F9F9F8;
+  border-color: #D7D2CB;
+  padding: 1.4rem 1.3rem;
+}
+
+.c9 svg {
+  fill: #D5002B;
+  height: 2rem;
+  position: relative;
+  width: 2rem;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin: 0 0 1.5rem 0;
+  padding: 0 1.5rem 0 5.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c5 .avatar {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: none;
+  background-size: cover;
+  background-color: #E5E5E5;
+  border-radius: 50%;
+  border: none;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  font-size: 1rem;
+  height: 4rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0 1.5rem 0 0;
+  text-transform: uppercase;
+  width: 4rem;
+}
+
+.c5 .avatar div {
+  height: 2rem;
+}
+
+.c5 .avatar svg {
+  width: 2rem;
+  height: 2rem;
+  fill: #D5002B;
+}
+
+.c5 .body {
+  box-sizing: border-box;
+  background: #FFFFFF;
+  border-radius: 1.2rem;
+  color: #2D373E;
+  padding: 1.5rem 2rem;
+  border: 0.1rem solid #621A4B;
+}
+
+.c5 .loading {
+  height: 0.8rem;
+  border-radius: 0.3rem;
+  color: #2D373E;
+  padding: 1.6rem 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+.c5 .loading span {
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  background: #621A4B;
+  border-radius: 50%;
+  margin: 0 1rem 0 0;
+  -webkit-animation: gjmckK 1s ease-in-out infinite alternate;
+  animation: gjmckK 1s ease-in-out infinite alternate;
+}
+
+.c5 .loading span:nth-child(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+
+.c5 .loading span:nth-child(2) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.c5 .loading span:nth-child(3) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.c5 .loading span:last-child {
+  margin: 0;
+}
+
+.c5.item-enter {
+  opacity: 0;
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
+}
+
+.c5.item-enter-active {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: -webkit-transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  -webkit-transition: transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  transition: transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  -webkit-transition-delay: 0ms;
+  transition-delay: 0ms;
+  -webkit-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+}
+
+.c5.item-exit {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c5.item-exit-active {
+  opacity: 0;
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
+  -webkit-transition: -webkit-transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  -webkit-transition: transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  transition: transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  -webkit-transition-delay: 0ms;
+  transition-delay: 0ms;
+  -webkit-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin: 0 0 1.5rem 0;
+  padding: 0 6rem 0 0;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c6 .avatar {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: url(mock-file) no-repeat 50% 50%;
+  background-size: cover;
+  background-color: #E5E5E5;
+  border-radius: 50%;
+  border: 0.1rem solid #D7D2CB;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  font-size: 1rem;
+  height: 4rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0 1.5rem 0 0;
+  text-transform: uppercase;
+  width: 4rem;
+}
+
+.c6 .avatar div {
+  height: 2rem;
+}
+
+.c6 .avatar svg {
+  width: 2rem;
+  height: 2rem;
+  fill: #D5002B;
+}
+
+.c6 .body {
+  box-sizing: border-box;
+  background: #FFFFFF;
+  border-radius: 1.2rem;
+  color: #2D373E;
+  padding: 1.5rem 2rem;
+  border: 0.1rem solid #D7D2CB;
+}
+
+.c6 .loading {
+  height: 0.8rem;
+  border-radius: 0.3rem;
+  color: #2D373E;
+  padding: 1.6rem 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+.c6 .loading span {
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  background: #621A4B;
+  border-radius: 50%;
+  margin: 0 1rem 0 0;
+  -webkit-animation: gjmckK 1s ease-in-out infinite alternate;
+  animation: gjmckK 1s ease-in-out infinite alternate;
+}
+
+.c6 .loading span:nth-child(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+
+.c6 .loading span:nth-child(2) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.c6 .loading span:nth-child(3) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.c6 .loading span:last-child {
+  margin: 0;
+}
+
+.c6.item-enter {
+  opacity: 0;
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
+}
+
+.c6.item-enter-active {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: -webkit-transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  -webkit-transition: transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  transition: transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  -webkit-transition-delay: 0ms;
+  transition-delay: 0ms;
+  -webkit-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+}
+
+.c6.item-exit {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c6.item-exit-active {
+  opacity: 0;
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
+  -webkit-transition: -webkit-transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  -webkit-transition: transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  transition: transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  -webkit-transition-delay: 0ms;
+  transition-delay: 0ms;
+  -webkit-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+}
+
+.c8 {
+  bottom: 1.5rem;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 4.8rem;
+  left: 1.5rem;
+  overflow: hidden;
+  position: fixed;
+  right: 1.5rem;
+  -webkit-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+  -webkit-transition-property: opacity,width,-webkit-transform;
+  -webkit-transition-property: opacity,width,transform;
+  transition-property: opacity,width,transform;
+  width: auto;
+  will-change: opacity,width;
+  z-index: 3;
+}
+
+.c8 input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  background: #FFFFFF;
+  border: 0.1rem solid #8C9296;
+  border-right: none;
+  border-radius: 0.3rem 0 0 0.3rem;
+  height: 4.8rem;
+  padding: 0 1.2rem;
+  color: #2D373E;
+  font-size: 1.6rem;
+  outline: none;
+}
+
+.c8 input::-webkit-input-placeholder {
+  color: rgba(0,0,0,0.4);
+}
+
+.c8 input::-moz-placeholder {
+  color: rgba(0,0,0,0.4);
+}
+
+.c8 input:-ms-input-placeholder {
+  color: rgba(0,0,0,0.4);
+}
+
+.c8 input::placeholder {
+  color: rgba(0,0,0,0.4);
+}
+
+.c8 .c1 {
+  background: #D5002B;
+  border: 0.1rem solid #D5002B;
+  border-radius: 0 0.3rem 0.3rem 0;
+  width: auto;
+  height: 4.8rem;
+}
+
+.c8.form-enter {
+  opacity: 0;
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
+}
+
+.c8.form-enter-done,
+.c8.form-enter-active {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c8.form-exit {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c8.form-exit-done,
+.c8.form-exit-active {
+  opacity: 0;
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
+}
+
+.c4 {
+  border-radius: 4.8rem;
+  -webkit-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  height: 4.8rem;
+  width: 8rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 span {
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 1rem;
+  background: #D5002B;
+  margin: 0 0.2rem;
+  -webkit-transform: translateY(0rem);
+  -ms-transform: translateY(0rem);
+  transform: translateY(0rem);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,background-color 0.3s ease-in-out,opacity 0.2s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,background-color 0.3s ease-in-out,opacity 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out,background-color 0.3s ease-in-out,opacity 0.2s ease-in-out;
+  -webkit-animation-name: eCSzNZ;
+  animation-name: eCSzNZ;
+  -webkit-animation-duration: 1.2s;
+  animation-duration: 1.2s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+  will-change: transform,height;
+  opacity: 0.2;
+}
+
+.c4 span:nth-child(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+
+.c4 span:nth-child(2) {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+
+.c4 span:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.c4 span:nth-child(4) {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+.c4 span:nth-child(5) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.c4 span:nth-child(6) {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+.c4 span:nth-child(3) {
+  -webkit-animation-name: eCSzNZ;
+  animation-name: eCSzNZ;
+}
+
+.c4 span:nth-child(2),
+.c4 span:nth-child(4) {
+  -webkit-animation-name: eCSzNZ;
+  animation-name: eCSzNZ;
+}
+
+.c0 {
+  background: #E5E5E5;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  top: auto;
+  height: 50vh;
+  width: 100%;
+  -webkit-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  z-index: 2;
+  border-top: 0.1rem solid #D7D2CB;
+}
+
+.c0 .c3 {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: -6.4rem;
+  height: 4.8rem;
+}
+
+.c0 .close {
+  position: absolute;
+  left: 1.5rem;
+  top: -6.4rem;
+  width: 4.8rem;
+  height: 4.8rem;
+  padding: 1.3rem;
+  margin: 0;
+}
+
+.c0:after,
+.c0:before {
+  background: #D7D2CB;
+  content: '';
+  height: 0.1rem;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  -webkit-transition: opacity 0.2s ease-in-out,height 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out,height 0.2s ease-in-out;
+  z-index: 2;
+}
+
+.c0:before {
+  display: none;
+}
+
+.c0:after {
+  bottom: 7.7rem;
+  top: auto;
+}
+
+.c0.overflow-top:before {
+  opacity: 1;
+}
+
+.c0.overflow-bottom:after {
+  opacity: 1;
+}
+
+.c0 .scroller {
+  width: calc(100% - 3rem);
+  height: calc(100% - 6rem);
+  overflow: auto;
+  padding: 0 1.5rem;
+  position: absolute;
+}
+
+.c0 .transcript-content {
+  padding: 1.5rem 0 0 1.5rem;
+}
+
+.c0.transcript-enter {
+  opacity: 0;
+}
+
+.c0.transcript-enter-done,
+.c0.transcript-enter-active {
+  opacity: 1;
+}
+
+.c0.transcript-exit {
+  opacity: 1;
+}
+
+.c0.transcript-exit-done,
+.c0.transcript-exit-active {
+  opacity: 0;
+}
+
+.c0 [data-simplebar] {
+  position: relative;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  height: calc(100% - 7.8rem);
+}
+
+.c0 .simplebar-wrapper {
+  overflow: hidden;
+  width: inherit;
+  height: inherit;
+  max-width: inherit;
+  max-height: inherit;
+}
+
+.c0 .simplebar-mask {
+  direction: inherit;
+  position: absolute;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: auto !important;
+  height: auto !important;
+  z-index: 0;
+}
+
+.c0 .simplebar-offset {
+  direction: inherit !important;
+  box-sizing: inherit !important;
+  resize: none !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c0 .simplebar-content-wrapper {
+  direction: inherit;
+  box-sizing: border-box !important;
+  position: relative;
+  display: block;
+  height: 100%;
+  width: auto;
+  visibility: visible;
+  overflow: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.c0 .simplebar-content:before,
+.c0 .simplebar-content:after {
+  content: " ";
+  display: table;
+}
+
+.c0 .simplebar-content {
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100%;
+}
+
+.c0 .simplebar-content > div {
+  width: 100%;
+}
+
+.c0 .simplebar-placeholder {
+  max-height: 100%;
+  max-width: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.c0 .simplebar-height-auto-observer-wrapper {
+  box-sizing: inherit !important;
+  height: 100%;
+  width: inherit;
+  max-width: 1px;
+  position: relative;
+  float: left;
+  max-height: 1px;
+  overflow: hidden;
+  z-index: -1;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  -webkit-box-flex: inherit;
+  -webkit-flex-grow: inherit;
+  -ms-flex-positive: inherit;
+  flex-grow: inherit;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c0 .simplebar-height-auto-observer {
+  box-sizing: inherit;
+  display: block;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1000%;
+  width: 1000%;
+  min-height: 1px;
+  min-width: 1px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.c0 .simplebar-track {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.c0 [data-simplebar].simplebar-dragging .simplebar-track {
+  pointer-events: all;
+}
+
+.c0 .simplebar-scrollbar {
+  position: absolute;
+  right: 2px;
+  width: 7px;
+  min-height: 10px;
+}
+
+.c0 .simplebar-scrollbar:before {
+  position: absolute;
+  content: "";
+  background: black;
+  border-radius: 7px;
+  left: 0;
+  right: 0;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+
+.c0 .simplebar-track .simplebar-scrollbar.simplebar-visible:before {
+  opacity: 0.5;
+  -webkit-transition: opacity 0s linear;
+  transition: opacity 0s linear;
+}
+
+.c0 .simplebar-track.simplebar-vertical {
+  top: 0;
+  width: 11px;
+}
+
+.c0 .simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+  top: 2px;
+  bottom: 2px;
+}
+
+.c0 .simplebar-track.simplebar-horizontal {
+  left: 0;
+  height: 11px;
+}
+
+.c0 .simplebar-track.simplebar-horizontal .simplebar-scrollbar:before {
+  height: 100%;
+  left: 2px;
+  right: 2px;
+}
+
+.c0 .simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+  right: auto;
+  left: 0;
+  top: 2px;
+  height: 7px;
+  min-height: 0;
+  min-width: 10px;
+  width: auto;
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c2 {
+    font-size: 1.8rem;
+    padding: 0 2rem;
+    width: 100%;
+  }
+
+  .c2:hover {
+    background: #e24d6b;
+  }
+
+  .c2:hover svg {
+    fill: #FFFFFF;
+  }
+
+  .c2:hover .ButtonTip__StyledButtonTip-zuccjc-0 {
+    opacity: 0;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c2 {
+    padding: 1.4rem 1.3rem;
+  }
+
+  .c2:hover {
+    background: #FFFFFF;
+  }
+
+  .c2:hover svg {
+    fill: #D5002B;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c9 {
+    font-size: 1.8rem;
+    padding: 0 2rem;
+    width: 100%;
+  }
+
+  .c9:hover {
+    background: #e24d6b;
+  }
+
+  .c9:hover svg {
+    fill: #FFFFFF;
+  }
+
+  .c9:hover .ButtonTip__StyledButtonTip-zuccjc-0 {
+    opacity: 0;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c9 {
+    padding: 1.4rem 1.3rem;
+  }
+
+  .c9:hover {
+    background: #FFFFFF;
+  }
+
+  .c9:hover svg {
+    fill: #D5002B;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c5 {
+    margin: 0 0 3rem 0;
+    padding: 0 0 0 4rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c5 .avatar {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c5 .loading {
+    padding: 2.1rem 0;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c6 {
+    margin: 0 0 3rem 0;
+    padding: 0 4rem 0 0;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c6 .avatar {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c6 .loading {
+    padding: 2.1rem 0;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c8 {
+    left: auto;
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 37rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c8 .c1:hover {
+    background: #e24d6b;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c8.form-enter {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    width: 0;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c8.form-enter-done,
+  .c8.form-enter-active {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    width: 37rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c8.form-exit {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    width: 37rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c8.form-exit-done,
+  .c8.form-exit-active {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    width: 0;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c4 {
+    height: 4.6rem;
+    width: 9.5rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0 {
+    background: transparent;
+    border: none;
+    bottom: 10rem;
+    left: 3rem;
+    top: 11rem;
+    width: 43.3rem;
+    height: auto;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0 .c7 {
+    display: none;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0 .c3 {
+    display: none;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0 .close {
+    display: none;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0:before {
+    display: block;
+    top: 11rem;
+    width: 43.3rem;
+    left: 3rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0:after {
+    bottom: 10rem;
+    left: 3rem;
+    width: 43.3rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0 .scroller {
+    width: 100%;
+    height: calc(100% - 1rem);
+    padding: 0;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0 .transcript-content {
+    padding: 3rem 2rem 0 0;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0 [data-simplebar] {
+    height: 100%;
+  }
+}
+
+<Connect(Transcript)>
+  <Transcript
+    activePanelIndex={0}
+    animateCamera={[Function]}
+    changePanel={[Function]}
+    infoPanels={Array []}
+    isConnected={true}
+    isOpen={true}
+    toggleTranscript={[Function]}
+    transcript={
+      Array [
+        Object {
+          "content": "Hello",
+          "source": "me",
+        },
+        Object {
+          "content": "Hello",
+          "source": "persona",
+        },
+      ]
+    }
+  >
+    <CSSTransition
+      classNames="transcript"
+      in={true}
+      timeout={300}
+      unmountOnExit={true}
+    >
+      <Transition
+        appear={false}
+        enter={true}
+        exit={true}
+        in={true}
+        mountOnEnter={false}
+        onEnter={[Function]}
+        onEntered={[Function]}
+        onEntering={[Function]}
+        onExit={[Function]}
+        onExited={[Function]}
+        onExiting={[Function]}
+        timeout={300}
+        unmountOnExit={true}
+      >
+        <Transcript__StyledTranscript
+          activePanelIndex={0}
+          animateCamera={[Function]}
+          changePanel={[Function]}
+          infoPanels={Array []}
+          isConnected={true}
+          isOpen={true}
+          toggleTranscript={[Function]}
+          transcript={
+            Array [
+              Object {
+                "content": "Hello",
+                "source": "me",
+              },
+              Object {
+                "content": "Hello",
+                "source": "persona",
+              },
+            ]
+          }
+        >
+          <StyledComponent
+            activePanelIndex={0}
+            animateCamera={[Function]}
+            changePanel={[Function]}
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "Transcript__StyledTranscript-sc-127m94n-0",
+                  "isStatic": false,
+                  "lastClassName": "c0",
+                  "rules": Array [
+                    "background:",
+                    [Function],
+                    ";bottom:0;left:0;position:absolute;top:auto;height:",
+                    [Function],
+                    ";width:100%;transition:opacity 1s ease-in-out;z-index:2;border-top:0.1rem solid ",
+                    [Function],
+                    ";",
+                    "@media (min-width:",
+                    "768",
+                    "px) and (min-height:",
+                    "0",
+                    "px){",
+                    "
+        background: transparent;
+        border: none;
+        bottom: 10rem;
+        left: 3rem;
+        top: 11rem;
+        width: 43.3rem;
+        height: auto;
+    ",
+                    "}",
+                    " ",
+                    ".c7",
+                    "{",
+                    "@media (min-width:",
+                    "768",
+                    "px) and (min-height:",
+                    "0",
+                    "px){",
+                    "
+            display: none;
+        ",
+                    "}",
+                    "}",
+                    ".c3",
+                    "{position:absolute;margin:0 auto;left:0;right:0;top:-6.4rem;height:4.8rem;",
+                    "@media (min-width:",
+                    "768",
+                    "px) and (min-height:",
+                    "0",
+                    "px){",
+                    "
+            display: none;
+        ",
+                    "}",
+                    "}.close{position:absolute;left:1.5rem;top:-6.4rem;width:4.8rem;height:4.8rem;padding:1.3rem;margin:0;",
+                    "@media (min-width:",
+                    "768",
+                    "px) and (min-height:",
+                    "0",
+                    "px){",
+                    "
+            display: none;
+        ",
+                    "}",
+                    "}&:after,&:before{background:",
+                    [Function],
+                    ";content:'';height:0.1rem;left:0;opacity:0;pointer-events:none;position:fixed;right:0;top:0;transition:opacity 0.2s ease-in-out,height 0.2s ease-in-out;z-index:2;}&:before{display:none;",
+                    "@media (min-width:",
+                    "768",
+                    "px) and (min-height:",
+                    "0",
+                    "px){",
+                    "
+            display: block;
+            top: 11rem;
+            width: 43.3rem;
+            left: 3rem;
+        ",
+                    "}",
+                    "}&:after{bottom:7.7rem;top:auto;",
+                    "@media (min-width:",
+                    "768",
+                    "px) and (min-height:",
+                    "0",
+                    "px){",
+                    "
+            bottom: 10rem;
+            left: 3rem;
+            width: 43.3rem;
+        ",
+                    "}",
+                    "}&.overflow-top:before{opacity:1;}&.overflow-bottom:after{opacity:1;}.scroller{width:calc(100% - 3rem);height:calc(100% - 6rem);overflow:auto;padding:0 1.5rem;position:absolute;",
+                    "@media (min-width:",
+                    "768",
+                    "px) and (min-height:",
+                    "0",
+                    "px){",
+                    "
+            width: 100%;
+            height: calc(100% - 1rem);
+            padding: 0;
+        ",
+                    "}",
+                    "}.transcript-content{padding:1.5rem 0 0 1.5rem;",
+                    "@media (min-width:",
+                    "768",
+                    "px) and (min-height:",
+                    "0",
+                    "px){",
+                    "
+            padding: 3rem 2rem 0 0;
+        ",
+                    "}",
+                    "}&.transcript-enter{opacity:0;}&.transcript-enter-done,&.transcript-enter-active{opacity:1;}&.transcript-exit{opacity:1;}&.transcript-exit-done,&.transcript-exit-active{opacity:0;}",
+                    "[data-simplebar]{position:relative;flex-direction:column;flex-wrap:wrap;justify-content:flex-start;align-content:flex-start;align-items:flex-start;height:calc(100% - 7.8rem);",
+                    "@media (min-width:",
+                    "768",
+                    "px) and (min-height:",
+                    "0",
+                    "px){",
+                    "
+            height: 100%;
+        ",
+                    "}",
+                    "}.simplebar-wrapper{overflow:hidden;width:inherit;height:inherit;max-width:inherit;max-height:inherit;}.simplebar-mask{direction:inherit;position:absolute;overflow:hidden;padding:0;margin:0;left:0;top:0;bottom:0;right:0;width:auto !important;height:auto !important;z-index:0;}.simplebar-offset{direction:inherit !important;box-sizing:inherit !important;resize:none !important;position:absolute;top:0;left:0;bottom:0;right:0;padding:0;margin:0;-webkit-overflow-scrolling:touch;}.simplebar-content-wrapper{direction:inherit;box-sizing:border-box !important;position:relative;display:block;height:100%;width:auto;visibility:visible;overflow:auto;max-width:100%;max-height:100%;}.simplebar-content:before,.simplebar-content:after{content:\\" \\";display:table;}.simplebar-content{align-items:flex-end;display:flex;min-height:100%;> div{width:100%;}}.simplebar-placeholder{max-height:100%;max-width:100%;width:100%;pointer-events:none;}.simplebar-height-auto-observer-wrapper{box-sizing:inherit !important;height:100%;width:inherit;max-width:1px;position:relative;float:left;max-height:1px;overflow:hidden;z-index:-1;padding:0;margin:0;pointer-events:none;flex-grow:inherit;flex-shrink:0;flex-basis:0;}.simplebar-height-auto-observer{box-sizing:inherit;display:block;opacity:0;position:absolute;top:0;left:0;height:1000%;width:1000%;min-height:1px;min-width:1px;overflow:hidden;pointer-events:none;z-index:-1;}.simplebar-track{z-index:1;position:absolute;right:0;bottom:0;pointer-events:none;overflow:hidden;}[data-simplebar].simplebar-dragging .simplebar-track{pointer-events:all;}.simplebar-scrollbar{position:absolute;right:2px;width:7px;min-height:10px;}.simplebar-scrollbar:before{position:absolute;content:\\"\\";background:black;border-radius:7px;left:0;right:0;opacity:0.5;transition:opacity 0.2s linear;}.simplebar-track .simplebar-scrollbar.simplebar-visible:before{opacity:0.5;transition:opacity 0s linear;}.simplebar-track.simplebar-vertical{top:0;width:11px;}.simplebar-track.simplebar-vertical .simplebar-scrollbar:before{top:2px;bottom:2px;}.simplebar-track.simplebar-horizontal{left:0;height:11px;}.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before{height:100%;left:2px;right:2px;}.simplebar-track.simplebar-horizontal .simplebar-scrollbar{right:auto;left:0;top:2px;height:7px;min-height:0;min-width:10px;width:auto;}",
+                    ";",
+                  ],
+                },
+                "displayName": "Transcript__StyledTranscript",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "Transcript__StyledTranscript-sc-127m94n-0",
+                "target": "div",
+                "toString": [Function],
+                "usesTheme": true,
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={
+              Object {
+                "current": .c2 {
+  background: #D5002B;
+  border-radius: 0.3rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  height: 4.8rem;
+  border: 0.1rem solid #D5002B;
+  margin: 0 0 2rem 0;
+  outline: none;
+  padding: 0 1.8rem;
+  position: relative;
+  width: 100%;
+  z-index: 3;
+  -webkit-transition: background 0.2s ease,color 0.2s ease;
+  transition: background 0.2s ease,color 0.2s ease;
+  background: #F9F9F8;
+  border-color: #D5002B;
+  padding: 1.4rem 1.3rem;
+}
+
+.c2 svg {
+  fill: #D5002B;
+  height: 2rem;
+  position: relative;
+  width: 2rem;
+}
+
+.c9 {
+  background: #D5002B;
+  border-radius: 0.3rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  height: 4.8rem;
+  border: 0.1rem solid #D5002B;
+  margin: 0 0 2rem 0;
+  outline: none;
+  padding: 0 1.8rem;
+  position: relative;
+  width: 100%;
+  z-index: 3;
+  -webkit-transition: background 0.2s ease,color 0.2s ease;
+  transition: background 0.2s ease,color 0.2s ease;
+  background: #F9F9F8;
+  border-color: #D7D2CB;
+  padding: 1.4rem 1.3rem;
+}
+
+.c9 svg {
+  fill: #D5002B;
+  height: 2rem;
+  position: relative;
+  width: 2rem;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin: 0 0 1.5rem 0;
+  padding: 0 1.5rem 0 5.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.c5 .avatar {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: none;
+  background-size: cover;
+  background-color: #E5E5E5;
+  border-radius: 50%;
+  border: none;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  font-size: 1rem;
+  height: 4rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0 1.5rem 0 0;
+  text-transform: uppercase;
+  width: 4rem;
+}
+
+.c5 .avatar div {
+  height: 2rem;
+}
+
+.c5 .avatar svg {
+  width: 2rem;
+  height: 2rem;
+  fill: #D5002B;
+}
+
+.c5 .body {
+  box-sizing: border-box;
+  background: #FFFFFF;
+  border-radius: 1.2rem;
+  color: #2D373E;
+  padding: 1.5rem 2rem;
+  border: 0.1rem solid #621A4B;
+}
+
+.c5 .loading {
+  height: 0.8rem;
+  border-radius: 0.3rem;
+  color: #2D373E;
+  padding: 1.6rem 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+.c5 .loading span {
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  background: #621A4B;
+  border-radius: 50%;
+  margin: 0 1rem 0 0;
+  -webkit-animation: gjmckK 1s ease-in-out infinite alternate;
+  animation: gjmckK 1s ease-in-out infinite alternate;
+}
+
+.c5 .loading span:nth-child(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+
+.c5 .loading span:nth-child(2) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.c5 .loading span:nth-child(3) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.c5 .loading span:last-child {
+  margin: 0;
+}
+
+.c5.item-enter {
+  opacity: 0;
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
+}
+
+.c5.item-enter-active {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: -webkit-transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  -webkit-transition: transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  transition: transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  -webkit-transition-delay: 0ms;
+  transition-delay: 0ms;
+  -webkit-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+}
+
+.c5.item-exit {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c5.item-exit-active {
+  opacity: 0;
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
+  -webkit-transition: -webkit-transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  -webkit-transition: transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  transition: transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  -webkit-transition-delay: 0ms;
+  transition-delay: 0ms;
+  -webkit-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin: 0 0 1.5rem 0;
+  padding: 0 6rem 0 0;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c6 .avatar {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: url(mock-file) no-repeat 50% 50%;
+  background-size: cover;
+  background-color: #E5E5E5;
+  border-radius: 50%;
+  border: 0.1rem solid #D7D2CB;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  font-size: 1rem;
+  height: 4rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0 1.5rem 0 0;
+  text-transform: uppercase;
+  width: 4rem;
+}
+
+.c6 .avatar div {
+  height: 2rem;
+}
+
+.c6 .avatar svg {
+  width: 2rem;
+  height: 2rem;
+  fill: #D5002B;
+}
+
+.c6 .body {
+  box-sizing: border-box;
+  background: #FFFFFF;
+  border-radius: 1.2rem;
+  color: #2D373E;
+  padding: 1.5rem 2rem;
+  border: 0.1rem solid #D7D2CB;
+}
+
+.c6 .loading {
+  height: 0.8rem;
+  border-radius: 0.3rem;
+  color: #2D373E;
+  padding: 1.6rem 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+.c6 .loading span {
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  background: #621A4B;
+  border-radius: 50%;
+  margin: 0 1rem 0 0;
+  -webkit-animation: gjmckK 1s ease-in-out infinite alternate;
+  animation: gjmckK 1s ease-in-out infinite alternate;
+}
+
+.c6 .loading span:nth-child(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+
+.c6 .loading span:nth-child(2) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.c6 .loading span:nth-child(3) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.c6 .loading span:last-child {
+  margin: 0;
+}
+
+.c6.item-enter {
+  opacity: 0;
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
+}
+
+.c6.item-enter-active {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: -webkit-transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  -webkit-transition: transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  transition: transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  -webkit-transition-delay: 0ms;
+  transition-delay: 0ms;
+  -webkit-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+}
+
+.c6.item-exit {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c6.item-exit-active {
+  opacity: 0;
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
+  -webkit-transition: -webkit-transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  -webkit-transition: transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  transition: transform 400ms ease-in-out,opacity 400ms ease-in-out;
+  -webkit-transition-delay: 0ms;
+  transition-delay: 0ms;
+  -webkit-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+}
+
+.c8 {
+  bottom: 1.5rem;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 4.8rem;
+  left: 1.5rem;
+  overflow: hidden;
+  position: fixed;
+  right: 1.5rem;
+  -webkit-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+  -webkit-transition-property: opacity,width,-webkit-transform;
+  -webkit-transition-property: opacity,width,transform;
+  transition-property: opacity,width,transform;
+  width: auto;
+  will-change: opacity,width;
+  z-index: 3;
+}
+
+.c8 input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  background: #FFFFFF;
+  border: 0.1rem solid #8C9296;
+  border-right: none;
+  border-radius: 0.3rem 0 0 0.3rem;
+  height: 4.8rem;
+  padding: 0 1.2rem;
+  color: #2D373E;
+  font-size: 1.6rem;
+  outline: none;
+}
+
+.c8 input::-webkit-input-placeholder {
+  color: rgba(0,0,0,0.4);
+}
+
+.c8 input::-moz-placeholder {
+  color: rgba(0,0,0,0.4);
+}
+
+.c8 input:-ms-input-placeholder {
+  color: rgba(0,0,0,0.4);
+}
+
+.c8 input::placeholder {
+  color: rgba(0,0,0,0.4);
+}
+
+.c8 .c1 {
+  background: #D5002B;
+  border: 0.1rem solid #D5002B;
+  border-radius: 0 0.3rem 0.3rem 0;
+  width: auto;
+  height: 4.8rem;
+}
+
+.c8.form-enter {
+  opacity: 0;
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
+}
+
+.c8.form-enter-done,
+.c8.form-enter-active {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c8.form-exit {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c8.form-exit-done,
+.c8.form-exit-active {
+  opacity: 0;
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
+}
+
+.c4 {
+  border-radius: 4.8rem;
+  -webkit-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  height: 4.8rem;
+  width: 8rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c4 span {
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 1rem;
+  background: #D5002B;
+  margin: 0 0.2rem;
+  -webkit-transform: translateY(0rem);
+  -ms-transform: translateY(0rem);
+  transform: translateY(0rem);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,background-color 0.3s ease-in-out,opacity 0.2s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,background-color 0.3s ease-in-out,opacity 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out,background-color 0.3s ease-in-out,opacity 0.2s ease-in-out;
+  -webkit-animation-name: eCSzNZ;
+  animation-name: eCSzNZ;
+  -webkit-animation-duration: 1.2s;
+  animation-duration: 1.2s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+  will-change: transform,height;
+  opacity: 0.2;
+}
+
+.c4 span:nth-child(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+
+.c4 span:nth-child(2) {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+
+.c4 span:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.c4 span:nth-child(4) {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+.c4 span:nth-child(5) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.c4 span:nth-child(6) {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+.c4 span:nth-child(3) {
+  -webkit-animation-name: eCSzNZ;
+  animation-name: eCSzNZ;
+}
+
+.c4 span:nth-child(2),
+.c4 span:nth-child(4) {
+  -webkit-animation-name: eCSzNZ;
+  animation-name: eCSzNZ;
+}
+
+.c0 {
+  background: #E5E5E5;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  top: auto;
+  height: 50vh;
+  width: 100%;
+  -webkit-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  z-index: 2;
+  border-top: 0.1rem solid #D7D2CB;
+}
+
+.c0 .c3 {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: -6.4rem;
+  height: 4.8rem;
+}
+
+.c0 .close {
+  position: absolute;
+  left: 1.5rem;
+  top: -6.4rem;
+  width: 4.8rem;
+  height: 4.8rem;
+  padding: 1.3rem;
+  margin: 0;
+}
+
+.c0:after,
+.c0:before {
+  background: #D7D2CB;
+  content: '';
+  height: 0.1rem;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  -webkit-transition: opacity 0.2s ease-in-out,height 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out,height 0.2s ease-in-out;
+  z-index: 2;
+}
+
+.c0:before {
+  display: none;
+}
+
+.c0:after {
+  bottom: 7.7rem;
+  top: auto;
+}
+
+.c0.overflow-top:before {
+  opacity: 1;
+}
+
+.c0.overflow-bottom:after {
+  opacity: 1;
+}
+
+.c0 .scroller {
+  width: calc(100% - 3rem);
+  height: calc(100% - 6rem);
+  overflow: auto;
+  padding: 0 1.5rem;
+  position: absolute;
+}
+
+.c0 .transcript-content {
+  padding: 1.5rem 0 0 1.5rem;
+}
+
+.c0.transcript-enter {
+  opacity: 0;
+}
+
+.c0.transcript-enter-done,
+.c0.transcript-enter-active {
+  opacity: 1;
+}
+
+.c0.transcript-exit {
+  opacity: 1;
+}
+
+.c0.transcript-exit-done,
+.c0.transcript-exit-active {
+  opacity: 0;
+}
+
+.c0 [data-simplebar] {
+  position: relative;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  height: calc(100% - 7.8rem);
+}
+
+.c0 .simplebar-wrapper {
+  overflow: hidden;
+  width: inherit;
+  height: inherit;
+  max-width: inherit;
+  max-height: inherit;
+}
+
+.c0 .simplebar-mask {
+  direction: inherit;
+  position: absolute;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: auto !important;
+  height: auto !important;
+  z-index: 0;
+}
+
+.c0 .simplebar-offset {
+  direction: inherit !important;
+  box-sizing: inherit !important;
+  resize: none !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.c0 .simplebar-content-wrapper {
+  direction: inherit;
+  box-sizing: border-box !important;
+  position: relative;
+  display: block;
+  height: 100%;
+  width: auto;
+  visibility: visible;
+  overflow: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.c0 .simplebar-content:before,
+.c0 .simplebar-content:after {
+  content: " ";
+  display: table;
+}
+
+.c0 .simplebar-content {
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100%;
+}
+
+.c0 .simplebar-content > div {
+  width: 100%;
+}
+
+.c0 .simplebar-placeholder {
+  max-height: 100%;
+  max-width: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.c0 .simplebar-height-auto-observer-wrapper {
+  box-sizing: inherit !important;
+  height: 100%;
+  width: inherit;
+  max-width: 1px;
+  position: relative;
+  float: left;
+  max-height: 1px;
+  overflow: hidden;
+  z-index: -1;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  -webkit-box-flex: inherit;
+  -webkit-flex-grow: inherit;
+  -ms-flex-positive: inherit;
+  flex-grow: inherit;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+}
+
+.c0 .simplebar-height-auto-observer {
+  box-sizing: inherit;
+  display: block;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1000%;
+  width: 1000%;
+  min-height: 1px;
+  min-width: 1px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.c0 .simplebar-track {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.c0 [data-simplebar].simplebar-dragging .simplebar-track {
+  pointer-events: all;
+}
+
+.c0 .simplebar-scrollbar {
+  position: absolute;
+  right: 2px;
+  width: 7px;
+  min-height: 10px;
+}
+
+.c0 .simplebar-scrollbar:before {
+  position: absolute;
+  content: "";
+  background: black;
+  border-radius: 7px;
+  left: 0;
+  right: 0;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+
+.c0 .simplebar-track .simplebar-scrollbar.simplebar-visible:before {
+  opacity: 0.5;
+  -webkit-transition: opacity 0s linear;
+  transition: opacity 0s linear;
+}
+
+.c0 .simplebar-track.simplebar-vertical {
+  top: 0;
+  width: 11px;
+}
+
+.c0 .simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+  top: 2px;
+  bottom: 2px;
+}
+
+.c0 .simplebar-track.simplebar-horizontal {
+  left: 0;
+  height: 11px;
+}
+
+.c0 .simplebar-track.simplebar-horizontal .simplebar-scrollbar:before {
+  height: 100%;
+  left: 2px;
+  right: 2px;
+}
+
+.c0 .simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+  right: auto;
+  left: 0;
+  top: 2px;
+  height: 7px;
+  min-height: 0;
+  min-width: 10px;
+  width: auto;
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c2 {
+    font-size: 1.8rem;
+    padding: 0 2rem;
+    width: 100%;
+  }
+
+  .c2:hover {
+    background: #e24d6b;
+  }
+
+  .c2:hover svg {
+    fill: #FFFFFF;
+  }
+
+  .c2:hover .ButtonTip__StyledButtonTip-zuccjc-0 {
+    opacity: 0;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c2 {
+    padding: 1.4rem 1.3rem;
+  }
+
+  .c2:hover {
+    background: #FFFFFF;
+  }
+
+  .c2:hover svg {
+    fill: #D5002B;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c9 {
+    font-size: 1.8rem;
+    padding: 0 2rem;
+    width: 100%;
+  }
+
+  .c9:hover {
+    background: #e24d6b;
+  }
+
+  .c9:hover svg {
+    fill: #FFFFFF;
+  }
+
+  .c9:hover .ButtonTip__StyledButtonTip-zuccjc-0 {
+    opacity: 0;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c9 {
+    padding: 1.4rem 1.3rem;
+  }
+
+  .c9:hover {
+    background: #FFFFFF;
+  }
+
+  .c9:hover svg {
+    fill: #D5002B;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c5 {
+    margin: 0 0 3rem 0;
+    padding: 0 0 0 4rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c5 .avatar {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c5 .loading {
+    padding: 2.1rem 0;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c6 {
+    margin: 0 0 3rem 0;
+    padding: 0 4rem 0 0;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c6 .avatar {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c6 .loading {
+    padding: 2.1rem 0;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c8 {
+    left: auto;
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 37rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c8 .c1:hover {
+    background: #e24d6b;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c8.form-enter {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    width: 0;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c8.form-enter-done,
+  .c8.form-enter-active {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    width: 37rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c8.form-exit {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    width: 37rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c8.form-exit-done,
+  .c8.form-exit-active {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    width: 0;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c4 {
+    height: 4.6rem;
+    width: 9.5rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0 {
+    background: transparent;
+    border: none;
+    bottom: 10rem;
+    left: 3rem;
+    top: 11rem;
+    width: 43.3rem;
+    height: auto;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0 .c7 {
+    display: none;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0 .c3 {
+    display: none;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0 .close {
+    display: none;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0:before {
+    display: block;
+    top: 11rem;
+    width: 43.3rem;
+    left: 3rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0:after {
+    bottom: 10rem;
+    left: 3rem;
+    width: 43.3rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0 .scroller {
+    width: 100%;
+    height: calc(100% - 1rem);
+    padding: 0;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0 .transcript-content {
+    padding: 3rem 2rem 0 0;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0 [data-simplebar] {
+    height: 100%;
+  }
+}
+
+<div
+                  class="c0"
+                >
+                  <button
+                    class="c1 c2 close"
+                  >
+                    <div />
+                  </button>
+                  <div
+                    class="c3 c4"
+                  >
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                  <div
+                    data-simplebar="true"
+                    style="overflow-x: hidden;"
+                  >
+                    <div
+                      class="simplebar-wrapper"
+                    >
+                      <div
+                        class="simplebar-height-auto-observer-wrapper"
+                      >
+                        <div
+                          class="simplebar-height-auto-observer"
+                        />
+                      </div>
+                      <div
+                        class="simplebar-mask"
+                      >
+                        <div
+                          class="simplebar-offset"
+                        >
+                          <div
+                            class="simplebar-content-wrapper"
+                          >
+                            <div
+                              class="simplebar-content"
+                            >
+                              <div>
+                                <div
+                                  class="transcript-content"
+                                >
+                                  <div
+                                    class="c5"
+                                    id="message-0"
+                                  >
+                                    <div
+                                      class="body"
+                                    >
+                                      <p>
+                                        Hello
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="c6"
+                                    id="message-1"
+                                  >
+                                    <div
+                                      class="avatar"
+                                    />
+                                    <div
+                                      class="body"
+                                    >
+                                      <p>
+                                        Hello
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="simplebar-placeholder"
+                      />
+                    </div>
+                    <div
+                      class="simplebar-track simplebar-horizontal"
+                    >
+                      <div
+                        class="simplebar-scrollbar"
+                      />
+                    </div>
+                    <div
+                      class="simplebar-track simplebar-vertical"
+                    >
+                      <div
+                        class="simplebar-scrollbar"
+                      />
+                    </div>
+                  </div>
+                  <form
+                    action="/"
+                    class="c7 c8"
+                    method="post"
+                  >
+                    <input
+                      placeholder="Type a message or just speak it..."
+                      value=""
+                    />
+                    <button
+                      class="c1 c9"
+                    >
+                      <div />
+                    </button>
+                  </form>
+                </div>,
+              }
+            }
+            infoPanels={Array []}
+            isConnected={true}
+            isOpen={true}
+            toggleTranscript={[Function]}
+            transcript={
+              Array [
+                Object {
+                  "content": "Hello",
+                  "source": "me",
+                },
+                Object {
+                  "content": "Hello",
+                  "source": "persona",
+                },
+              ]
+            }
+          >
+            <div
+              className="c0"
+            >
+              <Button__IconButton
+                className="close"
+                icon="mock-file"
+                isToggled={true}
+                onClick={[Function]}
+              >
+                <StyledComponent
+                  className="close"
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "c1",
+                        "isStatic": false,
+                        "lastClassName": "c9",
+                        "rules": Array [
+                          "background:",
+                          [Function],
+                          ";border-radius:",
+                          [Function],
+                          ";box-sizing:border-box;color:",
+                          [Function],
+                          ";cursor:pointer;display:flex;justify-content:center;font-size:1.6rem;height:4.8rem;border:",
+                          [Function],
+                          ";margin:0 0 2rem 0;outline:none;padding:0 1.8rem;position:relative;width:100%;z-index:3;transition:background 0.2s ease,color 0.2s ease;",
+                          "@media (min-width:",
+                          "768",
+                          "px) and (min-height:",
+                          "0",
+                          "px){",
+                          "
+        font-size: 1.8rem;
+        padding: 0 2rem;
+        width: 100%;
+
+        &:hover {
+            background: ",
+                          [Function],
+                          ";
+            
+            svg {
+                fill: ",
+                          [Function],
+                          ";
+            }
+
+            ",
+                          ".ButtonTip__StyledButtonTip-zuccjc-0",
+                          " {
+                opacity: ",
+                          [Function],
+                          ";
+                transform: translateY(0);
+            }
+        }
+    ",
+                          "}",
+                          "background:",
+                          [Function],
+                          ";border-color:",
+                          [Function],
+                          ";padding:1.4rem 1.3rem;",
+                          "@media (min-width:",
+                          "768",
+                          "px) and (min-height:",
+                          "0",
+                          "px){",
+                          "
+        padding: 1.4rem 1.3rem;
+
+        &:hover {
+            background: ",
+                          [Function],
+                          ";
+
+            svg {
+                fill: ",
+                          [Function],
+                          ";
+            }
+        }
+    ",
+                          "}",
+                          ";svg{fill:",
+                          [Function],
+                          ";height:2rem;position:relative;width:2rem;}",
+                        ],
+                      },
+                      "displayName": "Button__IconButton",
+                      "foldedComponentIds": Array [
+                        "Button__BaseButton-sc-1t6ofhe-0",
+                      ],
+                      "render": [Function],
+                      "styledComponentId": "c1",
+                      "target": [Function],
+                      "toString": [Function],
+                      "usesTheme": true,
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                  icon="mock-file"
+                  isToggled={true}
+                  onClick={[Function]}
+                >
+                  <Button
+                    className="c1 c2 close"
+                    disabled={false}
+                    icon="mock-file"
+                    isToggled={true}
+                    onClick={[Function]}
+                    secondary={false}
+                    tip={null}
+                    tipPosition="left"
+                    toggleTip={null}
+                  >
+                    <button
+                      aria-label={null}
+                      className="c1 c2 close"
+                      disabled={false}
+                      onClick={[Function]}
+                    >
+                      <ReactSVG
+                        evalScripts="never"
+                        fallback={null}
+                        loading={null}
+                        onInjected={[Function]}
+                        renumerateIRIElements={true}
+                        src="mock-file"
+                        svgClassName={null}
+                        svgStyle={Object {}}
+                        wrapper="div"
+                      >
+                        <div />
+                      </ReactSVG>
+                    </button>
+                  </Button>
+                </StyledComponent>
+              </Button__IconButton>
+              <Indicator>
+                <Indicator__StyledIndicator
+                  isAnimating={false}
+                >
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "c3",
+                          "isStatic": false,
+                          "lastClassName": "c4",
+                          "rules": Array [
+                            "border-radius:4.8rem;transition:border-color 0.3s ease-in-out;height:4.8rem;width:8rem;display:flex;justify-content:center;align-items:center;",
+                            "@media (min-width:",
+                            "768",
+                            "px) and (min-height:",
+                            "0",
+                            "px){",
+                            "
+        height: 4.6rem;
+        width: 9.5rem;
+    ",
+                            "}",
+                            " span{display:block;width:0.5rem;height:0.5rem;border-radius:1rem;background:",
+                            [Function],
+                            ";margin:0 0.2rem;transform:translateY(0rem);transition:transform 0.2s ease-in-out,background-color 0.3s ease-in-out,opacity 0.2s ease-in-out;animation-name:",
+                            [Function],
+                            ";animation-duration:",
+                            [Function],
+                            ";animation-timing-function:ease-in-out;animation-iteration-count:infinite;animation-direction:alternate;will-change:transform,height;opacity:",
+                            [Function],
+                            ";",
+                            "
+        &:nth-child(1) {
+            animation-delay: 0s;
+        }
+        
+        &:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+        
+        &:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+        
+        &:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+        
+        &:nth-child(5) {
+            animation-delay: 0.4s;
+        }
+        
+        &:nth-child(6) {
+            animation-delay: 0.5s;
+        }
+        ",
+                            ";&:nth-child(3){animation-name:",
+                            [Function],
+                            ";}&:nth-child(2),&:nth-child(4){animation-name:",
+                            [Function],
+                            ";}}",
+                          ],
+                        },
+                        "displayName": "Indicator__StyledIndicator",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "c3",
+                        "target": "div",
+                        "toString": [Function],
+                        "usesTheme": true,
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    isAnimating={false}
+                  >
+                    <div
+                      className="c3 c4"
+                    >
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                  </StyledComponent>
+                </Indicator__StyledIndicator>
+              </Indicator>
+              <l
+                onScroll={[Function]}
+                scrollableNodeProps={
+                  Object {
+                    "ref": [Function],
+                  }
+                }
+                style={
+                  Object {
+                    "overflowX": "hidden",
+                  }
+                }
+              >
+                <div
+                  data-simplebar={true}
+                  onScroll={[Function]}
+                  style={
+                    Object {
+                      "overflowX": "hidden",
+                    }
+                  }
+                >
+                  <div
+                    className="simplebar-wrapper"
+                  >
+                    <div
+                      className="simplebar-height-auto-observer-wrapper"
+                    >
+                      <div
+                        className="simplebar-height-auto-observer"
+                      />
+                    </div>
+                    <div
+                      className="simplebar-mask"
+                    >
+                      <div
+                        className="simplebar-offset"
+                      >
+                        <div
+                          className="simplebar-content-wrapper"
+                        >
+                          <div
+                            className="simplebar-content"
+                          >
+                            <div>
+                              <TransitionGroup
+                                childFactory={[Function]}
+                                className="transcript-content"
+                                component="div"
+                              >
+                                <div
+                                  className="transcript-content"
+                                >
+                                  <CSSTransition
+                                    classNames="item"
+                                    in={true}
+                                    key=".$0"
+                                    onExited={[Function]}
+                                    timeout={1000}
+                                  >
+                                    <Transition
+                                      appear={false}
+                                      enter={true}
+                                      exit={true}
+                                      in={true}
+                                      mountOnEnter={false}
+                                      onEnter={[Function]}
+                                      onEntered={[Function]}
+                                      onEntering={[Function]}
+                                      onExit={[Function]}
+                                      onExited={[Function]}
+                                      onExiting={[Function]}
+                                      timeout={1000}
+                                      unmountOnExit={false}
+                                    >
+                                      <TranscriptMessage
+                                        activePanelIndex={0}
+                                        content="Hello"
+                                        id="message-0"
+                                        key="message-0"
+                                        loading={false}
+                                        onContentResize={[Function]}
+                                        onPanelChange={[Function]}
+                                        panel={null}
+                                        source="me"
+                                        totalPanelCount={0}
+                                      >
+                                        <TranscriptMessage__StyledTranscriptMessage
+                                          id="message-0"
+                                          isInfoPanel={false}
+                                          isLoading={false}
+                                          isMine={true}
+                                        >
+                                          <StyledComponent
+                                            forwardedComponent={
+                                              Object {
+                                                "$$typeof": Symbol(react.forward_ref),
+                                                "attrs": Array [],
+                                                "componentStyle": ComponentStyle {
+                                                  "componentId": "TranscriptMessage__StyledTranscriptMessage-i3nk3a-0",
+                                                  "isStatic": false,
+                                                  "lastClassName": "c6",
+                                                  "rules": Array [
+                                                    "display:flex;flex-direction:row;flex-shrink:0;margin:0 0 1.5rem 0;padding:",
+                                                    [Function],
+                                                    ";width:100%;box-sizing:border-box;justify-content:",
+                                                    [Function],
+                                                    ";",
+                                                    "@media (min-width:",
+                                                    "768",
+                                                    "px) and (min-height:",
+                                                    "0",
+                                                    "px){",
+                                                    "
+        margin: 0 0 3rem 0;
+        padding: ",
+                                                    [Function],
+                                                    ";
+    ",
+                                                    "}",
+                                                    " .avatar{align-items:center;background:",
+                                                    [Function],
+                                                    ";background-size:cover;background-color:",
+                                                    [Function],
+                                                    ";border-radius:50%;border:",
+                                                    [Function],
+                                                    ";box-sizing:border-box;display:flex;flex-shrink:0;font-size:1rem;height:4rem;justify-content:center;margin:0 1.5rem 0 0;text-transform:uppercase;width:4rem;",
+                                                    "@media (min-width:",
+                                                    "768",
+                                                    "px) and (min-height:",
+                                                    "0",
+                                                    "px){",
+                                                    "
+            width: 5rem;
+            height: 5rem;
+        ",
+                                                    "}",
+                                                    " div{height:2rem;}svg{width:2rem;height:2rem;fill:",
+                                                    [Function],
+                                                    ";}}.body{box-sizing:border-box;background:",
+                                                    [Function],
+                                                    ";border-radius:1.2rem;color:",
+                                                    [Function],
+                                                    ";padding:1.5rem 2rem;border:0.1rem solid ",
+                                                    [Function],
+                                                    ";}.loading{height:0.8rem;border-radius:",
+                                                    [Function],
+                                                    ";color:",
+                                                    [Function],
+                                                    ";padding:1.6rem 0;font-size:0;line-height:0;",
+                                                    "@media (min-width:",
+                                                    "768",
+                                                    "px) and (min-height:",
+                                                    "0",
+                                                    "px){",
+                                                    "
+            padding: 2.1rem 0;
+        ",
+                                                    "}",
+                                                    " span{display:inline-block;width:0.8rem;height:0.8rem;background:",
+                                                    [Function],
+                                                    ";border-radius:50%;margin:0 1rem 0 0;animation:",
+                                                    Keyframes {
+                                                      "id": "sc-keyframes-gjmckK",
+                                                      "inject": [Function],
+                                                      "name": "gjmckK",
+                                                      "rules": Array [
+                                                        "@-webkit-keyframes gjmckK{0%{opacity:1;}50%{opacity:0.5;}100%{opacity:1;}}",
+                                                        "@keyframes gjmckK{0%{opacity:1;}50%{opacity:0.5;}100%{opacity:1;}}",
+                                                      ],
+                                                      "toString": [Function],
+                                                    },
+                                                    " 1s ease-in-out infinite alternate;",
+                                                    "
+        &:nth-child(1) {
+            animation-delay: 0s;
+        }
+        
+        &:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        &:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        ",
+                                                    " &:last-child{margin:0;}}}&.item-enter{opacity:0;transform:translateY(2rem);}&.item-enter-active{opacity:1;transform:translateY(0);transition:transform 400ms ease-in-out,opacity 400ms ease-in-out;transition-delay:",
+                                                    [Function],
+                                                    ";transform-origin:0% 0%;}&.item-exit{opacity:1;transform:translateY(0);}&.item-exit-active{opacity:0;transform:translateY(2rem);transition:transform 400ms ease-in-out,opacity 400ms ease-in-out;transition-delay:",
+                                                    [Function],
+                                                    ";transform-origin:0% 0%;}",
+                                                  ],
+                                                },
+                                                "displayName": "TranscriptMessage__StyledTranscriptMessage",
+                                                "foldedComponentIds": Array [],
+                                                "render": [Function],
+                                                "styledComponentId": "TranscriptMessage__StyledTranscriptMessage-i3nk3a-0",
+                                                "target": "div",
+                                                "toString": [Function],
+                                                "usesTheme": true,
+                                                "warnTooManyClasses": [Function],
+                                                "withComponent": [Function],
+                                              }
+                                            }
+                                            forwardedRef={null}
+                                            id="message-0"
+                                            isInfoPanel={false}
+                                            isLoading={false}
+                                            isMine={true}
+                                          >
+                                            <div
+                                              className="c5"
+                                              id="message-0"
+                                            >
+                                              <div
+                                                className="body"
+                                              >
+                                                <p>
+                                                  Hello
+                                                </p>
+                                              </div>
+                                            </div>
+                                          </StyledComponent>
+                                        </TranscriptMessage__StyledTranscriptMessage>
+                                      </TranscriptMessage>
+                                    </Transition>
+                                  </CSSTransition>
+                                  <CSSTransition
+                                    classNames="item"
+                                    in={true}
+                                    key=".$1"
+                                    onExited={[Function]}
+                                    timeout={1000}
+                                  >
+                                    <Transition
+                                      appear={false}
+                                      enter={true}
+                                      exit={true}
+                                      in={true}
+                                      mountOnEnter={false}
+                                      onEnter={[Function]}
+                                      onEntered={[Function]}
+                                      onEntering={[Function]}
+                                      onExit={[Function]}
+                                      onExited={[Function]}
+                                      onExiting={[Function]}
+                                      timeout={1000}
+                                      unmountOnExit={false}
+                                    >
+                                      <TranscriptMessage
+                                        activePanelIndex={0}
+                                        content="Hello"
+                                        id="message-1"
+                                        key="message-1"
+                                        loading={false}
+                                        onContentResize={[Function]}
+                                        onPanelChange={[Function]}
+                                        panel={null}
+                                        source="persona"
+                                        totalPanelCount={0}
+                                      >
+                                        <TranscriptMessage__StyledTranscriptMessage
+                                          id="message-1"
+                                          isInfoPanel={null}
+                                          isLoading={false}
+                                          isMine={false}
+                                        >
+                                          <StyledComponent
+                                            forwardedComponent={
+                                              Object {
+                                                "$$typeof": Symbol(react.forward_ref),
+                                                "attrs": Array [],
+                                                "componentStyle": ComponentStyle {
+                                                  "componentId": "TranscriptMessage__StyledTranscriptMessage-i3nk3a-0",
+                                                  "isStatic": false,
+                                                  "lastClassName": "c6",
+                                                  "rules": Array [
+                                                    "display:flex;flex-direction:row;flex-shrink:0;margin:0 0 1.5rem 0;padding:",
+                                                    [Function],
+                                                    ";width:100%;box-sizing:border-box;justify-content:",
+                                                    [Function],
+                                                    ";",
+                                                    "@media (min-width:",
+                                                    "768",
+                                                    "px) and (min-height:",
+                                                    "0",
+                                                    "px){",
+                                                    "
+        margin: 0 0 3rem 0;
+        padding: ",
+                                                    [Function],
+                                                    ";
+    ",
+                                                    "}",
+                                                    " .avatar{align-items:center;background:",
+                                                    [Function],
+                                                    ";background-size:cover;background-color:",
+                                                    [Function],
+                                                    ";border-radius:50%;border:",
+                                                    [Function],
+                                                    ";box-sizing:border-box;display:flex;flex-shrink:0;font-size:1rem;height:4rem;justify-content:center;margin:0 1.5rem 0 0;text-transform:uppercase;width:4rem;",
+                                                    "@media (min-width:",
+                                                    "768",
+                                                    "px) and (min-height:",
+                                                    "0",
+                                                    "px){",
+                                                    "
+            width: 5rem;
+            height: 5rem;
+        ",
+                                                    "}",
+                                                    " div{height:2rem;}svg{width:2rem;height:2rem;fill:",
+                                                    [Function],
+                                                    ";}}.body{box-sizing:border-box;background:",
+                                                    [Function],
+                                                    ";border-radius:1.2rem;color:",
+                                                    [Function],
+                                                    ";padding:1.5rem 2rem;border:0.1rem solid ",
+                                                    [Function],
+                                                    ";}.loading{height:0.8rem;border-radius:",
+                                                    [Function],
+                                                    ";color:",
+                                                    [Function],
+                                                    ";padding:1.6rem 0;font-size:0;line-height:0;",
+                                                    "@media (min-width:",
+                                                    "768",
+                                                    "px) and (min-height:",
+                                                    "0",
+                                                    "px){",
+                                                    "
+            padding: 2.1rem 0;
+        ",
+                                                    "}",
+                                                    " span{display:inline-block;width:0.8rem;height:0.8rem;background:",
+                                                    [Function],
+                                                    ";border-radius:50%;margin:0 1rem 0 0;animation:",
+                                                    Keyframes {
+                                                      "id": "sc-keyframes-gjmckK",
+                                                      "inject": [Function],
+                                                      "name": "gjmckK",
+                                                      "rules": Array [
+                                                        "@-webkit-keyframes gjmckK{0%{opacity:1;}50%{opacity:0.5;}100%{opacity:1;}}",
+                                                        "@keyframes gjmckK{0%{opacity:1;}50%{opacity:0.5;}100%{opacity:1;}}",
+                                                      ],
+                                                      "toString": [Function],
+                                                    },
+                                                    " 1s ease-in-out infinite alternate;",
+                                                    "
+        &:nth-child(1) {
+            animation-delay: 0s;
+        }
+        
+        &:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        &:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        ",
+                                                    " &:last-child{margin:0;}}}&.item-enter{opacity:0;transform:translateY(2rem);}&.item-enter-active{opacity:1;transform:translateY(0);transition:transform 400ms ease-in-out,opacity 400ms ease-in-out;transition-delay:",
+                                                    [Function],
+                                                    ";transform-origin:0% 0%;}&.item-exit{opacity:1;transform:translateY(0);}&.item-exit-active{opacity:0;transform:translateY(2rem);transition:transform 400ms ease-in-out,opacity 400ms ease-in-out;transition-delay:",
+                                                    [Function],
+                                                    ";transform-origin:0% 0%;}",
+                                                  ],
+                                                },
+                                                "displayName": "TranscriptMessage__StyledTranscriptMessage",
+                                                "foldedComponentIds": Array [],
+                                                "render": [Function],
+                                                "styledComponentId": "TranscriptMessage__StyledTranscriptMessage-i3nk3a-0",
+                                                "target": "div",
+                                                "toString": [Function],
+                                                "usesTheme": true,
+                                                "warnTooManyClasses": [Function],
+                                                "withComponent": [Function],
+                                              }
+                                            }
+                                            forwardedRef={null}
+                                            id="message-1"
+                                            isInfoPanel={null}
+                                            isLoading={false}
+                                            isMine={false}
+                                          >
+                                            <div
+                                              className="c6"
+                                              id="message-1"
+                                            >
+                                              <div
+                                                className="avatar"
+                                              />
+                                              <div
+                                                className="body"
+                                              >
+                                                <p>
+                                                  Hello
+                                                </p>
+                                              </div>
+                                            </div>
+                                          </StyledComponent>
+                                        </TranscriptMessage__StyledTranscriptMessage>
+                                      </TranscriptMessage>
+                                    </Transition>
+                                  </CSSTransition>
+                                </div>
+                              </TransitionGroup>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="simplebar-placeholder"
+                    />
+                  </div>
+                  <div
+                    className="simplebar-track simplebar-horizontal"
+                  >
+                    <div
+                      className="simplebar-scrollbar"
+                    />
+                  </div>
+                  <div
+                    className="simplebar-track simplebar-vertical"
+                  >
+                    <div
+                      className="simplebar-scrollbar"
+                    />
+                  </div>
+                </div>
+              </l>
+              <Connect(ChatInput)>
+                <ChatInput
+                  isOpen={true}
+                  sendMessage={[Function]}
+                >
+                  <CSSTransition
+                    classNames="form"
+                    in={true}
+                    timeout={3000}
+                    unmountOnExit={true}
+                  >
+                    <Transition
+                      appear={false}
+                      enter={true}
+                      exit={true}
+                      in={true}
+                      mountOnEnter={false}
+                      onEnter={[Function]}
+                      onEntered={[Function]}
+                      onEntering={[Function]}
+                      onExit={[Function]}
+                      onExited={[Function]}
+                      onExiting={[Function]}
+                      timeout={3000}
+                      unmountOnExit={true}
+                    >
+                      <ChatInput__StyledChatInput
+                        action="/"
+                        method="post"
+                        onSubmit={[Function]}
+                      >
+                        <StyledComponent
+                          action="/"
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "c7",
+                                "isStatic": false,
+                                "lastClassName": "c8",
+                                "rules": Array [
+                                  "bottom:1.5rem;box-sizing:border-box;display:flex;flex-direction:row;height:4.8rem;left:1.5rem;overflow:hidden;position:fixed;right:1.5rem;transition:width 0.3s ease-in-out;transition-property:opacity,width,transform;width:auto;will-change:opacity,width;z-index:3;",
+                                  "@media (min-width:",
+                                  "768",
+                                  "px) and (min-height:",
+                                  "0",
+                                  "px){",
+                                  "
+        left: auto;
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: 37rem;
+    ",
+                                  "}",
+                                  " input{box-sizing:border-box;display:block;width:100%;background:",
+                                  [Function],
+                                  ";border:0.1rem solid ",
+                                  [Function],
+                                  ";border-right:none;border-radius:",
+                                  [Function],
+                                  " 0 0 ",
+                                  [Function],
+                                  ";height:4.8rem;padding:0 1.2rem;color:",
+                                  [Function],
+                                  ";font-size:1.6rem;outline:none;&::placeholder{color:rgba(0,0,0,0.4);}}",
+                                  ".c1",
+                                  "{background:",
+                                  [Function],
+                                  ";border:",
+                                  [Function],
+                                  ";border-radius:0 ",
+                                  [Function],
+                                  " ",
+                                  [Function],
+                                  " 0;width:auto;height:4.8rem;",
+                                  "@media (min-width:",
+                                  "768",
+                                  "px) and (min-height:",
+                                  "0",
+                                  "px){",
+                                  "
+            &:hover {
+                background: ",
+                                  [Function],
+                                  ";
+            }
+        ",
+                                  "}",
+                                  "}&.form-enter{opacity:0;transform:translateY(2rem);",
+                                  "@media (min-width:",
+                                  "768",
+                                  "px) and (min-height:",
+                                  "0",
+                                  "px){",
+                                  "
+            transform: none;
+            width: 0;
+        ",
+                                  "}",
+                                  "}&.form-enter-done,&.form-enter-active{opacity:1;transform:translateY(0);",
+                                  "@media (min-width:",
+                                  "768",
+                                  "px) and (min-height:",
+                                  "0",
+                                  "px){",
+                                  "
+            transform: none;
+            width: 37rem;
+        ",
+                                  "}",
+                                  "}&.form-exit{opacity:1;transform:translateY(0);",
+                                  "@media (min-width:",
+                                  "768",
+                                  "px) and (min-height:",
+                                  "0",
+                                  "px){",
+                                  "
+            transform: none;
+            width: 37rem;
+        ",
+                                  "}",
+                                  "}&.form-exit-done,&.form-exit-active{opacity:0;transform:translateY(2rem);",
+                                  "@media (min-width:",
+                                  "768",
+                                  "px) and (min-height:",
+                                  "0",
+                                  "px){",
+                                  "
+            transform: none;
+            width: 0;
+        ",
+                                  "}",
+                                  "}",
+                                ],
+                              },
+                              "displayName": "ChatInput__StyledChatInput",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "c7",
+                              "target": "form",
+                              "toString": [Function],
+                              "usesTheme": true,
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                          method="post"
+                          onSubmit={[Function]}
+                        >
+                          <form
+                            action="/"
+                            className="c7 c8"
+                            method="post"
+                            onSubmit={[Function]}
+                          >
+                            <input
+                              onChange={[Function]}
+                              placeholder="Type a message or just speak it..."
+                              value=""
+                            />
+                            <Button__IconButton
+                              icon="mock-file"
+                              onClick={[Function]}
+                            >
+                              <StyledComponent
+                                forwardedComponent={
+                                  Object {
+                                    "$$typeof": Symbol(react.forward_ref),
+                                    "attrs": Array [],
+                                    "componentStyle": ComponentStyle {
+                                      "componentId": "c1",
+                                      "isStatic": false,
+                                      "lastClassName": "c9",
+                                      "rules": Array [
+                                        "background:",
+                                        [Function],
+                                        ";border-radius:",
+                                        [Function],
+                                        ";box-sizing:border-box;color:",
+                                        [Function],
+                                        ";cursor:pointer;display:flex;justify-content:center;font-size:1.6rem;height:4.8rem;border:",
+                                        [Function],
+                                        ";margin:0 0 2rem 0;outline:none;padding:0 1.8rem;position:relative;width:100%;z-index:3;transition:background 0.2s ease,color 0.2s ease;",
+                                        "@media (min-width:",
+                                        "768",
+                                        "px) and (min-height:",
+                                        "0",
+                                        "px){",
+                                        "
+        font-size: 1.8rem;
+        padding: 0 2rem;
+        width: 100%;
+
+        &:hover {
+            background: ",
+                                        [Function],
+                                        ";
+            
+            svg {
+                fill: ",
+                                        [Function],
+                                        ";
+            }
+
+            ",
+                                        ".ButtonTip__StyledButtonTip-zuccjc-0",
+                                        " {
+                opacity: ",
+                                        [Function],
+                                        ";
+                transform: translateY(0);
+            }
+        }
+    ",
+                                        "}",
+                                        "background:",
+                                        [Function],
+                                        ";border-color:",
+                                        [Function],
+                                        ";padding:1.4rem 1.3rem;",
+                                        "@media (min-width:",
+                                        "768",
+                                        "px) and (min-height:",
+                                        "0",
+                                        "px){",
+                                        "
+        padding: 1.4rem 1.3rem;
+
+        &:hover {
+            background: ",
+                                        [Function],
+                                        ";
+
+            svg {
+                fill: ",
+                                        [Function],
+                                        ";
+            }
+        }
+    ",
+                                        "}",
+                                        ";svg{fill:",
+                                        [Function],
+                                        ";height:2rem;position:relative;width:2rem;}",
+                                      ],
+                                    },
+                                    "displayName": "Button__IconButton",
+                                    "foldedComponentIds": Array [
+                                      "Button__BaseButton-sc-1t6ofhe-0",
+                                    ],
+                                    "render": [Function],
+                                    "styledComponentId": "c1",
+                                    "target": [Function],
+                                    "toString": [Function],
+                                    "usesTheme": true,
+                                    "warnTooManyClasses": [Function],
+                                    "withComponent": [Function],
+                                  }
+                                }
+                                forwardedRef={null}
+                                icon="mock-file"
+                                onClick={[Function]}
+                              >
+                                <Button
+                                  className="c1 c9"
+                                  disabled={false}
+                                  icon="mock-file"
+                                  isToggled={false}
+                                  onClick={[Function]}
+                                  secondary={false}
+                                  tip={null}
+                                  tipPosition="left"
+                                  toggleTip={null}
+                                >
+                                  <button
+                                    aria-label={null}
+                                    className="c1 c9"
+                                    disabled={false}
+                                    onClick={[Function]}
+                                  >
+                                    <ReactSVG
+                                      evalScripts="never"
+                                      fallback={null}
+                                      loading={null}
+                                      onInjected={[Function]}
+                                      renumerateIRIElements={true}
+                                      src="mock-file"
+                                      svgClassName={null}
+                                      svgStyle={Object {}}
+                                      wrapper="div"
+                                    >
+                                      <div />
+                                    </ReactSVG>
+                                  </button>
+                                </Button>
+                              </StyledComponent>
+                            </Button__IconButton>
+                          </form>
+                        </StyledComponent>
+                      </ChatInput__StyledChatInput>
+                    </Transition>
+                  </CSSTransition>
+                </ChatInput>
+              </Connect(ChatInput)>
+            </div>
+          </StyledComponent>
+        </Transcript__StyledTranscript>
+      </Transition>
+    </CSSTransition>
+  </Transcript>
+</Connect(Transcript)>
+`;
+
+exports[`Transcript renders correctly 1`] = `
+<Connect(Transcript)>
+  <Transcript
+    animateCamera={[Function]}
+    changePanel={[Function]}
+    isConnected={false}
+    isOpen={false}
+    toggleTranscript={[Function]}
+    transcript={Array []}
+  >
+    <CSSTransition
+      classNames="transcript"
+      in={false}
+      timeout={300}
+      unmountOnExit={true}
+    >
+      <Transition
+        appear={false}
+        enter={true}
+        exit={true}
+        in={false}
+        mountOnEnter={false}
+        onEnter={[Function]}
+        onEntered={[Function]}
+        onEntering={[Function]}
+        onExit={[Function]}
+        onExited={[Function]}
+        onExiting={[Function]}
+        timeout={300}
+        unmountOnExit={true}
+      />
+    </CSSTransition>
+  </Transcript>
+</Connect(Transcript)>
+`;

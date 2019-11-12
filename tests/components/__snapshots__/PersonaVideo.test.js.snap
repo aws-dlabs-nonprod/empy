@@ -1,0 +1,281 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonaVideo handles connection 1`] = `
+.c0 {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 0;
+}
+
+.c0 video {
+  width: 100%;
+  height: 100%;
+}
+
+.c0.video-enter {
+  opacity: 0;
+}
+
+.c0.video-enter-done,
+.c0.video-enter-active {
+  opacity: 1;
+}
+
+.c0.video-exit {
+  opacity: 1;
+}
+
+.c0.video-exit-done,
+.c0.video-exit-active {
+  opacity: 0;
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0 {
+    bottom: 0;
+  }
+}
+
+<Connect(PersonaVideo)
+  theme={
+    Object {
+      "colourBackground": "#E5E5E5",
+      "colourDivider": "#D7D2CB",
+      "colourFaintBorder": "#8C9296",
+      "colourForeground": "#FFFFFF",
+      "colourForegroundHover": "#F9F9F8",
+      "colourForegroundTransparent": "rgba(255, 255, 255, 0.2)",
+      "colourInactive": "#7F7F7F",
+      "colourPrimary": "#D5002B",
+      "colourPrimaryHover": "#e24d6b",
+      "colourPrimaryTransparent": "rgba(0, 174, 236, 0.5)",
+      "radius": "0.3rem",
+      "splitHeight": "50vh",
+      "textBody": "#1A1A1A",
+      "textDark": "#621A4B",
+      "textPrimary": "#2D373E",
+      "textSecondary": "#E7E6E6",
+    }
+  }
+>
+  <PersonaVideo
+    isConnected={true}
+    setVideoBounds={[Function]}
+    theme={
+      Object {
+        "colourBackground": "#E5E5E5",
+        "colourDivider": "#D7D2CB",
+        "colourFaintBorder": "#8C9296",
+        "colourForeground": "#FFFFFF",
+        "colourForegroundHover": "#F9F9F8",
+        "colourForegroundTransparent": "rgba(255, 255, 255, 0.2)",
+        "colourInactive": "#7F7F7F",
+        "colourPrimary": "#D5002B",
+        "colourPrimaryHover": "#e24d6b",
+        "colourPrimaryTransparent": "rgba(0, 174, 236, 0.5)",
+        "radius": "0.3rem",
+        "splitHeight": "50vh",
+        "textBody": "#1A1A1A",
+        "textDark": "#621A4B",
+        "textPrimary": "#2D373E",
+        "textSecondary": "#E7E6E6",
+      }
+    }
+  >
+    <CSSTransition
+      classNames="video"
+      in={true}
+      timeout={500}
+      unmountOnExit={true}
+    >
+      <Transition
+        appear={false}
+        enter={true}
+        exit={true}
+        in={true}
+        mountOnEnter={false}
+        onEnter={[Function]}
+        onEntered={[Function]}
+        onEntering={[Function]}
+        onExit={[Function]}
+        onExited={[Function]}
+        onExiting={[Function]}
+        timeout={500}
+        unmountOnExit={true}
+      >
+        <PersonaVideo__StyledPersonaVideo
+          isConnected={true}
+          setVideoBounds={[Function]}
+          theme={
+            Object {
+              "colourBackground": "#E5E5E5",
+              "colourDivider": "#D7D2CB",
+              "colourFaintBorder": "#8C9296",
+              "colourForeground": "#FFFFFF",
+              "colourForegroundHover": "#F9F9F8",
+              "colourForegroundTransparent": "rgba(255, 255, 255, 0.2)",
+              "colourInactive": "#7F7F7F",
+              "colourPrimary": "#D5002B",
+              "colourPrimaryHover": "#e24d6b",
+              "colourPrimaryTransparent": "rgba(0, 174, 236, 0.5)",
+              "radius": "0.3rem",
+              "splitHeight": "50vh",
+              "textBody": "#1A1A1A",
+              "textDark": "#621A4B",
+              "textPrimary": "#2D373E",
+              "textSecondary": "#E7E6E6",
+            }
+          }
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "PersonaVideo__StyledPersonaVideo-sc-1fqmpy8-0",
+                  "isStatic": false,
+                  "lastClassName": "c0",
+                  "rules": Array [
+                    "bottom:",
+                    [Function],
+                    ";left:0;position:absolute;right:0;top:0;transition:opacity 0.5s ease-in-out;z-index:0;video{width:100%;height:100%;}",
+                    "@media (min-width:",
+                    "768",
+                    "px) and (min-height:",
+                    "0",
+                    "px){",
+                    "
+        bottom: 0;
+    ",
+                    "}",
+                    " &.video-enter{opacity:0;}&.video-enter-done,&.video-enter-active{opacity:1;}&.video-exit{opacity:1;}&.video-exit-done,&.video-exit-active{opacity:0;}",
+                  ],
+                },
+                "displayName": "PersonaVideo__StyledPersonaVideo",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "PersonaVideo__StyledPersonaVideo-sc-1fqmpy8-0",
+                "target": "div",
+                "toString": [Function],
+                "usesTheme": true,
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            isConnected={true}
+            setVideoBounds={[Function]}
+            theme={
+              Object {
+                "colourBackground": "#E5E5E5",
+                "colourDivider": "#D7D2CB",
+                "colourFaintBorder": "#8C9296",
+                "colourForeground": "#FFFFFF",
+                "colourForegroundHover": "#F9F9F8",
+                "colourForegroundTransparent": "rgba(255, 255, 255, 0.2)",
+                "colourInactive": "#7F7F7F",
+                "colourPrimary": "#D5002B",
+                "colourPrimaryHover": "#e24d6b",
+                "colourPrimaryTransparent": "rgba(0, 174, 236, 0.5)",
+                "radius": "0.3rem",
+                "splitHeight": "50vh",
+                "textBody": "#1A1A1A",
+                "textDark": "#621A4B",
+                "textPrimary": "#2D373E",
+                "textSecondary": "#E7E6E6",
+              }
+            }
+          >
+            <div
+              className="c0"
+            >
+              <video
+                autoPlay={true}
+                onPlaying={[Function]}
+                playsInline={true}
+              />
+            </div>
+          </StyledComponent>
+        </PersonaVideo__StyledPersonaVideo>
+      </Transition>
+    </CSSTransition>
+  </PersonaVideo>
+</Connect(PersonaVideo)>
+`;
+
+exports[`PersonaVideo renders correctly 1`] = `
+<Connect(PersonaVideo)
+  theme={
+    Object {
+      "colourBackground": "#E5E5E5",
+      "colourDivider": "#D7D2CB",
+      "colourFaintBorder": "#8C9296",
+      "colourForeground": "#FFFFFF",
+      "colourForegroundHover": "#F9F9F8",
+      "colourForegroundTransparent": "rgba(255, 255, 255, 0.2)",
+      "colourInactive": "#7F7F7F",
+      "colourPrimary": "#D5002B",
+      "colourPrimaryHover": "#e24d6b",
+      "colourPrimaryTransparent": "rgba(0, 174, 236, 0.5)",
+      "radius": "0.3rem",
+      "splitHeight": "50vh",
+      "textBody": "#1A1A1A",
+      "textDark": "#621A4B",
+      "textPrimary": "#2D373E",
+      "textSecondary": "#E7E6E6",
+    }
+  }
+>
+  <PersonaVideo
+    setVideoBounds={[Function]}
+    theme={
+      Object {
+        "colourBackground": "#E5E5E5",
+        "colourDivider": "#D7D2CB",
+        "colourFaintBorder": "#8C9296",
+        "colourForeground": "#FFFFFF",
+        "colourForegroundHover": "#F9F9F8",
+        "colourForegroundTransparent": "rgba(255, 255, 255, 0.2)",
+        "colourInactive": "#7F7F7F",
+        "colourPrimary": "#D5002B",
+        "colourPrimaryHover": "#e24d6b",
+        "colourPrimaryTransparent": "rgba(0, 174, 236, 0.5)",
+        "radius": "0.3rem",
+        "splitHeight": "50vh",
+        "textBody": "#1A1A1A",
+        "textDark": "#621A4B",
+        "textPrimary": "#2D373E",
+        "textSecondary": "#E7E6E6",
+      }
+    }
+  >
+    <CSSTransition
+      classNames="video"
+      timeout={500}
+      unmountOnExit={true}
+    >
+      <Transition
+        appear={false}
+        enter={true}
+        exit={true}
+        in={false}
+        mountOnEnter={false}
+        onEnter={[Function]}
+        onEntered={[Function]}
+        onEntering={[Function]}
+        onExit={[Function]}
+        onExited={[Function]}
+        onExiting={[Function]}
+        timeout={500}
+        unmountOnExit={true}
+      />
+    </CSSTransition>
+  </PersonaVideo>
+</Connect(PersonaVideo)>
+`;

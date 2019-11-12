@@ -37,9 +37,17 @@ ${AWS_REGION}
 text
 EOF
 
-sh -c "node -v" >> "./node_version"
+TOKEN_ISSUER=https://localhost:5000/auth/authorize
 
+sh -c "node -v" >> "./node_version"
 sh -c "npm -v" >> "./npm version"
+
+echo "//registry.npmjs.org/:_authToken='${NPM_TOKEN}'" > .npmrc
+
+sh -c "npm install"
+
+sh -c "npm run prod"
+
 
 # Sync using our dedicated profile and suppress verbose messages.
 # All other flags are optional via the `args:` directive.

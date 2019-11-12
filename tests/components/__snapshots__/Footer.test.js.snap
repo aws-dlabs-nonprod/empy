@@ -1,0 +1,1702 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders correctly 1`] = `
+<Connect(Footer)>
+  <Footer
+    infoPanels={Array []}
+    isConnected={false}
+    toggleInfoPanel={[Function]}
+    toggleMute={[Function]}
+    toggleTranscript={[Function]}
+  >
+    <CSSTransition
+      classNames="footer"
+      in={false}
+      timeout={300}
+      unmountOnExit={true}
+    >
+      <Transition
+        appear={false}
+        enter={true}
+        exit={true}
+        in={false}
+        mountOnEnter={false}
+        onEnter={[Function]}
+        onEntered={[Function]}
+        onEntering={[Function]}
+        onExit={[Function]}
+        onExited={[Function]}
+        onExiting={[Function]}
+        timeout={300}
+        unmountOnExit={true}
+      />
+    </CSSTransition>
+  </Footer>
+</Connect(Footer)>
+`;
+
+exports[`Footer toggles correctly 1`] = `
+.c4 {
+  background: #FFFFFF;
+  border-radius: 0.3rem;
+  bottom: 5rem;
+  color: #1A1A1A;
+  display: block;
+  opacity: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  left: 0;
+  right: auto;
+  line-height: 1.22;
+  padding: 1rem;
+  pointer-events: none;
+  position: absolute;
+  text-align: left;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  -webkit-transition-property: opacity,-webkit-transform;
+  -webkit-transition-property: opacity,transform;
+  transition-property: opacity,transform;
+  white-space: nowrap;
+  -webkit-transform: translateY(10%);
+  -ms-transform: translateY(10%);
+  transform: translateY(10%);
+  will-change: opacity,transform;
+}
+
+.c4:before,
+.c4:after {
+  border-left: 0.7rem solid transparent;
+  border-right: 0.7rem solid transparent;
+  border-top: 0.7rem solid #FFFFFF;
+  bottom: -0.7rem;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  left: 1.2rem;
+  right: auto;
+  margin: 0;
+  position: absolute;
+}
+
+.c4:before {
+  display: none;
+}
+
+.c7 {
+  background: #FFFFFF;
+  border-radius: 0.3rem;
+  bottom: 5rem;
+  color: #1A1A1A;
+  display: block;
+  opacity: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  left: auto;
+  right: auto;
+  line-height: 1.22;
+  padding: 1rem;
+  pointer-events: none;
+  position: absolute;
+  text-align: left;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  -webkit-transition-property: opacity,-webkit-transform;
+  -webkit-transition-property: opacity,transform;
+  transition-property: opacity,transform;
+  white-space: nowrap;
+  -webkit-transform: translateY(10%);
+  -ms-transform: translateY(10%);
+  transform: translateY(10%);
+  will-change: opacity,transform;
+}
+
+.c7:before,
+.c7:after {
+  border-left: 0.7rem solid transparent;
+  border-right: 0.7rem solid transparent;
+  border-top: 0.7rem solid #FFFFFF;
+  bottom: -0.7rem;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  position: absolute;
+}
+
+.c7:before {
+  display: none;
+}
+
+.c8 {
+  background: #FFFFFF;
+  border-radius: 0.3rem;
+  bottom: 5rem;
+  color: #1A1A1A;
+  display: block;
+  opacity: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  left: auto;
+  right: 0;
+  line-height: 1.22;
+  padding: 1rem;
+  pointer-events: none;
+  position: absolute;
+  text-align: left;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  -webkit-transition-property: opacity,-webkit-transform;
+  -webkit-transition-property: opacity,transform;
+  transition-property: opacity,transform;
+  white-space: nowrap;
+  -webkit-transform: translateY(10%);
+  -ms-transform: translateY(10%);
+  transform: translateY(10%);
+  will-change: opacity,transform;
+}
+
+.c8:before,
+.c8:after {
+  border-left: 0.7rem solid transparent;
+  border-right: 0.7rem solid transparent;
+  border-top: 0.7rem solid #FFFFFF;
+  bottom: -0.7rem;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  left: auto;
+  right: 1.2rem;
+  margin: 0;
+  position: absolute;
+}
+
+.c8:before {
+  display: none;
+}
+
+.c2 {
+  background: #D5002B;
+  border-radius: 0.3rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  height: 4.8rem;
+  border: 0.1rem solid #D5002B;
+  margin: 0 0 2rem 0;
+  outline: none;
+  padding: 0 1.8rem;
+  position: relative;
+  width: 100%;
+  z-index: 3;
+  -webkit-transition: background 0.2s ease,color 0.2s ease;
+  transition: background 0.2s ease,color 0.2s ease;
+  background: #F9F9F8;
+  border-color: #D7D2CB;
+  padding: 1.4rem 1.3rem;
+}
+
+.c2 svg {
+  fill: #D5002B;
+  height: 2rem;
+  position: relative;
+  width: 2rem;
+}
+
+.c6 {
+  border-radius: 4.8rem;
+  -webkit-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  height: 4.8rem;
+  width: 8rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c6 span {
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 1rem;
+  background: #D5002B;
+  margin: 0 0.2rem;
+  -webkit-transform: translateY(0rem);
+  -ms-transform: translateY(0rem);
+  transform: translateY(0rem);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out,background-color 0.3s ease-in-out,opacity 0.2s ease-in-out;
+  -webkit-transition: transform 0.2s ease-in-out,background-color 0.3s ease-in-out,opacity 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out,background-color 0.3s ease-in-out,opacity 0.2s ease-in-out;
+  -webkit-animation-name: eCSzNZ;
+  animation-name: eCSzNZ;
+  -webkit-animation-duration: 1.2s;
+  animation-duration: 1.2s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+  will-change: transform,height;
+  opacity: 0.2;
+}
+
+.c6 span:nth-child(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+
+.c6 span:nth-child(2) {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+
+.c6 span:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.c6 span:nth-child(4) {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+.c6 span:nth-child(5) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.c6 span:nth-child(6) {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+.c6 span:nth-child(3) {
+  -webkit-animation-name: eCSzNZ;
+  animation-name: eCSzNZ;
+}
+
+.c6 span:nth-child(2),
+.c6 span:nth-child(4) {
+  -webkit-animation-name: eCSzNZ;
+  animation-name: eCSzNZ;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1.5rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition-property: bottom,-webkit-transform,opacity;
+  -webkit-transition-property: bottom,transform,opacity;
+  transition-property: bottom,transform,opacity;
+  -webkit-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+  z-index: 3;
+}
+
+.c0 .c1 {
+  margin: 0 1rem 0 0;
+  width: 4.8rem;
+}
+
+.c0 .c1:last-child {
+  margin-right: 0;
+}
+
+.c0 .c5 {
+  margin-right: 1rem;
+}
+
+.c0 .c9 {
+  display: none;
+}
+
+.c0 .button-group {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 .hint {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  bottom: 9.3rem;
+  left: 3rem;
+}
+
+.c0 .hint-enter {
+  opacity: 0;
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
+}
+
+.c0 .hint-enter-done,
+.c0 .hint-enter-active {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c0 .hint-exit {
+  opacity: 1;
+  -webkit-transition-duration: 0s,0s;
+  transition-duration: 0s,0s;
+}
+
+.c0 .hint-exit-done,
+.c0 .hint-exit-active {
+  opacity: 0;
+}
+
+.c0 .info {
+  display: none;
+}
+
+.c0.footer-enter {
+  opacity: 0;
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
+}
+
+.c0.footer-enter-done,
+.c0.footer-enter-active {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c0.footer-exit {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c0.footer-exit-done,
+.c0.footer-exit-active {
+  opacity: 0;
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c4 {
+    font-size: 1.2rem;
+    bottom: 6.2rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c4:before,
+  .c4:after {
+    left: 1.8rem;
+    right: auto;
+    bottom: -0.7rem;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c4:before {
+    display: none;
+    bottom: 3.4rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c7 {
+    font-size: 1.2rem;
+    bottom: 6.2rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c7:before,
+  .c7:after {
+    left: 0;
+    right: 0;
+    bottom: -0.7rem;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c7:before {
+    display: none;
+    bottom: 3.4rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c8 {
+    font-size: 1.2rem;
+    bottom: 6.2rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c8:before,
+  .c8:after {
+    left: auto;
+    right: 1.8rem;
+    bottom: -0.7rem;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c8:before {
+    display: none;
+    bottom: 3.4rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c2 {
+    font-size: 1.8rem;
+    padding: 0 2rem;
+    width: 100%;
+  }
+
+  .c2:hover {
+    background: #e24d6b;
+  }
+
+  .c2:hover svg {
+    fill: #FFFFFF;
+  }
+
+  .c2:hover .c3 {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c2 {
+    padding: 1.4rem 1.3rem;
+  }
+
+  .c2:hover {
+    background: #FFFFFF;
+  }
+
+  .c2:hover svg {
+    fill: #D5002B;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c6 {
+    height: 4.6rem;
+    width: 9.5rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0 {
+    padding: 3rem;
+    bottom: 0;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0 .c1 {
+    margin-right: 1.5rem;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0 .c5 {
+    margin: 0 auto;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0 .c9 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width:768px) and (min-height:0px) {
+  .c0 .info {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 1;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+    position: absolute;
+    left: 9.3rem;
+  }
+
+  .c0 .info-enter {
+    opacity: 0;
+  }
+
+  .c0 .info-enter-done,
+  .c0 .info-enter-active {
+    opacity: 1;
+  }
+
+  .c0 .info-exit {
+    opacity: 1;
+  }
+
+  .c0 .info-exit-done,
+  .c0 .info-exit-active {
+    opacity: 0;
+  }
+}
+
+<Connect(Footer)>
+  <Footer
+    infoPanels={Array []}
+    isConnected={true}
+    toggleInfoPanel={[Function]}
+    toggleMute={[Function]}
+    toggleTranscript={[Function]}
+  >
+    <CSSTransition
+      classNames="footer"
+      in={true}
+      timeout={300}
+      unmountOnExit={true}
+    >
+      <Transition
+        appear={false}
+        enter={true}
+        exit={true}
+        in={true}
+        mountOnEnter={false}
+        onEnter={[Function]}
+        onEntered={[Function]}
+        onEntering={[Function]}
+        onExit={[Function]}
+        onExited={[Function]}
+        onExiting={[Function]}
+        timeout={300}
+        unmountOnExit={true}
+      >
+        <Footer__StyledFooter
+          infoPanels={Array []}
+          isConnected={true}
+          toggleInfoPanel={[Function]}
+          toggleMute={[Function]}
+          toggleTranscript={[Function]}
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "Footer__StyledFooter-sc-6580ik-0",
+                  "isStatic": false,
+                  "lastClassName": "c0",
+                  "rules": Array [
+                    "display:flex;flex-direction:row;justify-content:space-between;padding:1.5rem;position:absolute;bottom:",
+                    [Function],
+                    ";right:0;left:0;transition:all 0.3s ease-in-out;transition-property:bottom,transform,opacity;transform-origin:0% 0%;z-index:3;",
+                    "@media (min-width:",
+                    "768",
+                    "px) and (min-height:",
+                    "0",
+                    "px){",
+                    "
+        padding: 3rem;
+        bottom: 0;
+    ",
+                    "}",
+                    " ",
+                    ".c1",
+                    "{margin:0 1rem 0 0;width:4.8rem;",
+                    "@media (min-width:",
+                    "768",
+                    "px) and (min-height:",
+                    "0",
+                    "px){",
+                    "
+            margin-right: 1.5rem;
+        ",
+                    "}",
+                    " &:last-child{margin-right:0;}}",
+                    ".c5",
+                    "{margin-right:1rem;",
+                    "@media (min-width:",
+                    "768",
+                    "px) and (min-height:",
+                    "0",
+                    "px){",
+                    "
+            margin: 0 auto;
+        ",
+                    "}",
+                    "}",
+                    ".c9",
+                    "{display:none;",
+                    "@media (min-width:",
+                    "768",
+                    "px) and (min-height:",
+                    "0",
+                    "px){",
+                    "
+            display: flex;
+        ",
+                    "}",
+                    "}.button-group{display:flex;flex-direction:row;}.hint{opacity:1;transform:translateY(0);bottom:9.3rem;left:3rem;&-enter{opacity:0;transform:translateY(2rem);}&-enter-done,&-enter-active{opacity:1;transform:translateY(0);}&-exit{opacity:1;transition-duration:0s,0s;}&-exit-done,&-exit-active{opacity:0;}}.info{display:none;",
+                    "@media (min-width:",
+                    "768",
+                    "px) and (min-height:",
+                    "0",
+                    "px){",
+                    "
+            display: flex;
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+            position: absolute;
+            left: 9.3rem;
+
+            &-enter {
+                opacity: 0;
+            }
+
+            &-enter-done,
+            &-enter-active {
+                opacity: 1;
+            }
+
+            &-exit {
+                opacity: 1;
+            }
+
+            &-exit-done,
+            &-exit-active {
+                opacity: 0;
+            }
+        ",
+                    "}",
+                    "}&.footer-enter{opacity:0;transform:translateY(2rem);}&.footer-enter-done,&.footer-enter-active{opacity:1;transform:translateY(0);}&.footer-exit{opacity:1;transform:translateY(0);}&.footer-exit-done,&.footer-exit-active{opacity:0;transform:translateY(2rem);}",
+                  ],
+                },
+                "displayName": "Footer__StyledFooter",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "Footer__StyledFooter-sc-6580ik-0",
+                "target": "footer",
+                "toString": [Function],
+                "usesTheme": false,
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            infoPanels={Array []}
+            isConnected={true}
+            toggleInfoPanel={[Function]}
+            toggleMute={[Function]}
+            toggleTranscript={[Function]}
+          >
+            <footer
+              className="c0"
+            >
+              <div
+                className="button-group"
+              >
+                <CSSTransition
+                  classNames="hint"
+                  in={false}
+                  timeout={300}
+                  unmountOnExit={true}
+                >
+                  <Transition
+                    appear={false}
+                    enter={true}
+                    exit={true}
+                    in={false}
+                    mountOnEnter={false}
+                    onEnter={[Function]}
+                    onEntered={[Function]}
+                    onEntering={[Function]}
+                    onExit={[Function]}
+                    onExited={[Function]}
+                    onExiting={[Function]}
+                    timeout={300}
+                    unmountOnExit={true}
+                  />
+                </CSSTransition>
+                <Button__IconButton
+                  icon="mock-file"
+                  onClick={[Function]}
+                  tip="Show chat transcript"
+                  toggleTip="Hide chat transcript"
+                >
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "c1",
+                          "isStatic": false,
+                          "lastClassName": "c2",
+                          "rules": Array [
+                            "background:",
+                            [Function],
+                            ";border-radius:",
+                            [Function],
+                            ";box-sizing:border-box;color:",
+                            [Function],
+                            ";cursor:pointer;display:flex;justify-content:center;font-size:1.6rem;height:4.8rem;border:",
+                            [Function],
+                            ";margin:0 0 2rem 0;outline:none;padding:0 1.8rem;position:relative;width:100%;z-index:3;transition:background 0.2s ease,color 0.2s ease;",
+                            "@media (min-width:",
+                            "768",
+                            "px) and (min-height:",
+                            "0",
+                            "px){",
+                            "
+        font-size: 1.8rem;
+        padding: 0 2rem;
+        width: 100%;
+
+        &:hover {
+            background: ",
+                            [Function],
+                            ";
+            
+            svg {
+                fill: ",
+                            [Function],
+                            ";
+            }
+
+            ",
+                            ".c3",
+                            " {
+                opacity: ",
+                            [Function],
+                            ";
+                transform: translateY(0);
+            }
+        }
+    ",
+                            "}",
+                            "background:",
+                            [Function],
+                            ";border-color:",
+                            [Function],
+                            ";padding:1.4rem 1.3rem;",
+                            "@media (min-width:",
+                            "768",
+                            "px) and (min-height:",
+                            "0",
+                            "px){",
+                            "
+        padding: 1.4rem 1.3rem;
+
+        &:hover {
+            background: ",
+                            [Function],
+                            ";
+
+            svg {
+                fill: ",
+                            [Function],
+                            ";
+            }
+        }
+    ",
+                            "}",
+                            ";svg{fill:",
+                            [Function],
+                            ";height:2rem;position:relative;width:2rem;}",
+                          ],
+                        },
+                        "displayName": "Button__IconButton",
+                        "foldedComponentIds": Array [
+                          "Button__BaseButton-sc-1t6ofhe-0",
+                        ],
+                        "render": [Function],
+                        "styledComponentId": "c1",
+                        "target": [Function],
+                        "toString": [Function],
+                        "usesTheme": true,
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    icon="mock-file"
+                    onClick={[Function]}
+                    tip="Show chat transcript"
+                    toggleTip="Hide chat transcript"
+                  >
+                    <Button
+                      className="c1 c2"
+                      disabled={false}
+                      icon="mock-file"
+                      isToggled={false}
+                      onClick={[Function]}
+                      secondary={false}
+                      tip="Show chat transcript"
+                      tipPosition="left"
+                      toggleTip="Hide chat transcript"
+                    >
+                      <button
+                        aria-label="Show chat transcript"
+                        className="c1 c2"
+                        disabled={false}
+                        onClick={[Function]}
+                      >
+                        <ReactSVG
+                          evalScripts="never"
+                          fallback={null}
+                          loading={null}
+                          onInjected={[Function]}
+                          renumerateIRIElements={true}
+                          src="mock-file"
+                          svgClassName={null}
+                          svgStyle={Object {}}
+                          wrapper="div"
+                        >
+                          <div />
+                        </ReactSVG>
+                        <ButtonTip
+                          tipPosition="left"
+                        >
+                          <ButtonTip__StyledButtonTip
+                            tipPosition="left"
+                          >
+                            <StyledComponent
+                              forwardedComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "attrs": Array [],
+                                  "componentStyle": ComponentStyle {
+                                    "componentId": "c3",
+                                    "isStatic": false,
+                                    "lastClassName": "c8",
+                                    "rules": Array [
+                                      "background:",
+                                      [Function],
+                                      ";border-radius:",
+                                      [Function],
+                                      ";bottom:5rem;color:",
+                                      [Function],
+                                      ";display:",
+                                      [Function],
+                                      ";opacity:0;font-size:1rem;font-weight:700;left:",
+                                      [Function],
+                                      ";right:",
+                                      [Function],
+                                      ";line-height:1.22;padding:1rem;pointer-events:none;position:absolute;text-align:left;transition:opacity 0.2s ease-in-out;transition-property:opacity,transform;white-space:nowrap;transform:translateY(10%);will-change:opacity,transform;",
+                                      "@media (min-width:",
+                                      "768",
+                                      "px) and (min-height:",
+                                      "0",
+                                      "px){",
+                                      "
+        font-size: 1.2rem;
+        bottom: ",
+                                      [Function],
+                                      ";
+    ",
+                                      "}",
+                                      " &:before,&:after{border-left:0.7rem solid transparent;border-right:0.7rem solid transparent;border-top:0.7rem solid ",
+                                      [Function],
+                                      ";bottom:-0.7rem;content:'';display:block;width:0;height:0;left:",
+                                      [Function],
+                                      ";right:",
+                                      [Function],
+                                      ";margin:",
+                                      [Function],
+                                      ";position:absolute;",
+                                      "@media (min-width:",
+                                      "768",
+                                      "px) and (min-height:",
+                                      "0",
+                                      "px){",
+                                      "
+            left: ",
+                                      [Function],
+                                      ";
+            right: ",
+                                      [Function],
+                                      ";
+            bottom: ",
+                                      [Function],
+                                      ";
+            transform: ",
+                                      [Function],
+                                      ";
+        ",
+                                      "}",
+                                      "}&:before{display:none;",
+                                      "@media (min-width:",
+                                      "768",
+                                      "px) and (min-height:",
+                                      "0",
+                                      "px){",
+                                      "
+            display: ",
+                                      [Function],
+                                      ";
+            bottom: 3.4rem;
+        ",
+                                      "}",
+                                      "}",
+                                    ],
+                                  },
+                                  "displayName": "ButtonTip__StyledButtonTip",
+                                  "foldedComponentIds": Array [],
+                                  "render": [Function],
+                                  "styledComponentId": "c3",
+                                  "target": "div",
+                                  "toString": [Function],
+                                  "usesTheme": true,
+                                  "warnTooManyClasses": [Function],
+                                  "withComponent": [Function],
+                                }
+                              }
+                              forwardedRef={null}
+                              tipPosition="left"
+                            >
+                              <div
+                                className="c3 c4"
+                              >
+                                <p>
+                                  Show chat transcript
+                                </p>
+                              </div>
+                            </StyledComponent>
+                          </ButtonTip__StyledButtonTip>
+                        </ButtonTip>
+                      </button>
+                    </Button>
+                  </StyledComponent>
+                </Button__IconButton>
+                <Connect(ChatInput)>
+                  <ChatInput
+                    sendMessage={[Function]}
+                  >
+                    <CSSTransition
+                      classNames="form"
+                      timeout={3000}
+                      unmountOnExit={true}
+                    >
+                      <Transition
+                        appear={false}
+                        enter={true}
+                        exit={true}
+                        in={false}
+                        mountOnEnter={false}
+                        onEnter={[Function]}
+                        onEntered={[Function]}
+                        onEntering={[Function]}
+                        onExit={[Function]}
+                        onExited={[Function]}
+                        onExiting={[Function]}
+                        timeout={3000}
+                        unmountOnExit={true}
+                      />
+                    </CSSTransition>
+                  </ChatInput>
+                </Connect(ChatInput)>
+                <CSSTransition
+                  classNames="info"
+                  in={false}
+                  timeout={300}
+                  unmountOnExit={true}
+                >
+                  <Transition
+                    appear={false}
+                    enter={true}
+                    exit={true}
+                    in={false}
+                    mountOnEnter={false}
+                    onEnter={[Function]}
+                    onEntered={[Function]}
+                    onEntering={[Function]}
+                    onExit={[Function]}
+                    onExited={[Function]}
+                    onExiting={[Function]}
+                    timeout={300}
+                    unmountOnExit={true}
+                  />
+                </CSSTransition>
+              </div>
+              <Indicator>
+                <Indicator__StyledIndicator
+                  isAnimating={false}
+                >
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "c5",
+                          "isStatic": false,
+                          "lastClassName": "c6",
+                          "rules": Array [
+                            "border-radius:4.8rem;transition:border-color 0.3s ease-in-out;height:4.8rem;width:8rem;display:flex;justify-content:center;align-items:center;",
+                            "@media (min-width:",
+                            "768",
+                            "px) and (min-height:",
+                            "0",
+                            "px){",
+                            "
+        height: 4.6rem;
+        width: 9.5rem;
+    ",
+                            "}",
+                            " span{display:block;width:0.5rem;height:0.5rem;border-radius:1rem;background:",
+                            [Function],
+                            ";margin:0 0.2rem;transform:translateY(0rem);transition:transform 0.2s ease-in-out,background-color 0.3s ease-in-out,opacity 0.2s ease-in-out;animation-name:",
+                            [Function],
+                            ";animation-duration:",
+                            [Function],
+                            ";animation-timing-function:ease-in-out;animation-iteration-count:infinite;animation-direction:alternate;will-change:transform,height;opacity:",
+                            [Function],
+                            ";",
+                            "
+        &:nth-child(1) {
+            animation-delay: 0s;
+        }
+        
+        &:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+        
+        &:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+        
+        &:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+        
+        &:nth-child(5) {
+            animation-delay: 0.4s;
+        }
+        
+        &:nth-child(6) {
+            animation-delay: 0.5s;
+        }
+        ",
+                            ";&:nth-child(3){animation-name:",
+                            [Function],
+                            ";}&:nth-child(2),&:nth-child(4){animation-name:",
+                            [Function],
+                            ";}}",
+                          ],
+                        },
+                        "displayName": "Indicator__StyledIndicator",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "c5",
+                        "target": "div",
+                        "toString": [Function],
+                        "usesTheme": true,
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    isAnimating={false}
+                  >
+                    <div
+                      className="c5 c6"
+                    >
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                  </StyledComponent>
+                </Indicator__StyledIndicator>
+              </Indicator>
+              <div
+                className="button-group"
+              >
+                <Button__IconButton
+                  icon="mock-file"
+                  onClick={[Function]}
+                  tip="Mute your microphone"
+                  tipPosition="center"
+                  toggleIcon="mock-file"
+                  toggleTip="Unmute your microphone"
+                >
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "c1",
+                          "isStatic": false,
+                          "lastClassName": "c2",
+                          "rules": Array [
+                            "background:",
+                            [Function],
+                            ";border-radius:",
+                            [Function],
+                            ";box-sizing:border-box;color:",
+                            [Function],
+                            ";cursor:pointer;display:flex;justify-content:center;font-size:1.6rem;height:4.8rem;border:",
+                            [Function],
+                            ";margin:0 0 2rem 0;outline:none;padding:0 1.8rem;position:relative;width:100%;z-index:3;transition:background 0.2s ease,color 0.2s ease;",
+                            "@media (min-width:",
+                            "768",
+                            "px) and (min-height:",
+                            "0",
+                            "px){",
+                            "
+        font-size: 1.8rem;
+        padding: 0 2rem;
+        width: 100%;
+
+        &:hover {
+            background: ",
+                            [Function],
+                            ";
+            
+            svg {
+                fill: ",
+                            [Function],
+                            ";
+            }
+
+            ",
+                            ".c3",
+                            " {
+                opacity: ",
+                            [Function],
+                            ";
+                transform: translateY(0);
+            }
+        }
+    ",
+                            "}",
+                            "background:",
+                            [Function],
+                            ";border-color:",
+                            [Function],
+                            ";padding:1.4rem 1.3rem;",
+                            "@media (min-width:",
+                            "768",
+                            "px) and (min-height:",
+                            "0",
+                            "px){",
+                            "
+        padding: 1.4rem 1.3rem;
+
+        &:hover {
+            background: ",
+                            [Function],
+                            ";
+
+            svg {
+                fill: ",
+                            [Function],
+                            ";
+            }
+        }
+    ",
+                            "}",
+                            ";svg{fill:",
+                            [Function],
+                            ";height:2rem;position:relative;width:2rem;}",
+                          ],
+                        },
+                        "displayName": "Button__IconButton",
+                        "foldedComponentIds": Array [
+                          "Button__BaseButton-sc-1t6ofhe-0",
+                        ],
+                        "render": [Function],
+                        "styledComponentId": "c1",
+                        "target": [Function],
+                        "toString": [Function],
+                        "usesTheme": true,
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    icon="mock-file"
+                    onClick={[Function]}
+                    tip="Mute your microphone"
+                    tipPosition="center"
+                    toggleIcon="mock-file"
+                    toggleTip="Unmute your microphone"
+                  >
+                    <Button
+                      className="c1 c2"
+                      disabled={false}
+                      icon="mock-file"
+                      isToggled={false}
+                      onClick={[Function]}
+                      secondary={false}
+                      tip="Mute your microphone"
+                      tipPosition="center"
+                      toggleIcon="mock-file"
+                      toggleTip="Unmute your microphone"
+                    >
+                      <button
+                        aria-label="Mute your microphone"
+                        className="c1 c2"
+                        disabled={false}
+                        onClick={[Function]}
+                      >
+                        <ReactSVG
+                          evalScripts="never"
+                          fallback={null}
+                          loading={null}
+                          onInjected={[Function]}
+                          renumerateIRIElements={true}
+                          src="mock-file"
+                          svgClassName={null}
+                          svgStyle={Object {}}
+                          wrapper="div"
+                        >
+                          <div />
+                        </ReactSVG>
+                        <ButtonTip
+                          tipPosition="center"
+                        >
+                          <ButtonTip__StyledButtonTip
+                            tipPosition="center"
+                          >
+                            <StyledComponent
+                              forwardedComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "attrs": Array [],
+                                  "componentStyle": ComponentStyle {
+                                    "componentId": "c3",
+                                    "isStatic": false,
+                                    "lastClassName": "c8",
+                                    "rules": Array [
+                                      "background:",
+                                      [Function],
+                                      ";border-radius:",
+                                      [Function],
+                                      ";bottom:5rem;color:",
+                                      [Function],
+                                      ";display:",
+                                      [Function],
+                                      ";opacity:0;font-size:1rem;font-weight:700;left:",
+                                      [Function],
+                                      ";right:",
+                                      [Function],
+                                      ";line-height:1.22;padding:1rem;pointer-events:none;position:absolute;text-align:left;transition:opacity 0.2s ease-in-out;transition-property:opacity,transform;white-space:nowrap;transform:translateY(10%);will-change:opacity,transform;",
+                                      "@media (min-width:",
+                                      "768",
+                                      "px) and (min-height:",
+                                      "0",
+                                      "px){",
+                                      "
+        font-size: 1.2rem;
+        bottom: ",
+                                      [Function],
+                                      ";
+    ",
+                                      "}",
+                                      " &:before,&:after{border-left:0.7rem solid transparent;border-right:0.7rem solid transparent;border-top:0.7rem solid ",
+                                      [Function],
+                                      ";bottom:-0.7rem;content:'';display:block;width:0;height:0;left:",
+                                      [Function],
+                                      ";right:",
+                                      [Function],
+                                      ";margin:",
+                                      [Function],
+                                      ";position:absolute;",
+                                      "@media (min-width:",
+                                      "768",
+                                      "px) and (min-height:",
+                                      "0",
+                                      "px){",
+                                      "
+            left: ",
+                                      [Function],
+                                      ";
+            right: ",
+                                      [Function],
+                                      ";
+            bottom: ",
+                                      [Function],
+                                      ";
+            transform: ",
+                                      [Function],
+                                      ";
+        ",
+                                      "}",
+                                      "}&:before{display:none;",
+                                      "@media (min-width:",
+                                      "768",
+                                      "px) and (min-height:",
+                                      "0",
+                                      "px){",
+                                      "
+            display: ",
+                                      [Function],
+                                      ";
+            bottom: 3.4rem;
+        ",
+                                      "}",
+                                      "}",
+                                    ],
+                                  },
+                                  "displayName": "ButtonTip__StyledButtonTip",
+                                  "foldedComponentIds": Array [],
+                                  "render": [Function],
+                                  "styledComponentId": "c3",
+                                  "target": "div",
+                                  "toString": [Function],
+                                  "usesTheme": true,
+                                  "warnTooManyClasses": [Function],
+                                  "withComponent": [Function],
+                                }
+                              }
+                              forwardedRef={null}
+                              tipPosition="center"
+                            >
+                              <div
+                                className="c3 c7"
+                              >
+                                <p>
+                                  Mute your microphone
+                                </p>
+                              </div>
+                            </StyledComponent>
+                          </ButtonTip__StyledButtonTip>
+                        </ButtonTip>
+                      </button>
+                    </Button>
+                  </StyledComponent>
+                </Button__IconButton>
+                <Button__IconButton
+                  icon="mock-file"
+                  onClick={[Function]}
+                  tip="End the session"
+                  tipPosition="right"
+                >
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "c1",
+                          "isStatic": false,
+                          "lastClassName": "c2",
+                          "rules": Array [
+                            "background:",
+                            [Function],
+                            ";border-radius:",
+                            [Function],
+                            ";box-sizing:border-box;color:",
+                            [Function],
+                            ";cursor:pointer;display:flex;justify-content:center;font-size:1.6rem;height:4.8rem;border:",
+                            [Function],
+                            ";margin:0 0 2rem 0;outline:none;padding:0 1.8rem;position:relative;width:100%;z-index:3;transition:background 0.2s ease,color 0.2s ease;",
+                            "@media (min-width:",
+                            "768",
+                            "px) and (min-height:",
+                            "0",
+                            "px){",
+                            "
+        font-size: 1.8rem;
+        padding: 0 2rem;
+        width: 100%;
+
+        &:hover {
+            background: ",
+                            [Function],
+                            ";
+            
+            svg {
+                fill: ",
+                            [Function],
+                            ";
+            }
+
+            ",
+                            ".c3",
+                            " {
+                opacity: ",
+                            [Function],
+                            ";
+                transform: translateY(0);
+            }
+        }
+    ",
+                            "}",
+                            "background:",
+                            [Function],
+                            ";border-color:",
+                            [Function],
+                            ";padding:1.4rem 1.3rem;",
+                            "@media (min-width:",
+                            "768",
+                            "px) and (min-height:",
+                            "0",
+                            "px){",
+                            "
+        padding: 1.4rem 1.3rem;
+
+        &:hover {
+            background: ",
+                            [Function],
+                            ";
+
+            svg {
+                fill: ",
+                            [Function],
+                            ";
+            }
+        }
+    ",
+                            "}",
+                            ";svg{fill:",
+                            [Function],
+                            ";height:2rem;position:relative;width:2rem;}",
+                          ],
+                        },
+                        "displayName": "Button__IconButton",
+                        "foldedComponentIds": Array [
+                          "Button__BaseButton-sc-1t6ofhe-0",
+                        ],
+                        "render": [Function],
+                        "styledComponentId": "c1",
+                        "target": [Function],
+                        "toString": [Function],
+                        "usesTheme": true,
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                    icon="mock-file"
+                    onClick={[Function]}
+                    tip="End the session"
+                    tipPosition="right"
+                  >
+                    <Button
+                      className="c1 c2"
+                      disabled={false}
+                      icon="mock-file"
+                      isToggled={false}
+                      onClick={[Function]}
+                      secondary={false}
+                      tip="End the session"
+                      tipPosition="right"
+                      toggleTip={null}
+                    >
+                      <button
+                        aria-label="End the session"
+                        className="c1 c2"
+                        disabled={false}
+                        onClick={[Function]}
+                      >
+                        <ReactSVG
+                          evalScripts="never"
+                          fallback={null}
+                          loading={null}
+                          onInjected={[Function]}
+                          renumerateIRIElements={true}
+                          src="mock-file"
+                          svgClassName={null}
+                          svgStyle={Object {}}
+                          wrapper="div"
+                        >
+                          <div />
+                        </ReactSVG>
+                        <ButtonTip
+                          tipPosition="right"
+                        >
+                          <ButtonTip__StyledButtonTip
+                            tipPosition="right"
+                          >
+                            <StyledComponent
+                              forwardedComponent={
+                                Object {
+                                  "$$typeof": Symbol(react.forward_ref),
+                                  "attrs": Array [],
+                                  "componentStyle": ComponentStyle {
+                                    "componentId": "c3",
+                                    "isStatic": false,
+                                    "lastClassName": "c8",
+                                    "rules": Array [
+                                      "background:",
+                                      [Function],
+                                      ";border-radius:",
+                                      [Function],
+                                      ";bottom:5rem;color:",
+                                      [Function],
+                                      ";display:",
+                                      [Function],
+                                      ";opacity:0;font-size:1rem;font-weight:700;left:",
+                                      [Function],
+                                      ";right:",
+                                      [Function],
+                                      ";line-height:1.22;padding:1rem;pointer-events:none;position:absolute;text-align:left;transition:opacity 0.2s ease-in-out;transition-property:opacity,transform;white-space:nowrap;transform:translateY(10%);will-change:opacity,transform;",
+                                      "@media (min-width:",
+                                      "768",
+                                      "px) and (min-height:",
+                                      "0",
+                                      "px){",
+                                      "
+        font-size: 1.2rem;
+        bottom: ",
+                                      [Function],
+                                      ";
+    ",
+                                      "}",
+                                      " &:before,&:after{border-left:0.7rem solid transparent;border-right:0.7rem solid transparent;border-top:0.7rem solid ",
+                                      [Function],
+                                      ";bottom:-0.7rem;content:'';display:block;width:0;height:0;left:",
+                                      [Function],
+                                      ";right:",
+                                      [Function],
+                                      ";margin:",
+                                      [Function],
+                                      ";position:absolute;",
+                                      "@media (min-width:",
+                                      "768",
+                                      "px) and (min-height:",
+                                      "0",
+                                      "px){",
+                                      "
+            left: ",
+                                      [Function],
+                                      ";
+            right: ",
+                                      [Function],
+                                      ";
+            bottom: ",
+                                      [Function],
+                                      ";
+            transform: ",
+                                      [Function],
+                                      ";
+        ",
+                                      "}",
+                                      "}&:before{display:none;",
+                                      "@media (min-width:",
+                                      "768",
+                                      "px) and (min-height:",
+                                      "0",
+                                      "px){",
+                                      "
+            display: ",
+                                      [Function],
+                                      ";
+            bottom: 3.4rem;
+        ",
+                                      "}",
+                                      "}",
+                                    ],
+                                  },
+                                  "displayName": "ButtonTip__StyledButtonTip",
+                                  "foldedComponentIds": Array [],
+                                  "render": [Function],
+                                  "styledComponentId": "c3",
+                                  "target": "div",
+                                  "toString": [Function],
+                                  "usesTheme": true,
+                                  "warnTooManyClasses": [Function],
+                                  "withComponent": [Function],
+                                }
+                              }
+                              forwardedRef={null}
+                              tipPosition="right"
+                            >
+                              <div
+                                className="c3 c8"
+                              >
+                                <p>
+                                  End the session
+                                </p>
+                              </div>
+                            </StyledComponent>
+                          </ButtonTip__StyledButtonTip>
+                        </ButtonTip>
+                      </button>
+                    </Button>
+                  </StyledComponent>
+                </Button__IconButton>
+              </div>
+            </footer>
+          </StyledComponent>
+        </Footer__StyledFooter>
+      </Transition>
+    </CSSTransition>
+  </Footer>
+</Connect(Footer)>
+`;

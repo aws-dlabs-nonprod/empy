@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders correctly 1`] = `
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "Button__BaseButton-sc-1t6ofhe-0",
+        "isStatic": false,
+        "rules": Array [
+          "background:",
+          [Function],
+          ";border-radius:",
+          [Function],
+          ";box-sizing:border-box;color:",
+          [Function],
+          ";cursor:pointer;display:flex;justify-content:center;font-size:1.6rem;height:4.8rem;border:",
+          [Function],
+          ";margin:0 0 2rem 0;outline:none;padding:0 1.8rem;position:relative;width:100%;z-index:3;transition:background 0.2s ease,color 0.2s ease;",
+          "@media (min-width:",
+          "768",
+          "px) and (min-height:",
+          "0",
+          "px){",
+          "
+        font-size: 1.8rem;
+        padding: 0 2rem;
+        width: 100%;
+
+        &:hover {
+            background: ",
+          [Function],
+          ";
+            
+            svg {
+                fill: ",
+          [Function],
+          ";
+            }
+
+            ",
+          ".ButtonTip__StyledButtonTip-zuccjc-0",
+          " {
+                opacity: ",
+          [Function],
+          ";
+                transform: translateY(0);
+            }
+        }
+    ",
+          "}",
+        ],
+      },
+      "displayName": "Button__BaseButton",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "Button__BaseButton-sc-1t6ofhe-0",
+      "target": [Function],
+      "toString": [Function],
+      "usesTheme": true,
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+  theme={
+    Object {
+      "colourBackground": "#E5E5E5",
+      "colourDivider": "#D7D2CB",
+      "colourFaintBorder": "#8C9296",
+      "colourForeground": "#FFFFFF",
+      "colourForegroundHover": "#F9F9F8",
+      "colourForegroundTransparent": "rgba(255, 255, 255, 0.2)",
+      "colourInactive": "#7F7F7F",
+      "colourPrimary": "#D5002B",
+      "colourPrimaryHover": "#e24d6b",
+      "colourPrimaryTransparent": "rgba(0, 174, 236, 0.5)",
+      "radius": "0.3rem",
+      "splitHeight": "50vh",
+      "textBody": "#1A1A1A",
+      "textDark": "#621A4B",
+      "textPrimary": "#2D373E",
+      "textSecondary": "#E7E6E6",
+    }
+  }
+/>
+`;
