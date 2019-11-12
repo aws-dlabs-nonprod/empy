@@ -44,16 +44,16 @@ sh -c "npm -v" >> "./npm version"
 
 rm package-lock.json
 
-echo "//registry.npmjs.org/:_authToken=\"$NPM_TOKEN\"" > "./.npmrc"
+echo "//registry.npmjs.org/:_authToken=\"$AWS_S3_BUCKET\"" > "./.npmrc"
 
-NEW_TOKEN="$NPM_TOKEN"
+NEW_TOKEN="$AWS_S3_BUCKET"
 echo "//registry.npmjs.org/:_authToken=\"$NEW_TOKEN\"" > "./.npmrc1"
 
-NEW_TOKEN1=$NPM_TOKEN
+NEW_TOKEN1=$AWS_S3_BUCKET
 echo "//registry.npmjs.org/:_authToken=\"$NEW_TOKEN1\"" > "./.npmrc2"
 
 
-NEW_TOKEN3=$NPM_TOKEN
+NEW_TOKEN3=$AWS_S3_BUCKET
 echo "//registry.npmjs.org/:_authToken=$NEW_TOKEN3" > "./.npmrc3"
 
 # sh -c "npm install"
