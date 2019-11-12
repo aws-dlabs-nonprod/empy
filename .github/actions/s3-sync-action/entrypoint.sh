@@ -46,9 +46,19 @@ rm package-lock.json
 
 echo "//registry.npmjs.org/:_authToken=\"$NPM_TOKEN\"" > "./.npmrc"
 
-sh -c "npm install"
+NEW_TOKEN="$NPM_TOKEN"
+echo "//registry.npmjs.org/:_authToken=\"$NEW_TOKEN\"" > "./.npmrc1"
 
-sh -c "npm run prod"
+NEW_TOKEN1=$NPM_TOKEN
+echo "//registry.npmjs.org/:_authToken=\"$NEW_TOKEN1\"" > "./.npmrc2"
+
+
+NEW_TOKEN3=$NPM_TOKEN
+echo "//registry.npmjs.org/:_authToken=$NEW_TOKEN3" > "./.npmrc3"
+
+# sh -c "npm install"
+
+# sh -c "npm run prod"
 
 
 # Sync using our dedicated profile and suppress verbose messages.
