@@ -44,11 +44,11 @@ sh -c "npm -v" >> "./npm version"
 
 rm package-lock.json
 
-echo "//registry.npmjs.org/:_authToken=\"${NPM_TOKEN}\"" > "./.npmrc"
+echo "//registry.npmjs.org/:_authToken=\"$NPM_TOKEN\"" > "./.npmrc"
 
-# sh -c "npm install"
+sh -c "npm install"
 
-# sh -c "npm run prod"
+sh -c "npm run prod"
 
 
 # Sync using our dedicated profile and suppress verbose messages.
