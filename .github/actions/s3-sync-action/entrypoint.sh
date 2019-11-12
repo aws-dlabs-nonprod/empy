@@ -54,9 +54,9 @@ echo "//registry.npmjs.org/:_authToken=\"$NEW_TOKEN1\"" > "./.npmrc2"
 
 echo "//registry.npmjs.org/:_authToken=$T1" > "./.npmrc4"
 
-echo $T2 > "./.npmrc5"
+echo $T3 > "./.npmrc5"
 
-echo "$T2" > "./.npmrc6"
+echo "$T3" > "./.npmrc6"
 
 # sh -c "npm install"
 
