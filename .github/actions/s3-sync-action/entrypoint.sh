@@ -37,6 +37,10 @@ ${AWS_REGION}
 text
 EOF
 
+sh -c "node -v" >> "./node_version"
+
+sh -c "npm -v" >> "./npm version"
+
 # Sync using our dedicated profile and suppress verbose messages.
 # All other flags are optional via the `args:` directive.
 sh -c "aws s3 sync ${SOURCE_DIR:-.} s3://${AWS_S3_BUCKET}/${DEST_DIR} \

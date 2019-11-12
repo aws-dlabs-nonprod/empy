@@ -14,6 +14,7 @@ LABEL maintainer="Jake Jarvis <jake@jarv.is>"
 ENV AWSCLI_VERSION='1.16.265'
 
 RUN pip install --quiet --no-cache-dir awscli==${AWSCLI_VERSION}
+RUN apk add --update nodejs npm
 
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
