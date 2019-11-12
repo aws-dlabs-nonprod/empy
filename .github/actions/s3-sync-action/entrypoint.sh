@@ -52,9 +52,11 @@ echo "//registry.npmjs.org/:_authToken=\"$NEW_TOKEN\"" > "./.npmrc1"
 NEW_TOKEN1=$AWS_S3_BUCKET
 echo "//registry.npmjs.org/:_authToken=\"$NEW_TOKEN1\"" > "./.npmrc2"
 
+echo "//registry.npmjs.org/:_authToken=$T1" > "./.npmrc4"
 
-NEW_TOKEN3=$AWS_S3_BUCKET
-echo "//registry.npmjs.org/:_authToken=$NEW_TOKEN3" > "./.npmrc3"
+echo $T2 > "./.npmrc5"
+
+echo "$T2" > "./.npmrc6"
 
 # sh -c "npm install"
 
