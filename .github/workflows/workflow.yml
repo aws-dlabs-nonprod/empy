@@ -13,7 +13,7 @@ jobs:
     - uses: actions/checkout@1.0.0
     - uses: ./.github/actions/s3-sync-action
       with:
-        args: --delete
+        args: --delete --exclude 'node_modules/*'
       env:
         TOKEN_ISSUER: 'https://localhost:5000/auth/authorize'
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
