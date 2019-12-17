@@ -1,5 +1,5 @@
 
-name: s3 Sync
+name: s3 Sync prod
 
 on:
   push:
