@@ -29,10 +29,10 @@ const ButtonTip = (props) => {
 };
 
 const StyledButtonTip = styled.div`
-    background: ${props => props.theme.colourForeground};
+    background: ${props => props.theme.textBody};
     border-radius: ${props => props.theme.radius};
     bottom: 5rem;
-    color: ${props => props.theme.textBody};
+    color: ${props => props.theme.colourForeground};
     display: ${props => props.isHidden ? 'none' : 'block'};
     opacity: 0;
     font-size: 1rem;
@@ -59,7 +59,7 @@ const StyledButtonTip = styled.div`
     &:after {
         border-left: 0.7rem solid transparent;
         border-right: 0.7rem solid transparent;
-        border-top: 0.7rem solid ${props => props.theme.colourForeground};
+        border-top: 0.7rem solid ${props => props.theme.textBody};
         bottom: -0.7rem;
         content: '';
         display: block;
@@ -70,7 +70,7 @@ const StyledButtonTip = styled.div`
         margin: ${props => tipPosition(props, ['0', '0 auto', '0'])};
         position: absolute;
 
-        ${Media.tablet`
+        ${Media.desktop`
             left: ${props => tipPosition(props, ['1.8rem', '0', 'auto'])};
             right: ${props => tipPosition(props, ['auto', '0', '1.8rem'])};
             bottom: ${props => props.tipBelow ? '3.3rem' : '-0.7rem' };
@@ -81,7 +81,7 @@ const StyledButtonTip = styled.div`
     &:before {
         display: none;
 
-        ${Media.tablet`
+        ${Media.desktop`
             display: ${props => props.tipBelow ? 'block' : 'none'};
             bottom: 3.4rem;
         `}

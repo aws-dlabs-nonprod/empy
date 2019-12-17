@@ -88,7 +88,7 @@ const StyledChatInput = styled.form`
     will-change: opacity, width;
     z-index: 3;
 
-    ${Media.tablet`
+    ${Media.desktop`
         left: auto;
         position: relative;
         right: auto;
@@ -122,11 +122,15 @@ const StyledChatInput = styled.form`
         width: auto;
         height: 4.8rem;
 
-        ${Media.tablet`
+        ${Media.desktop`
             &:hover {
                 background: ${props => props.theme.colourPrimaryHover};
             }
         `}
+
+        svg {
+            fill: ${props => props.theme.colourForeground};
+        }
     }
 
     /* Enter/Exit animation */
@@ -134,7 +138,7 @@ const StyledChatInput = styled.form`
         opacity: 0;
         transform: translateY(2rem);
 
-        ${Media.tablet`
+        ${Media.desktop`
             transform: none;
             width: 0;
         `}
@@ -145,7 +149,7 @@ const StyledChatInput = styled.form`
         opacity: 1;
         transform: translateY(0);
 
-        ${Media.tablet`
+        ${Media.desktop`
             transform: none;
             width: 37rem;
         `}
@@ -155,7 +159,7 @@ const StyledChatInput = styled.form`
         opacity: 1;
         transform: translateY(0);
 
-        ${Media.tablet`
+        ${Media.desktop`
             transform: none;
             width: 37rem;
         `}
@@ -166,7 +170,7 @@ const StyledChatInput = styled.form`
         opacity: 0;
         transform: translateY(2rem);
 
-        ${Media.tablet`
+        ${Media.desktop`
             transform: none;
             width: 0;
         `}

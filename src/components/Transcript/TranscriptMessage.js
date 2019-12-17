@@ -3,8 +3,9 @@ import styled, { keyframes } from 'styled-components';
 import { animationDelay } from '@style/helpers';
 import Media from '@style/media';
 import { InfoPanel } from '@components/InfoPanel';
-import ReactSVG from 'react-svg';
 import Source from '@constants/Source';
+import svgSprite from '@style/svg';
+import * as ComponentType from '@constants/ComponentType';
 
 const iconInfo = require('@svg/icon-info.svg');
 const wendyAvatar = require('@img/wendy.jpg');
@@ -55,12 +56,14 @@ class TranscriptMessage extends Component {
 
         const isMine = source === Source.ME;
         const isInfoPanel = (source === Source.PERSONA && panel);
-
+        const isWayfinder = (isInfoPanel && panel.type === ComponentType.WAYFINDER);
+    
         return (
-            <StyledTranscriptMessage id={ id } isMine={ isMine } isInfoPanel={ isInfoPanel } isLoading={ loading }>
+            <StyledTranscriptMessage id={ id } isMine={ isMine } isWayfinder={ isWayfinder } isInfoPanel={ isInfoPanel } isLoading={ loading }>
                 { !isMine &&
-                <div className="avatar">
-                    { isInfoPanel && <ReactSVG src={ iconInfo } /> }
+                <div
+                    className="avatar"
+                    dangerouslySetInnerHTML={{ __html: isInfoPanel && !isWayfinder ? svgSprite(iconInfo) : null }}>
                 </div>
                 }
 
@@ -118,14 +121,14 @@ const StyledTranscriptMessage = styled.div`
     box-sizing: border-box;
     justify-content: ${props => !props.isMine ? 'flex-start' : 'flex-end'};
 
-    ${Media.tablet`
+    ${Media.desktop`
         margin: 0 0 3rem 0;
         padding: ${props => !props.isMine ? '0 4rem 0 0' : props.isInfoPanel ? '0 1.5rem 0 0' : '0 0 0 4rem' };
     `}
     
     .avatar {
         align-items: center;
-        background: ${props => props.isMine || props.isInfoPanel ? 'none' : `url(${wendyAvatar}) no-repeat 50% 50%` };
+        background: ${props => props.isMine || (props.isInfoPanel && !props.isWayfinder) ? 'none' : `url(${wendyAvatar}) no-repeat 50% 50%` };
         background-size: cover;
         background-color: ${props => props.isInfoPanel ? props.theme.colourForeground : props.theme.colourBackground};
         border-radius: 50%;
@@ -140,7 +143,7 @@ const StyledTranscriptMessage = styled.div`
         text-transform: uppercase;
         width: 4rem;
 
-        ${Media.tablet`
+        ${Media.desktop`
             width: 5rem;
             height: 5rem;
         `}
@@ -173,7 +176,7 @@ const StyledTranscriptMessage = styled.div`
         font-size: 0;
         line-height: 0;
 
-        ${Media.tablet`
+        ${Media.desktop`
             padding: 2.1rem 0;
         `}
 
@@ -199,25 +202,21 @@ const StyledTranscriptMessage = styled.div`
         transform: translateY(2rem);
     }
 
-    &.item-enter-active {
+    &.item-enter-active,
+    &.item-enter-done {
         opacity: 1;
         transform: translateY(0);
         transition: transform 400ms ease-in-out, opacity 400ms ease-in-out;
-        transition-delay: ${props => props.isLoading ? '300ms' : '0ms'};
-        transform-origin: 0% 0%;
     }
 
     &.item-exit {
         opacity: 1;
-        transform: translateY(0);
+        transition-duration: 0s, 0s;
     }
 
-    &.item-exit-active {
+    &.item-exit-active,
+    &.item-exit-done {
         opacity: 0;
-        transform: translateY(2rem);
-        transition: transform 400ms ease-in-out, opacity 400ms ease-in-out;
-        transition-delay: ${props => props.isLoading ? '300ms' : '0ms'};
-        transform-origin: 0% 0%;
     }
 `;
 

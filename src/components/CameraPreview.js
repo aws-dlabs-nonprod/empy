@@ -12,7 +12,6 @@ class CameraPreview extends Component {
 
         this.videoRef = React.createRef();
 
-        this.handleToggleMute = this.handleToggleMute.bind(this);
         this.handleToggleVideoCollapse = this.handleToggleVideoCollapse.bind(this);
         this.handleUserMedia = this.handleUserMedia.bind(this);
 
@@ -21,10 +20,6 @@ class CameraPreview extends Component {
 
     handleToggleVideoCollapse() {
         this.props.toggleVideoCollapse();
-    }
-
-    handleToggleMute() {
-        this.props.toggleMute();
     }
 
     handleUserMedia(stream) {
@@ -106,12 +101,12 @@ const StyledCameraPreview = styled.div`
         transition: border-color 0.3s ease-in-out;
         overflow: hidden;
 
-        ${Media.tablet`
+        ${Media.desktop`
             display: flex;
         `};
     }
 
-    ${Media.tablet`
+    ${Media.desktop`
         display: flex;
         height: ${props => props.hasCamera ? props.isVideoCollapsed ? '7.5rem' : '12rem' : '5rem'};
         right: 3rem;
@@ -125,7 +120,7 @@ const StyledCameraPreview = styled.div`
         position: absolute;
         height: ${props => props.hasCamera ? '3rem' : '4rem'};
 
-        ${Media.tablet`
+        ${Media.desktop`
             height: 5rem;
         `};
     }
@@ -145,7 +140,7 @@ const StyledCameraPreview = styled.div`
             top: -1rem;
         }
 
-        ${Media.tablet`
+        ${Media.desktop`
             display: block;
             left: 1rem;
             top: 1rem;

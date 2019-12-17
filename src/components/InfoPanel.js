@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Media from '@style/media';
-import ReactSVG from 'react-svg';
+import svgSprite from '@style/svg';
 import { CSSTransition } from 'react-transition-group';
 import Lightbox from 'lightbox-react';
+import * as ComponentType from '@constants/ComponentType';
 
 import { IconButton } from '@components/Button';
-const iconClose = require('@svg/icon-close.svg');
+import Wayfinder from '@components/Wayfinder';
 
+const iconClose = require('@svg/icon-close.svg');
 const iconArrow = require('@svg/icon-arrow.svg');
+const iconExternal = require('@img/icon-link.png');
 
 class InfoPanel extends Component {
 
@@ -53,12 +56,25 @@ class InfoPanel extends Component {
         });
     }
 
+    componentDidMount() {
+        const { panel } = this.props;
+
+        // Transition in wayfinder options
+        if (panel.type === ComponentType.WAYFINDER) {
+            setTimeout(() => {
+                this.setState({
+                    isExpanded: true
+                });
+            }, 200);
+        }
+    }
+
     render() {
-        const { className, isOpen } = this.props;
+        const { className, panel, isOpen } = this.props;
 
         return (
             <CSSTransition in={ isOpen } unmountOnExit timeout={ 200 } classNames="panel">
-                <div className={ className }>
+                <div className={ `${className} ${panel.type}` }>
                     { this.renderContent() }
                     { this.renderFooter() }
                 </div>
@@ -71,14 +87,17 @@ class InfoPanel extends Component {
 
         switch (panel.type) {
             default:
-            case 'text':
+            case ComponentType.TEXT:
                 return this.renderTextContent(panel.data);
 
-            case 'image':
+            case ComponentType.IMAGE:
                 return this.renderImageContent(panel.data);
 
-            case 'link':
+            case ComponentType.LINK:
                 return this.renderLinkContent(panel.data);
+
+            case ComponentType.WAYFINDER:
+                return this.renderWayfinderContent(panel.data);
         }
     }
 
@@ -98,6 +117,17 @@ class InfoPanel extends Component {
         return (
             <article className="panel-link">
                 <p><a href={ panel.data.url } target="_blank">{ panel.data.label }</a></p>
+            </article>
+        );
+    }
+
+    renderWayfinderContent() {
+        const { panel: { data } } = this.props;
+        const { isExpanded } = this.state;
+
+        return (
+            <article className="panel-wayfinder">
+                <Wayfinder { ...data } isOpen={ isExpanded } />
             </article>
         );
     }
@@ -132,9 +162,19 @@ class InfoPanel extends Component {
 
         return (
             <footer>
-                <ReactSVG onClick={ () => this.handlePanelChange(-1) } className="arrow arrow--left" src={ iconArrow } />
+                <div
+                    className="arrow arrow--left"
+                    onClick={ () => this.handlePanelChange(-1) }
+                    dangerouslySetInnerHTML={{ __html: svgSprite(iconArrow)}}>
+                </div>
+
                 <span>{ activePanelIndex + 1 } of { totalPanelCount }</span>
-                <ReactSVG onClick={ () => this.handlePanelChange(1) } className="arrow arrow--right" src={ iconArrow } />
+
+                <div
+                    className="arrow arrow--right"
+                    onClick={ () => this.handlePanelChange(1) }
+                    dangerouslySetInnerHTML={{ __html: svgSprite(iconArrow)}}>
+                </div>
             </footer>
         );
     }
@@ -154,7 +194,11 @@ const StyledInfoPanel = styled(InfoPanel)`
     color: ${props => props.theme.textBody};
     width: 100%;
 
-    ${Media.tablet`
+    &.wayfinder {
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+    ${Media.desktop`
         bottom: 10rem;
         right: 3rem;
         transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
@@ -178,23 +222,27 @@ const StyledInfoPanel = styled(InfoPanel)`
             width: 100%;
             height: 100%;
             object-fit: contain;
+            max-height: 30vh;
         }
         
         &.panel-link {
             height: auto;
         }
 
-        a {
-            &:after {
-                background: url(${require('@svg/icon-link.svg')}) no-repeat 50% 50%;
-                background-size: contain;
-                content: '';
-                display: inline-block;
-                height: 1rem;
-                margin: 0 0 0 0.2rem;
-                position: relative;
-                top: -0.2rem;
-                width: 1rem;
+        &.panel-link,
+        &.panel-text {
+            a {
+                &:after {
+                    background: url(${iconExternal}) no-repeat 50% 50%;
+                    background-size: contain;
+                    content: '';
+                    display: inline-block;
+                    height: 1rem;
+                    margin: 0 0 0 0.5rem;
+                    position: relative;
+                    top: -0.2rem;
+                    width: 1rem;
+                }
             }
         }
     }
@@ -215,6 +263,7 @@ const StyledInfoPanel = styled(InfoPanel)`
         display: block;
         line-height: 5rem;
         height: 5rem;
+        width: 5.6rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -262,7 +311,7 @@ const StyledInfoPanel = styled(InfoPanel)`
     &.panel-enter {
         opacity: 0;
 
-        ${Media.tablet`
+        ${Media.desktop`
             transform: translateY(1rem);
         `}
     }
@@ -271,7 +320,7 @@ const StyledInfoPanel = styled(InfoPanel)`
     &.panel-enter-active {
         opacity: 1;
 
-        ${Media.tablet`
+        ${Media.desktop`
             transform: translateY(0rem);
         `}
     }
@@ -279,7 +328,7 @@ const StyledInfoPanel = styled(InfoPanel)`
     &.panel-exit {
         opacity: 1;
 
-        ${Media.tablet`
+        ${Media.desktop`
             transform: translateY(0rem);
         `}
     }
@@ -288,7 +337,7 @@ const StyledInfoPanel = styled(InfoPanel)`
     &.panel-exit-active {
         opacity: 0;
 
-        ${Media.tablet`
+        ${Media.desktop`
             transform: translateY(1rem);
         `}
     }
@@ -304,8 +353,9 @@ const FooterInfoPanel = styled(StyledInfoPanel)`
     width: auto;
     z-index: 2;
 
-    ${Media.tablet`
-        border-radius: ${props => props.theme.radius};
+    ${Media.desktop`
+        border-radius: 1.2rem;
+        border: 0.1rem solid ${props => props.theme.colourDivider};
         bottom: 10rem;
         height: auto;
         left: auto;
@@ -326,7 +376,7 @@ const FooterInfoPanel = styled(StyledInfoPanel)`
         top: -0.7rem;
         width: 0;
 
-        ${Media.tablet`
+        ${Media.desktop`
             top: auto;
             bottom: -0.7rem;  
             right: 14.8rem;
@@ -356,12 +406,13 @@ const FooterInfoPanel = styled(StyledInfoPanel)`
 
     footer {
         bottom: 0;
-        box-shadow: ${props => props.theme.colourForeground} 0 -1rem 2rem 0;
+        box-shadow: ${props => props.theme.colourDivider} 0 -1rem 2rem 0;
+        border-color: ${props => props.theme.colourDivider};
         left: 0;
         position: absolute;
         right: 0;
 
-        ${Media.tablet`
+        ${Media.desktop`
             box-shadow: none;    
             position: relative;
         `}

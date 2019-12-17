@@ -26,7 +26,7 @@ class Footer extends Component {
 
         this.handleToggleTranscript = this.handleToggleTranscript.bind(this);
         this.handleToggleMute = this.handleToggleMute.bind(this);
-        this.handleDisconnect = this.handleDisconnect.bind(this);
+        this.handleShowFeedback = this.handleShowFeedback.bind(this);
         this.handleToggleInfoPanel = this.handleToggleInfoPanel.bind(this);
     }
 
@@ -35,15 +35,21 @@ class Footer extends Component {
     }
 
     handleToggleTranscript() {
-        this.props.toggleTranscript();
+        const { isTranscriptOpen } = this.props;
+
+        this.props.toggleTranscript(!isTranscriptOpen);
+
+        setTimeout(() => {
+            this.props.toggleShrinkPersona(!isTranscriptOpen);
+        }, 800);
     }
 
     handleToggleMute() {
         this.props.toggleMute();
     }
 
-    handleDisconnect() {
-        this.context.disconnect();
+    handleShowFeedback() {
+        this.props.showFeedback();
     }
 
     getTranscriptHint() {
@@ -132,7 +138,7 @@ class Footer extends Component {
                             icon={ iconClose }
                             tipPosition="right"
                             tip="End the session"
-                            onClick={ this.handleDisconnect }
+                            onClick={ this.handleShowFeedback }
                         />
                     </div>
                 </StyledFooter>
@@ -153,9 +159,10 @@ const StyledFooter = styled.footer`
     transition: all 0.3s ease-in-out;
     transition-property: bottom, transform, opacity;
     transform-origin: 0% 0%;
+    transition-delay: ${props => props.isTranscriptOpen ? 0 : '0.5s'};
     z-index: 3;
 
-    ${Media.tablet`
+    ${Media.desktop`
         padding: 3rem;
         bottom: 0;
     `}
@@ -164,7 +171,7 @@ const StyledFooter = styled.footer`
         margin: 0 1rem 0 0;
         width: 4.8rem;
 
-        ${Media.tablet`
+        ${Media.desktop`
             margin-right: 1.5rem;
         `}
 
@@ -176,7 +183,7 @@ const StyledFooter = styled.footer`
     ${StyledIndicator} {
         margin-right: 1rem;
     
-        ${Media.tablet`
+        ${Media.desktop`
             margin: 0 auto;
         `}
     }
@@ -184,7 +191,7 @@ const StyledFooter = styled.footer`
     ${StyledChatInput} {
         display: none;
 
-        ${Media.tablet`
+        ${Media.desktop`
             display: flex;
         `}
     }
@@ -195,42 +202,46 @@ const StyledFooter = styled.footer`
     }
 
     .hint {
-        display: none;
+        bottom: 7.8rem;
+        left: 1.5rem;
+        opacity: 1;
+        transform: translateY(0);
 
-        ${Media.tablet`
+        &:after {
+            left: 1.8rem;
+        }
+
+        &-enter {
+            opacity: 0;
+            transform: translateY(2rem);
+        }
+
+        &-enter-done,
+        &-enter-active {
             opacity: 1;
             transform: translateY(0);
+        }
 
+        &-exit {
+            opacity: 1;
+            transition-duration: 0s, 0s;
+        }
+
+        &-exit-done,
+        &-exit-active {
+            opacity: 0;
+        }
+
+        ${Media.desktop`
             bottom: 9.3rem;
             left: 3rem;
-
-            &-enter {
-                opacity: 0;
-                transform: translateY(2rem);
-            }
-
-            &-enter-done,
-            &-enter-active {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            &-exit {
-                opacity: 1;
-                transition-duration: 0s, 0s;
-            }
-
-            &-exit-done,
-            &-exit-active {
-                opacity: 0;
-            }
-        `}
+        `};
     }
 
     .info {
         display: none;
 
-        ${Media.tablet`
+        ${Media.desktop`
             display: flex;
             opacity: 1;
             transition: opacity 0.3s ease-in-out;
@@ -297,8 +308,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        toggleTranscript: () => dispatch({
-            type: ActionTypes.TRANSCRIPT_TOGGLE
+        toggleTranscript: (isToggled) => dispatch({
+            type: ActionTypes.TRANSCRIPT_TOGGLE,
+            isToggled
         }),
 
         toggleMute: () => dispatch({
@@ -307,6 +319,15 @@ function mapDispatchToProps(dispatch) {
 
         toggleInfoPanel: () => dispatch({
             type: ActionTypes.TOGGLE_INFO_PANEL
+        }),
+
+        toggleShrinkPersona: (isToggled) => dispatch({
+            type: ActionTypes.TOGGLE_PERSONA_SHRINK,
+            isToggled
+        }),
+
+        showFeedback: () => dispatch({
+            type: ActionTypes.SHOW_FEEDBACK
         })
     };
 }

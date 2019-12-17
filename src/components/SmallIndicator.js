@@ -49,7 +49,7 @@ const StyledSmallIndicator = styled.div`
     justify-content: center;
     align-items: center;
 
-    ${Media.tablet`
+    ${Media.desktop`
         height: 5rem;
         width: auto;
     `}

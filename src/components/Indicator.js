@@ -59,7 +59,7 @@ const StyledIndicator = styled.div`
     justify-content: center;
     align-items: center;
 
-    ${Media.tablet`
+    ${Media.desktop`
         height: 4.6rem;
         width: 9.5rem;
     `}

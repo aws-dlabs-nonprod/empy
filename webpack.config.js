@@ -6,16 +6,17 @@ const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 module.exports = (env, argv) => {
     argv.env = { ...argv.env };
-
+    const dist_path = JSON.stringify(argv.env.DIST_PATH || process.env.DIST_PATH)
     const config = {
         entry: './src/index.js',
         output: {
             filename: 'assets/js/app.[hash:8].js',
             chunkFilename: 'assets/js/[name].[hash:8].bundle.js',
-            path: path.resolve(__dirname, 'dist')
+            path: dist_path ? path.resolve(__dirname, `dist/${dist_path}` ) : path.resolve(__dirname, 'dist')
         },
         resolve: {
             alias: {
@@ -35,15 +36,14 @@ module.exports = (env, argv) => {
         module: {
             rules: [
                 {
-                    test: /\.(css)$/,
-                    use: {
-                        loader: 'file-loader'
-                    }
-                },
-                {
                     test: /\.(mp4)$/,
                     use: {
-                        loader: 'file-loader'
+                        loader: 'file-loader',
+                        options: {
+                            emitFile: true,
+                            name: '[name].[hash:8].[ext]',
+                            outputPath: 'assets/video/'
+                        }
                     }
                 },
                 {
@@ -54,7 +54,7 @@ module.exports = (env, argv) => {
                     }
                 },
                 {
-                    test: /fonts\/.*$/,
+                    test: /fonts[\/\\].*$/,
                     use: {
                         loader: 'file-loader',
                         options: {
@@ -65,14 +65,14 @@ module.exports = (env, argv) => {
                     }
                 },
                 {
-                    test: /\.svg$/,
+                    test: /svg[\/\\].*\.svg$/,
                     use: [
                         {
-                            loader: 'file-loader',
+                            loader: 'svg-sprite-loader',
                             options: {
-                                emitFile: true,
-                                name: '[name].[hash:8].[ext]',
-                                outputPath: 'assets/img/'
+                                symbolId: filePath => path.basename(filePath),
+                                spriteFilename: 'sprite.svg',
+                                esModule: true
                             }
                         },
                         {
@@ -123,8 +123,11 @@ module.exports = (env, argv) => {
                 CAMERA_ID: JSON.stringify('CloseUp'),
                 SCENE: JSON.stringify('wendy'),
                 TOKEN_ISSUER: JSON.stringify(argv.env.TOKEN_ISSUER || process.env.TOKEN_ISSUER),
-                VERSION: JSON.stringify(process.env.npm_package_version)
+                VERSION: JSON.stringify(process.env.npm_package_version),
+                FEEDBACK: JSON.stringify(argv.env.FEEDBACK_FORM || process.env.FEEDBACK_FORM) 
+                        //JSON.stringify('https://sit03.www.westpac.com.au/wendy-feedback-form/')
             }),
+            new SpriteLoaderPlugin()
         ],
         optimization: {
             splitChunks: {

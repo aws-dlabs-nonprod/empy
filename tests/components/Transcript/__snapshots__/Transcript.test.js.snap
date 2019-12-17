@@ -15,6 +15,10 @@ exports[`Transcript handles connection 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-size: 1.6rem;
   height: 4.8rem;
   border: 0.1rem solid #D5002B;
@@ -52,6 +56,10 @@ exports[`Transcript handles connection 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-size: 1.6rem;
   height: 4.8rem;
   border: 0.1rem solid #D5002B;
@@ -563,16 +571,31 @@ exports[`Transcript handles connection 1`] = `
 
 .c0 {
   background: #E5E5E5;
+  border-top: 0.1rem solid #D7D2CB;
   bottom: 0;
+  height: 50vh;
   left: 0;
+  opacity: 0;
   position: absolute;
   top: auto;
-  height: 50vh;
+  -webkit-transform: translateY(130%);
+  -ms-transform: translateY(130%);
+  transform: translateY(130%);
+  -webkit-transition: opacity 0.5s ease-in-out,-webkit-transform 0.5s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out,transform 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out,transform 0.5s ease-in-out;
   width: 100%;
-  -webkit-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
   z-index: 2;
-  border-top: 0.1rem solid #D7D2CB;
+}
+
+.c0 .c7 {
+  opacity: 0;
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
+  -webkit-transition: opacity 0.3s ease-in-out,-webkit-transform 0.3s ease-in-out;
+  -webkit-transition: opacity 0.3s ease-in-out,transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out,transform 0.3s ease-in-out;
 }
 
 .c0 .c3 {
@@ -641,20 +664,64 @@ exports[`Transcript handles connection 1`] = `
 
 .c0.transcript-enter {
   opacity: 0;
+  -webkit-transform: translateY(130%);
+  -ms-transform: translateY(130%);
+  transform: translateY(130%);
+}
+
+.c0.transcript-enter .c7 {
+  opacity: 0;
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
 }
 
 .c0.transcript-enter-done,
 .c0.transcript-enter-active {
   opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c0.transcript-enter-done .c7,
+.c0.transcript-enter-active .c7 {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
 }
 
 .c0.transcript-exit {
   opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c0.transcript-exit .c7 {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
 }
 
 .c0.transcript-exit-done,
 .c0.transcript-exit-active {
   opacity: 0;
+  -webkit-transform: translateY(130%);
+  -ms-transform: translateY(130%);
+  transform: translateY(130%);
+}
+
+.c0.transcript-exit-done .c7,
+.c0.transcript-exit-active .c7 {
+  opacity: 0;
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
 }
 
 .c0 [data-simplebar] {
@@ -826,7 +893,7 @@ exports[`Transcript handles connection 1`] = `
   border-radius: 7px;
   left: 0;
   right: 0;
-  opacity: 0.5;
+  opacity: 0.1;
   -webkit-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
 }
@@ -868,7 +935,7 @@ exports[`Transcript handles connection 1`] = `
   width: auto;
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c2 {
     font-size: 1.8rem;
     padding: 0 2rem;
@@ -891,7 +958,7 @@ exports[`Transcript handles connection 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c2 {
     padding: 1.4rem 1.3rem;
   }
@@ -905,7 +972,7 @@ exports[`Transcript handles connection 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c9 {
     font-size: 1.8rem;
     padding: 0 2rem;
@@ -928,7 +995,7 @@ exports[`Transcript handles connection 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c9 {
     padding: 1.4rem 1.3rem;
   }
@@ -942,47 +1009,47 @@ exports[`Transcript handles connection 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c5 {
     margin: 0 0 3rem 0;
     padding: 0 0 0 4rem;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c5 .avatar {
     width: 5rem;
     height: 5rem;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c5 .loading {
     padding: 2.1rem 0;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c6 {
     margin: 0 0 3rem 0;
     padding: 0 4rem 0 0;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c6 .avatar {
     width: 5rem;
     height: 5rem;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c6 .loading {
     padding: 2.1rem 0;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c8 {
     left: auto;
     position: relative;
@@ -992,13 +1059,13 @@ exports[`Transcript handles connection 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c8 .c1:hover {
     background: #e24d6b;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c8.form-enter {
     -webkit-transform: none;
     -ms-transform: none;
@@ -1007,7 +1074,7 @@ exports[`Transcript handles connection 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c8.form-enter-done,
   .c8.form-enter-active {
     -webkit-transform: none;
@@ -1017,7 +1084,7 @@ exports[`Transcript handles connection 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c8.form-exit {
     -webkit-transform: none;
     -ms-transform: none;
@@ -1026,7 +1093,7 @@ exports[`Transcript handles connection 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c8.form-exit-done,
   .c8.form-exit-active {
     -webkit-transform: none;
@@ -1036,14 +1103,14 @@ exports[`Transcript handles connection 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c4 {
     height: 4.6rem;
     width: 9.5rem;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c0 {
     background: transparent;
     border: none;
@@ -1055,42 +1122,42 @@ exports[`Transcript handles connection 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c0 .c7 {
     display: none;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c0 .c3 {
     display: none;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c0 .close {
     display: none;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c0:before {
     display: block;
-    top: 11rem;
+    top: 0;
     width: 43.3rem;
-    left: 3rem;
+    left: 0;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c0:after {
-    bottom: 10rem;
-    left: 3rem;
+    bottom: 0;
+    left: 0;
     width: 43.3rem;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c0 .scroller {
     width: 100%;
     height: calc(100% - 1rem);
@@ -1098,13 +1165,30 @@ exports[`Transcript handles connection 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c0 .transcript-content {
     padding: 3rem 2rem 0 0;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
+  .c0.transcript-enter {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@media (min-width:992px) and (min-height:0px) {
+  .c0.transcript-exit-done,
+  .c0.transcript-exit-active {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@media (min-width:992px) and (min-height:0px) {
   .c0 [data-simplebar] {
     height: 100%;
   }
@@ -1113,11 +1197,11 @@ exports[`Transcript handles connection 1`] = `
 <Connect(Transcript)>
   <Transcript
     activePanelIndex={0}
-    animateCamera={[Function]}
     changePanel={[Function]}
     infoPanels={Array []}
     isConnected={true}
     isOpen={true}
+    toggleShrinkPersona={[Function]}
     toggleTranscript={[Function]}
     transcript={
       Array [
@@ -1135,7 +1219,7 @@ exports[`Transcript handles connection 1`] = `
     <CSSTransition
       classNames="transcript"
       in={true}
-      timeout={300}
+      timeout={1000}
       unmountOnExit={true}
     >
       <Transition
@@ -1150,16 +1234,16 @@ exports[`Transcript handles connection 1`] = `
         onExit={[Function]}
         onExited={[Function]}
         onExiting={[Function]}
-        timeout={300}
+        timeout={1000}
         unmountOnExit={true}
       >
         <Transcript__StyledTranscript
           activePanelIndex={0}
-          animateCamera={[Function]}
           changePanel={[Function]}
           infoPanels={Array []}
           isConnected={true}
           isOpen={true}
+          toggleShrinkPersona={[Function]}
           toggleTranscript={[Function]}
           transcript={
             Array [
@@ -1176,7 +1260,6 @@ exports[`Transcript handles connection 1`] = `
         >
           <StyledComponent
             activePanelIndex={0}
-            animateCamera={[Function]}
             changePanel={[Function]}
             forwardedComponent={
               Object {
@@ -1189,13 +1272,13 @@ exports[`Transcript handles connection 1`] = `
                   "rules": Array [
                     "background:",
                     [Function],
-                    ";bottom:0;left:0;position:absolute;top:auto;height:",
+                    ";border-top:0.1rem solid ",
                     [Function],
-                    ";width:100%;transition:opacity 1s ease-in-out;z-index:2;border-top:0.1rem solid ",
+                    ";bottom:0;height:",
                     [Function],
-                    ";",
+                    ";left:0;opacity:0;position:absolute;top:auto;transform:translateY(130%);transition:opacity 0.5s ease-in-out,transform 0.5s ease-in-out;width:100%;z-index:2;",
                     "@media (min-width:",
-                    "768",
+                    "992",
                     "px) and (min-height:",
                     "0",
                     "px){",
@@ -1211,9 +1294,9 @@ exports[`Transcript handles connection 1`] = `
                     "}",
                     " ",
                     ".c7",
-                    "{",
+                    "{opacity:0;transform:translateY(2rem);transition:opacity 0.3s ease-in-out,transform 0.3s ease-in-out;",
                     "@media (min-width:",
-                    "768",
+                    "992",
                     "px) and (min-height:",
                     "0",
                     "px){",
@@ -1225,7 +1308,7 @@ exports[`Transcript handles connection 1`] = `
                     ".c3",
                     "{position:absolute;margin:0 auto;left:0;right:0;top:-6.4rem;height:4.8rem;",
                     "@media (min-width:",
-                    "768",
+                    "992",
                     "px) and (min-height:",
                     "0",
                     "px){",
@@ -1235,7 +1318,7 @@ exports[`Transcript handles connection 1`] = `
                     "}",
                     "}.close{position:absolute;left:1.5rem;top:-6.4rem;width:4.8rem;height:4.8rem;padding:1.3rem;margin:0;",
                     "@media (min-width:",
-                    "768",
+                    "992",
                     "px) and (min-height:",
                     "0",
                     "px){",
@@ -1247,32 +1330,32 @@ exports[`Transcript handles connection 1`] = `
                     [Function],
                     ";content:'';height:0.1rem;left:0;opacity:0;pointer-events:none;position:fixed;right:0;top:0;transition:opacity 0.2s ease-in-out,height 0.2s ease-in-out;z-index:2;}&:before{display:none;",
                     "@media (min-width:",
-                    "768",
+                    "992",
                     "px) and (min-height:",
                     "0",
                     "px){",
                     "
             display: block;
-            top: 11rem;
+            top: 0;
             width: 43.3rem;
-            left: 3rem;
+            left: 0;
         ",
                     "}",
                     "}&:after{bottom:7.7rem;top:auto;",
                     "@media (min-width:",
-                    "768",
+                    "992",
                     "px) and (min-height:",
                     "0",
                     "px){",
                     "
-            bottom: 10rem;
-            left: 3rem;
+            bottom: 0;
+            left: 0;
             width: 43.3rem;
         ",
                     "}",
                     "}&.overflow-top:before{opacity:1;}&.overflow-bottom:after{opacity:1;}.scroller{width:calc(100% - 3rem);height:calc(100% - 6rem);overflow:auto;padding:0 1.5rem;position:absolute;",
                     "@media (min-width:",
-                    "768",
+                    "992",
                     "px) and (min-height:",
                     "0",
                     "px){",
@@ -1284,7 +1367,7 @@ exports[`Transcript handles connection 1`] = `
                     "}",
                     "}.transcript-content{padding:1.5rem 0 0 1.5rem;",
                     "@media (min-width:",
-                    "768",
+                    "992",
                     "px) and (min-height:",
                     "0",
                     "px){",
@@ -1292,10 +1375,38 @@ exports[`Transcript handles connection 1`] = `
             padding: 3rem 2rem 0 0;
         ",
                     "}",
-                    "}&.transcript-enter{opacity:0;}&.transcript-enter-done,&.transcript-enter-active{opacity:1;}&.transcript-exit{opacity:1;}&.transcript-exit-done,&.transcript-exit-active{opacity:0;}",
+                    "}&.transcript-enter{opacity:0;transform:translateY(130%);",
+                    ".c7",
+                    "{opacity:0;transform:translateY(2rem);}",
+                    "@media (min-width:",
+                    "992",
+                    "px) and (min-height:",
+                    "0",
+                    "px){",
+                    "
+            transform: translateY(0);
+        ",
+                    "}",
+                    "}&.transcript-enter-done,&.transcript-enter-active{opacity:1;transform:translateY(0);",
+                    ".c7",
+                    "{opacity:1;transform:translateY(0);transition-delay:0.5s;}}&.transcript-exit{opacity:1;transform:translateY(0);",
+                    ".c7",
+                    "{opacity:1;transform:translateY(0);}}&.transcript-exit-done,&.transcript-exit-active{opacity:0;transform:translateY(130%);",
+                    ".c7",
+                    "{opacity:0;transform:translateY(2rem);}",
+                    "@media (min-width:",
+                    "992",
+                    "px) and (min-height:",
+                    "0",
+                    "px){",
+                    "
+            transform: translateY(0);
+        ",
+                    "}",
+                    "}",
                     "[data-simplebar]{position:relative;flex-direction:column;flex-wrap:wrap;justify-content:flex-start;align-content:flex-start;align-items:flex-start;height:calc(100% - 7.8rem);",
                     "@media (min-width:",
-                    "768",
+                    "992",
                     "px) and (min-height:",
                     "0",
                     "px){",
@@ -1303,7 +1414,7 @@ exports[`Transcript handles connection 1`] = `
             height: 100%;
         ",
                     "}",
-                    "}.simplebar-wrapper{overflow:hidden;width:inherit;height:inherit;max-width:inherit;max-height:inherit;}.simplebar-mask{direction:inherit;position:absolute;overflow:hidden;padding:0;margin:0;left:0;top:0;bottom:0;right:0;width:auto !important;height:auto !important;z-index:0;}.simplebar-offset{direction:inherit !important;box-sizing:inherit !important;resize:none !important;position:absolute;top:0;left:0;bottom:0;right:0;padding:0;margin:0;-webkit-overflow-scrolling:touch;}.simplebar-content-wrapper{direction:inherit;box-sizing:border-box !important;position:relative;display:block;height:100%;width:auto;visibility:visible;overflow:auto;max-width:100%;max-height:100%;}.simplebar-content:before,.simplebar-content:after{content:\\" \\";display:table;}.simplebar-content{align-items:flex-end;display:flex;min-height:100%;> div{width:100%;}}.simplebar-placeholder{max-height:100%;max-width:100%;width:100%;pointer-events:none;}.simplebar-height-auto-observer-wrapper{box-sizing:inherit !important;height:100%;width:inherit;max-width:1px;position:relative;float:left;max-height:1px;overflow:hidden;z-index:-1;padding:0;margin:0;pointer-events:none;flex-grow:inherit;flex-shrink:0;flex-basis:0;}.simplebar-height-auto-observer{box-sizing:inherit;display:block;opacity:0;position:absolute;top:0;left:0;height:1000%;width:1000%;min-height:1px;min-width:1px;overflow:hidden;pointer-events:none;z-index:-1;}.simplebar-track{z-index:1;position:absolute;right:0;bottom:0;pointer-events:none;overflow:hidden;}[data-simplebar].simplebar-dragging .simplebar-track{pointer-events:all;}.simplebar-scrollbar{position:absolute;right:2px;width:7px;min-height:10px;}.simplebar-scrollbar:before{position:absolute;content:\\"\\";background:black;border-radius:7px;left:0;right:0;opacity:0.5;transition:opacity 0.2s linear;}.simplebar-track .simplebar-scrollbar.simplebar-visible:before{opacity:0.5;transition:opacity 0s linear;}.simplebar-track.simplebar-vertical{top:0;width:11px;}.simplebar-track.simplebar-vertical .simplebar-scrollbar:before{top:2px;bottom:2px;}.simplebar-track.simplebar-horizontal{left:0;height:11px;}.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before{height:100%;left:2px;right:2px;}.simplebar-track.simplebar-horizontal .simplebar-scrollbar{right:auto;left:0;top:2px;height:7px;min-height:0;min-width:10px;width:auto;}",
+                    "}.simplebar-wrapper{overflow:hidden;width:inherit;height:inherit;max-width:inherit;max-height:inherit;}.simplebar-mask{direction:inherit;position:absolute;overflow:hidden;padding:0;margin:0;left:0;top:0;bottom:0;right:0;width:auto !important;height:auto !important;z-index:0;}.simplebar-offset{direction:inherit !important;box-sizing:inherit !important;resize:none !important;position:absolute;top:0;left:0;bottom:0;right:0;padding:0;margin:0;-webkit-overflow-scrolling:touch;}.simplebar-content-wrapper{direction:inherit;box-sizing:border-box !important;position:relative;display:block;height:100%;width:auto;visibility:visible;overflow:auto;max-width:100%;max-height:100%;}.simplebar-content:before,.simplebar-content:after{content:\\" \\";display:table;}.simplebar-content{align-items:flex-end;display:flex;min-height:100%;> div{width:100%;}}.simplebar-placeholder{max-height:100%;max-width:100%;width:100%;pointer-events:none;}.simplebar-height-auto-observer-wrapper{box-sizing:inherit !important;height:100%;width:inherit;max-width:1px;position:relative;float:left;max-height:1px;overflow:hidden;z-index:-1;padding:0;margin:0;pointer-events:none;flex-grow:inherit;flex-shrink:0;flex-basis:0;}.simplebar-height-auto-observer{box-sizing:inherit;display:block;opacity:0;position:absolute;top:0;left:0;height:1000%;width:1000%;min-height:1px;min-width:1px;overflow:hidden;pointer-events:none;z-index:-1;}.simplebar-track{z-index:1;position:absolute;right:0;bottom:0;pointer-events:none;overflow:hidden;}[data-simplebar].simplebar-dragging .simplebar-track{pointer-events:all;}.simplebar-scrollbar{position:absolute;right:2px;width:7px;min-height:10px;}.simplebar-scrollbar:before{position:absolute;content:\\"\\";background:black;border-radius:7px;left:0;right:0;opacity:0.1;transition:opacity 0.2s linear;}.simplebar-track .simplebar-scrollbar.simplebar-visible:before{opacity:0.5;transition:opacity 0s linear;}.simplebar-track.simplebar-vertical{top:0;width:11px;}.simplebar-track.simplebar-vertical .simplebar-scrollbar:before{top:2px;bottom:2px;}.simplebar-track.simplebar-horizontal{left:0;height:11px;}.simplebar-track.simplebar-horizontal .simplebar-scrollbar:before{height:100%;left:2px;right:2px;}.simplebar-track.simplebar-horizontal .simplebar-scrollbar{right:auto;left:0;top:2px;height:7px;min-height:0;min-width:10px;width:auto;}",
                     ";",
                   ],
                 },
@@ -1334,6 +1445,10 @@ exports[`Transcript handles connection 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-size: 1.6rem;
   height: 4.8rem;
   border: 0.1rem solid #D5002B;
@@ -1371,6 +1486,10 @@ exports[`Transcript handles connection 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-size: 1.6rem;
   height: 4.8rem;
   border: 0.1rem solid #D5002B;
@@ -1882,16 +2001,31 @@ exports[`Transcript handles connection 1`] = `
 
 .c0 {
   background: #E5E5E5;
+  border-top: 0.1rem solid #D7D2CB;
   bottom: 0;
+  height: 50vh;
   left: 0;
+  opacity: 0;
   position: absolute;
   top: auto;
-  height: 50vh;
+  -webkit-transform: translateY(130%);
+  -ms-transform: translateY(130%);
+  transform: translateY(130%);
+  -webkit-transition: opacity 0.5s ease-in-out,-webkit-transform 0.5s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out,transform 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out,transform 0.5s ease-in-out;
   width: 100%;
-  -webkit-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
   z-index: 2;
-  border-top: 0.1rem solid #D7D2CB;
+}
+
+.c0 .c7 {
+  opacity: 0;
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
+  -webkit-transition: opacity 0.3s ease-in-out,-webkit-transform 0.3s ease-in-out;
+  -webkit-transition: opacity 0.3s ease-in-out,transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out,transform 0.3s ease-in-out;
 }
 
 .c0 .c3 {
@@ -1960,20 +2094,64 @@ exports[`Transcript handles connection 1`] = `
 
 .c0.transcript-enter {
   opacity: 0;
+  -webkit-transform: translateY(130%);
+  -ms-transform: translateY(130%);
+  transform: translateY(130%);
+}
+
+.c0.transcript-enter .c7 {
+  opacity: 0;
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
 }
 
 .c0.transcript-enter-done,
 .c0.transcript-enter-active {
   opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c0.transcript-enter-done .c7,
+.c0.transcript-enter-active .c7 {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
 }
 
 .c0.transcript-exit {
   opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c0.transcript-exit .c7 {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
 }
 
 .c0.transcript-exit-done,
 .c0.transcript-exit-active {
   opacity: 0;
+  -webkit-transform: translateY(130%);
+  -ms-transform: translateY(130%);
+  transform: translateY(130%);
+}
+
+.c0.transcript-exit-done .c7,
+.c0.transcript-exit-active .c7 {
+  opacity: 0;
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
 }
 
 .c0 [data-simplebar] {
@@ -2145,7 +2323,7 @@ exports[`Transcript handles connection 1`] = `
   border-radius: 7px;
   left: 0;
   right: 0;
-  opacity: 0.5;
+  opacity: 0.1;
   -webkit-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
 }
@@ -2187,7 +2365,7 @@ exports[`Transcript handles connection 1`] = `
   width: auto;
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c2 {
     font-size: 1.8rem;
     padding: 0 2rem;
@@ -2210,7 +2388,7 @@ exports[`Transcript handles connection 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c2 {
     padding: 1.4rem 1.3rem;
   }
@@ -2224,7 +2402,7 @@ exports[`Transcript handles connection 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c9 {
     font-size: 1.8rem;
     padding: 0 2rem;
@@ -2247,7 +2425,7 @@ exports[`Transcript handles connection 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c9 {
     padding: 1.4rem 1.3rem;
   }
@@ -2261,47 +2439,47 @@ exports[`Transcript handles connection 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c5 {
     margin: 0 0 3rem 0;
     padding: 0 0 0 4rem;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c5 .avatar {
     width: 5rem;
     height: 5rem;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c5 .loading {
     padding: 2.1rem 0;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c6 {
     margin: 0 0 3rem 0;
     padding: 0 4rem 0 0;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c6 .avatar {
     width: 5rem;
     height: 5rem;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c6 .loading {
     padding: 2.1rem 0;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c8 {
     left: auto;
     position: relative;
@@ -2311,13 +2489,13 @@ exports[`Transcript handles connection 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c8 .c1:hover {
     background: #e24d6b;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c8.form-enter {
     -webkit-transform: none;
     -ms-transform: none;
@@ -2326,7 +2504,7 @@ exports[`Transcript handles connection 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c8.form-enter-done,
   .c8.form-enter-active {
     -webkit-transform: none;
@@ -2336,7 +2514,7 @@ exports[`Transcript handles connection 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c8.form-exit {
     -webkit-transform: none;
     -ms-transform: none;
@@ -2345,7 +2523,7 @@ exports[`Transcript handles connection 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c8.form-exit-done,
   .c8.form-exit-active {
     -webkit-transform: none;
@@ -2355,14 +2533,14 @@ exports[`Transcript handles connection 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c4 {
     height: 4.6rem;
     width: 9.5rem;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c0 {
     background: transparent;
     border: none;
@@ -2374,42 +2552,42 @@ exports[`Transcript handles connection 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c0 .c7 {
     display: none;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c0 .c3 {
     display: none;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c0 .close {
     display: none;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c0:before {
     display: block;
-    top: 11rem;
+    top: 0;
     width: 43.3rem;
-    left: 3rem;
+    left: 0;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c0:after {
-    bottom: 10rem;
-    left: 3rem;
+    bottom: 0;
+    left: 0;
     width: 43.3rem;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c0 .scroller {
     width: 100%;
     height: calc(100% - 1rem);
@@ -2417,13 +2595,30 @@ exports[`Transcript handles connection 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c0 .transcript-content {
     padding: 3rem 2rem 0 0;
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
+  .c0.transcript-enter {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@media (min-width:992px) and (min-height:0px) {
+  .c0.transcript-exit-done,
+  .c0.transcript-exit-active {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@media (min-width:992px) and (min-height:0px) {
   .c0 [data-simplebar] {
     height: 100%;
   }
@@ -2550,6 +2745,7 @@ exports[`Transcript handles connection 1`] = `
             infoPanels={Array []}
             isConnected={true}
             isOpen={true}
+            toggleShrinkPersona={[Function]}
             toggleTranscript={[Function]}
             transcript={
               Array [
@@ -2590,11 +2786,11 @@ exports[`Transcript handles connection 1`] = `
                           [Function],
                           ";box-sizing:border-box;color:",
                           [Function],
-                          ";cursor:pointer;display:flex;justify-content:center;font-size:1.6rem;height:4.8rem;border:",
+                          ";cursor:pointer;display:flex;justify-content:center;align-items:center;font-size:1.6rem;height:4.8rem;border:",
                           [Function],
                           ";margin:0 0 2rem 0;outline:none;padding:0 1.8rem;position:relative;width:100%;z-index:3;transition:background 0.2s ease,color 0.2s ease;",
                           "@media (min-width:",
-                          "768",
+                          "992",
                           "px) and (min-height:",
                           "0",
                           "px){",
@@ -2631,7 +2827,7 @@ exports[`Transcript handles connection 1`] = `
                           [Function],
                           ";padding:1.4rem 1.3rem;",
                           "@media (min-width:",
-                          "768",
+                          "992",
                           "px) and (min-height:",
                           "0",
                           "px){",
@@ -2724,7 +2920,7 @@ exports[`Transcript handles connection 1`] = `
                           "rules": Array [
                             "border-radius:4.8rem;transition:border-color 0.3s ease-in-out;height:4.8rem;width:8rem;display:flex;justify-content:center;align-items:center;",
                             "@media (min-width:",
-                            "768",
+                            "992",
                             "px) and (min-height:",
                             "0",
                             "px){",
@@ -2910,7 +3106,7 @@ exports[`Transcript handles connection 1`] = `
                                                     [Function],
                                                     ";",
                                                     "@media (min-width:",
-                                                    "768",
+                                                    "992",
                                                     "px) and (min-height:",
                                                     "0",
                                                     "px){",
@@ -2929,7 +3125,7 @@ exports[`Transcript handles connection 1`] = `
                                                     [Function],
                                                     ";box-sizing:border-box;display:flex;flex-shrink:0;font-size:1rem;height:4rem;justify-content:center;margin:0 1.5rem 0 0;text-transform:uppercase;width:4rem;",
                                                     "@media (min-width:",
-                                                    "768",
+                                                    "992",
                                                     "px) and (min-height:",
                                                     "0",
                                                     "px){",
@@ -2952,7 +3148,7 @@ exports[`Transcript handles connection 1`] = `
                                                     [Function],
                                                     ";padding:1.6rem 0;font-size:0;line-height:0;",
                                                     "@media (min-width:",
-                                                    "768",
+                                                    "992",
                                                     "px) and (min-height:",
                                                     "0",
                                                     "px){",
@@ -3084,7 +3280,7 @@ exports[`Transcript handles connection 1`] = `
                                                     [Function],
                                                     ";",
                                                     "@media (min-width:",
-                                                    "768",
+                                                    "992",
                                                     "px) and (min-height:",
                                                     "0",
                                                     "px){",
@@ -3103,7 +3299,7 @@ exports[`Transcript handles connection 1`] = `
                                                     [Function],
                                                     ";box-sizing:border-box;display:flex;flex-shrink:0;font-size:1rem;height:4rem;justify-content:center;margin:0 1.5rem 0 0;text-transform:uppercase;width:4rem;",
                                                     "@media (min-width:",
-                                                    "768",
+                                                    "992",
                                                     "px) and (min-height:",
                                                     "0",
                                                     "px){",
@@ -3126,7 +3322,7 @@ exports[`Transcript handles connection 1`] = `
                                                     [Function],
                                                     ";padding:1.6rem 0;font-size:0;line-height:0;",
                                                     "@media (min-width:",
-                                                    "768",
+                                                    "992",
                                                     "px) and (min-height:",
                                                     "0",
                                                     "px){",
@@ -3276,7 +3472,7 @@ exports[`Transcript handles connection 1`] = `
                                 "rules": Array [
                                   "bottom:1.5rem;box-sizing:border-box;display:flex;flex-direction:row;height:4.8rem;left:1.5rem;overflow:hidden;position:fixed;right:1.5rem;transition:width 0.3s ease-in-out;transition-property:opacity,width,transform;width:auto;will-change:opacity,width;z-index:3;",
                                   "@media (min-width:",
-                                  "768",
+                                  "992",
                                   "px) and (min-height:",
                                   "0",
                                   "px){",
@@ -3310,7 +3506,7 @@ exports[`Transcript handles connection 1`] = `
                                   [Function],
                                   " 0;width:auto;height:4.8rem;",
                                   "@media (min-width:",
-                                  "768",
+                                  "992",
                                   "px) and (min-height:",
                                   "0",
                                   "px){",
@@ -3324,7 +3520,7 @@ exports[`Transcript handles connection 1`] = `
                                   "}",
                                   "}&.form-enter{opacity:0;transform:translateY(2rem);",
                                   "@media (min-width:",
-                                  "768",
+                                  "992",
                                   "px) and (min-height:",
                                   "0",
                                   "px){",
@@ -3335,7 +3531,7 @@ exports[`Transcript handles connection 1`] = `
                                   "}",
                                   "}&.form-enter-done,&.form-enter-active{opacity:1;transform:translateY(0);",
                                   "@media (min-width:",
-                                  "768",
+                                  "992",
                                   "px) and (min-height:",
                                   "0",
                                   "px){",
@@ -3346,7 +3542,7 @@ exports[`Transcript handles connection 1`] = `
                                   "}",
                                   "}&.form-exit{opacity:1;transform:translateY(0);",
                                   "@media (min-width:",
-                                  "768",
+                                  "992",
                                   "px) and (min-height:",
                                   "0",
                                   "px){",
@@ -3357,7 +3553,7 @@ exports[`Transcript handles connection 1`] = `
                                   "}",
                                   "}&.form-exit-done,&.form-exit-active{opacity:0;transform:translateY(2rem);",
                                   "@media (min-width:",
-                                  "768",
+                                  "992",
                                   "px) and (min-height:",
                                   "0",
                                   "px){",
@@ -3415,11 +3611,11 @@ exports[`Transcript handles connection 1`] = `
                                         [Function],
                                         ";box-sizing:border-box;color:",
                                         [Function],
-                                        ";cursor:pointer;display:flex;justify-content:center;font-size:1.6rem;height:4.8rem;border:",
+                                        ";cursor:pointer;display:flex;justify-content:center;align-items:center;font-size:1.6rem;height:4.8rem;border:",
                                         [Function],
                                         ";margin:0 0 2rem 0;outline:none;padding:0 1.8rem;position:relative;width:100%;z-index:3;transition:background 0.2s ease,color 0.2s ease;",
                                         "@media (min-width:",
-                                        "768",
+                                        "992",
                                         "px) and (min-height:",
                                         "0",
                                         "px){",
@@ -3456,7 +3652,7 @@ exports[`Transcript handles connection 1`] = `
                                         [Function],
                                         ";padding:1.4rem 1.3rem;",
                                         "@media (min-width:",
-                                        "768",
+                                        "992",
                                         "px) and (min-height:",
                                         "0",
                                         "px){",
@@ -3551,17 +3747,17 @@ exports[`Transcript handles connection 1`] = `
 exports[`Transcript renders correctly 1`] = `
 <Connect(Transcript)>
   <Transcript
-    animateCamera={[Function]}
     changePanel={[Function]}
     isConnected={false}
     isOpen={false}
+    toggleShrinkPersona={[Function]}
     toggleTranscript={[Function]}
     transcript={Array []}
   >
     <CSSTransition
       classNames="transcript"
       in={false}
-      timeout={300}
+      timeout={1000}
       unmountOnExit={true}
     >
       <Transition
@@ -3576,7 +3772,7 @@ exports[`Transcript renders correctly 1`] = `
         onExit={[Function]}
         onExited={[Function]}
         onExiting={[Function]}
-        timeout={300}
+        timeout={1000}
         unmountOnExit={true}
       />
     </CSSTransition>

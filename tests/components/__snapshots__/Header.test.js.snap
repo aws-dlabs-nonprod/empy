@@ -37,7 +37,7 @@ exports[`Header renders correctly 1`] = `
   width: 100%;
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c0 {
     padding: 3rem;
     background: none;
@@ -46,7 +46,7 @@ exports[`Header renders correctly 1`] = `
   }
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c0 .logo__image {
     width: 6.9rem;
     height: 2.8rem;
@@ -75,7 +75,7 @@ exports[`Header renders correctly 1`] = `
               "rules": Array [
                 "left:0%;padding:1.5rem;position:fixed;right:0;top:0;height:4.8rem;transform:translate3d(0,0,0);z-index:4;",
                 "@media (min-width:",
-                "768",
+                "992",
                 "px) and (min-height:",
                 "0",
                 "px){",
@@ -88,7 +88,7 @@ exports[`Header renders correctly 1`] = `
                 "}",
                 " .logo{display:flex;align-items:center;}.logo__image{cursor:pointer;width:5.2rem;height:2.1rem;margin:0.7rem 1.5rem 0.7rem 0;",
                 "@media (min-width:",
-                "768",
+                "992",
                 "px) and (min-height:",
                 "0",
                 "px){",

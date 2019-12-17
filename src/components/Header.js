@@ -4,8 +4,7 @@ import Media from '@style/media';
 import { connect } from 'react-redux';
 import * as ActionTypes from '@constants/ActionTypes';
 import { SoulMachinesContext } from '@contexts/SoulMachines';
-import ReactSVG from 'react-svg';
-
+import svgSprite from '@style/svg';
 import CameraPreview from '@components/CameraPreview';
 
 const logo = require('@svg/logo.svg');
@@ -25,7 +24,7 @@ class Header extends Component {
         const { isConnected } = this.props;
 
         if (isConnected) {
-            this.context.disconnect(false);
+            this.props.showFeedback();
         } else {
             this.props.goHome();
         }
@@ -45,7 +44,10 @@ class Header extends Component {
         return (
             <StyledHeader { ...this.props }>
                 <div className="logo">
-                    <ReactSVG className="logo__image" onClick={ this.handleGoHome } src={ logo } />
+                    <div className="logo__image"
+                        onClick={ this.handleGoHome }
+                        dangerouslySetInnerHTML={{ __html: svgSprite(logo)}}>
+                    </div>
                 </div>
     
                 { isConnected &&
@@ -76,7 +78,7 @@ const StyledHeader = styled.header`
     transform: translate3d(0, 0, 0);
     z-index: 4;
 
-    ${Media.tablet`
+    ${Media.desktop`
         padding: 3rem;
         background: none;
         border: none;
@@ -94,10 +96,15 @@ const StyledHeader = styled.header`
         height: 2.1rem;
         margin: 0.7rem 1.5rem 0.7rem 0;
 
-        ${Media.tablet`
+        ${Media.desktop`
             width: 6.9rem;
             height: 2.8rem;
             margin: 0 2rem 0 0;
+
+            svg {
+                width: 6.9rem;
+                height: 2.8rem;
+            }
         `}
 
         svg {
@@ -126,9 +133,12 @@ function mapDispatchToProps(dispatch) {
         }),
 
         goHome: () => dispatch({
-            type: ActionTypes.SCENE_DISCONNECTED,
-            isFinished: false
+            type: ActionTypes.SCENE_DISCONNECTED
         }),
+
+        showFeedback: () => dispatch({
+            type: ActionTypes.SHOW_FEEDBACK
+        })
     };
 }
 

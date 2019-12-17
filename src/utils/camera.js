@@ -1,4 +1,4 @@
-const SCREEN_SPACE_RATIO = 4.0;
+const CAMERA_FOV = 4.0;
 
 const CameraPosition = {
     CENTER: 0.5,
@@ -6,8 +6,15 @@ const CameraPosition = {
     LEFT: 0.3333333333
 };
 
-const lerp = (min, max, percentage) => {
+const linearInterpolate = (min, max, percentage) => {
     return (1.0 - percentage) * min + percentage * max;
+};
+
+const NeuralPosition = {
+    tiltDeg: 0,
+    orbitDegX: 0,
+    orbitDegY: 0,
+    panDeg: 0
 };
 
 /**
@@ -19,17 +26,18 @@ const lerp = (min, max, percentage) => {
  */
 const calculateCameraPosition = (videoWidth, videoHeight, percentage) => {
     const ratio = videoWidth / videoHeight;
-    const angleRange = ratio * SCREEN_SPACE_RATIO;
+    const angleRange = ratio * CAMERA_FOV;
 
     return {
         tiltDeg: 0,
-        orbitDegX: lerp(-20, 20, percentage),
+        orbitDegX: linearInterpolate(-20, 20, percentage),
         orbitDegY: 0,
-        panDeg: lerp(-angleRange, angleRange, percentage)
+        panDeg: linearInterpolate(-angleRange, angleRange, percentage)
     };
 };
 
 export {
     calculateCameraPosition,
-    CameraPosition
+    CameraPosition,
+    NeuralPosition
 };

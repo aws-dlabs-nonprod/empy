@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { connect } from 'react-redux';
 import { SoulMachinesContext } from '@contexts/SoulMachines';
 import { CSSTransition } from 'react-transition-group';
 import Media from '@style/media';
-import * as ActionTypes from '@constants/ActionTypes';
 
 class Wayfinder extends Component {
 
     static contextType = SoulMachinesContext;
+
+    static defaultProps = {
+        title: '',
+        options: [],
+        isStandAlone: false
+    };
 
     constructor() {
         super();
@@ -17,38 +21,33 @@ class Wayfinder extends Component {
     }
 
     handleChoosePrompt(message) {
-        this.context.sendMessage(message);
-
-        this.props.hideWayfinder();
+        this.context.sendMessage(message, true);
     }
 
     render() {
-        const { wayfinders, isOpen } = this.props;
+        const { title, options, isOpen, className, isStandAlone } = this.props;
+
+        const Component = isStandAlone ? StyledStandAloneWayfinder : StyledWayfinder;
 
         return (
             <CSSTransition in={ isOpen } timeout={ 300 } unmountOnExit classNames="wayfinder">
-                <StyledWayfinder { ...this.props }>
-                    <span>You can ask me about</span>
+                <Component className={ className }>
+                    <span>{ title }</span>
 
-                    { wayfinders.map((item, index) => (
+                    { options.map((item, index) => (
                         <a key={ index } onClick={ () => this.handleChoosePrompt(item) }>
                             { item }
                         </a>
                     ))}
-                </StyledWayfinder>
+                </Component>
             </CSSTransition>
         );
     }
 }
 
 const StyledWayfinder = styled.div`
-    position: absolute;
     left: 0;
     right: 0;
-    bottom: 7.8rem;
-    padding: 1.5rem;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
     z-index: 1;
 
     span {
@@ -59,15 +58,15 @@ const StyledWayfinder = styled.div`
     }
 
     a {
-        font-size: 2.4rem;
+        font-size: 1.8rem;
+        line-height: 1.25;
         color: ${props => props.theme.textDark};
         display: block;
         font-family: 'ChronicleDisplay', serif;
         margin: 0 0 2rem 0;
         opacity: 0;
-        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, color 0.3s ease-in-out;
-        transform: translateX(-2rem);
-
+        transition: opacity 0.5s ease-in-out, color 0.3s ease-in-out;
+    
         &:nth-child(2) {
             transition-delay: 0.5s;
         }
@@ -88,27 +87,94 @@ const StyledWayfinder = styled.div`
             transition-delay: 2.5s;
         }
 
-        ${Media.tablet`
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        ${Media.desktop`
+            font-size: 2.4rem;
+
             &:hover {
                 color: #a37a93;
             }
         `}
     }
 
-    ${Media.tablet`
-        width: 34rem;
+    article a {
+        &:after {
+            display: none;
+        }
+    }
+
+    ${Media.desktop`
         left: auto;
-        right: 6rem;
-        top: 15rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding: 0;
 
         a {
-            font-size: 4.2rem;
-            line-height: 4.8rem;
+            font-size: 2.2rem;
         }
+    `}
+
+    /* Enter/Exit animation */
+    &.wayfinder-enter {
+        a {
+            opacity: 0;
+        }
+    }
+
+    &.wayfinder-enter-done,
+    &.wayfinder-enter-active {
+        a {
+            opacity: 1;
+        }
+    }
+
+    &.wayfinder-enter-done {
+        a {
+            transition-delay: 0s;
+        }
+    }
+
+    &.wayfinder-exit {
+        a {
+            opacity: 1;
+        }
+    }
+
+    &.wayfinder-exit-done,
+    &.wayfinder-exit-active {
+        a {
+            opacity: 0;
+        }
+    }
+`;
+
+const StyledStandAloneWayfinder = styled(StyledWayfinder)`
+    position: absolute;
+    bottom: 7.8rem;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1;
+    display: none;
+
+    a {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, color 0.3s ease-in-out;
+        transform: translateX(-2rem);
+        
+        ${Media.desktop`
+            font-size: 3.2rem;
+        `}
+    }
+
+    ${Media.desktop`
+        width: 34rem;
+        left: auto;
+        right: 6rem;
+        top: 15rem;
     `}
 
     /* Enter/Exit animation */
@@ -157,23 +223,4 @@ const StyledWayfinder = styled.div`
     }
 `;
 
-
-function mapStateToProps(state) {
-    return {
-        isOpen: state.showWayfinders && state.isConnected && !state.isTranscriptOpen,
-        wayfinders: state.wayfinders
-    };
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        hideWayfinder: () => dispatch({
-            type: ActionTypes.HIDE_WAYFINDER
-        })
-    };
-}
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Wayfinder);
+export default Wayfinder;

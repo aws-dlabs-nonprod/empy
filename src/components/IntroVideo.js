@@ -1,13 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import Media from '@style/media';
+import VideoCover from 'react-video-cover';
 
 const introVideo = require('@video/wendy.mp4');
 
 const IntroVideo = () => {
     return (
         <StyledIntroVideo>
-            <video loop autoPlay playsInline muted src={ introVideo } />
+            <VideoCover
+                remeasureOnWindowResize={ true }
+                videoOptions={{
+                    src: introVideo,
+                    autoPlay: true,
+                    playsInline: true,
+                    muted: true,
+                    loop: true
+                }} />
         </StyledIntroVideo>
     );
 };
@@ -23,9 +32,6 @@ const StyledIntroVideo = styled.div`
 
     video {
         display: none;
-        height:100%;
-        object-fit: cover;
-        width:100%;
 
         ${Media.tablet`
             display: block;

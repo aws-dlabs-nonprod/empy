@@ -27,7 +27,7 @@ export default createGlobalStyle`
         line-height: 1.25;
         margin: 0;
 
-        ${Media.tablet`
+        ${Media.desktop`
             font-size: 1.4rem;
         `}
     }
@@ -41,7 +41,7 @@ export default createGlobalStyle`
     /* Typography */
     h1 {
         color: ${props => props.theme.textDark};
-        font-size: 2.5rem;
+        font-size: 3.2rem;
         font-weight: 600;
         font-family: 'ChronicleDisplay', serif;
         margin: 0 0 2rem 0;
@@ -50,7 +50,7 @@ export default createGlobalStyle`
             color: ${props => props.theme.textPrimary};
         }
 
-        ${Media.tablet`
+        ${Media.desktop`
             font-size: 4.2rem;
         `}
     }

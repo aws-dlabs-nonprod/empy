@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import ReactSVG from 'react-svg';
 import Media from '@style/media';
+import svgSprite from '@style/svg';
 
 import { StyledLoader } from '@components/Loader';
 import Tip, { StyledTip } from '@components/ButtonTip';
@@ -13,9 +13,7 @@ class Button extends Component {
         toggleTip: null,
         tipPosition: 'left',
         isToggled: false,
-        secondary: false,
-        disabled: false,
-        onClick: () => {}
+        disabled: false
     };
 
     constructor(props) {
@@ -23,9 +21,12 @@ class Button extends Component {
     }
 
     handleClick = (e) => {
-        e.preventDefault();
+        const { onClick } = this.props;
 
-        this.props.onClick();
+        if (onClick) {
+            e.preventDefault();
+            this.props.onClick();
+        }
     }
 
     render() {
@@ -40,15 +41,20 @@ class Button extends Component {
             disabled,
             tipPosition,
             tipBelow,
-            theme
+            theme,
+            ...rest
         } = this.props;
 
         const tipContent = isToggled ? (toggleTip || tip) : tip;
         const iconOption = isToggled ? (toggleIcon || icon) : icon;
 
+        const Component = rest.href ? 'a' : 'button';
+
         return (
-            <button disabled={ disabled } aria-label={ tipContent } className={ className } onClick={ this.handleClick }>
-                { iconOption && <ReactSVG src={ iconOption } /> }
+            <Component { ...rest } disabled={ disabled } aria-label={ tipContent } className={ className } onClick={ this.handleClick }>
+                { iconOption &&
+                    <div dangerouslySetInnerHTML={{ __html: svgSprite(iconOption) }}></div>
+                }
 
                 { children }
 
@@ -57,7 +63,7 @@ class Button extends Component {
                     <p>{ tipContent }</p>
                 </Tip>
                 }
-            </button>
+            </Component>
         );
     }
 }
@@ -70,6 +76,7 @@ const BaseButton = styled(Button)`
     cursor: pointer;
     display: flex;
     justify-content: center;
+    align-items: center;
     font-size: 1.6rem;
     height: 4.8rem;
     border: ${props => `0.1rem solid ${props.theme.colourPrimary}`};
@@ -81,7 +88,7 @@ const BaseButton = styled(Button)`
     z-index: 3;
     transition: background 0.2s ease, color 0.2s ease;
 
-    ${Media.tablet`
+    ${Media.desktop`
         font-size: 1.8rem;
         padding: 0 2rem;
         width: 100%;
@@ -90,7 +97,9 @@ const BaseButton = styled(Button)`
             background: ${props => props.theme.colourPrimaryHover};
             
             svg {
-                fill: ${props => props.theme.colourForeground};
+                path {
+                    fill: ${props => props.theme.colourForeground};
+                }
             }
 
             ${StyledTip} {
@@ -105,7 +114,7 @@ const SecondaryButton = styled(BaseButton)`
     background: ${props => props.theme.colourForeground};
     color: ${props => props.theme.textPrimary};
 
-    ${Media.tablet`
+    ${Media.desktop`
         &:hover {
             color: ${props => props.theme.colourForeground};
 
@@ -124,12 +133,22 @@ const SecondaryButton = styled(BaseButton)`
     }
 `;
 
+const SecondaryButtonSmall = styled(SecondaryButton)`
+    font-size: 1.4rem;
+    height: 3rem;
+    border-color: ${props => props.theme.colourDivider};
+
+    ${Media.desktop`
+        font-size: 1.4rem;
+    `};
+`;
+
 const IconButton = styled(BaseButton)`
     background: ${props => props.theme.colourForegroundHover};
     border-color: ${props => props.isToggled ? props.theme.colourPrimary : props.theme.colourDivider};
     padding: 1.4rem 1.3rem;
 
-    ${Media.tablet`
+    ${Media.desktop`
         padding: 1.4rem 1.3rem;
 
         &:hover {
@@ -154,7 +173,7 @@ const SmallIconButton = styled(IconButton)`
     height: 3rem;
     width: 3rem;
 
-    ${Media.tablet`
+    ${Media.desktop`
         padding: 0.4rem;
         height: 3rem;
         width: 3rem;
@@ -166,6 +185,7 @@ export default BaseButton;
 export {
     BaseButton as Button,
     SecondaryButton,
+    SecondaryButtonSmall,
     IconButton,
     SmallIconButton
 };

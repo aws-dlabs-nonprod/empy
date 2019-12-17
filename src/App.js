@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { SoulMachinesProvider } from '@contexts/SoulMachines';
 import * as ActionTypes from '@constants/ActionTypes';
 import { smwebsdk } from '@soulmachines/smwebsdk';
+import { supportsAudioOnly, isCompatible } from '@utils/helpers';
 
 import GlobalStyle from '@style/global';
 import theme from '@style/theme';
@@ -19,17 +20,6 @@ import { FooterInfoPanel } from '@components/InfoPanel';
 import IntroVideo from '@components/IntroVideo';
 import Wayfinder from '@components/Wayfinder';
 
-const PRELOAD = [
-    require('@svg/icon-mic.svg'),
-    require('@svg/icon-mic-mute.svg'),
-    require('@svg/icon-collapse.svg'),
-    require('@svg/icon-chat.svg'),
-    require('@svg/icon-info.svg'),
-    require('@svg/icon-close.svg'),
-    require('@svg/icon-pause.svg'),
-    require('@svg/icon-arrow.svg')
-];
-
 class App extends Component {
 
     constructor() {
@@ -41,21 +31,13 @@ class App extends Component {
     componentDidMount() {
         // Detect device capabilities
         smwebsdk.DetectCapabilities().then((result) => {
-            const isSafari = navigator.userAgent.match(/Version\/[0-9.]+ Safari\/[0-9.]+/) !== null;
-
             this.props.setFeatures({
                 hasCamera: result.hasCamera,
                 hasMicrophone: result.hasMicrophone,
-                isBrowserSupported: result.isBrowserSupported,
-                isSafari: isSafari
+                isBrowserSupported: result.isBrowserSupported && isCompatible(),
+                allowAudioOnly: supportsAudioOnly()
             });
         });
-
-        // Preload icons to prevent blank buttons during session start
-        for (let i = 0; i < PRELOAD.length; i++) {
-            const img = new Image();
-            img.src = PRELOAD[i];
-        }
     }
 
     handlePanelChange(direction) {
@@ -77,29 +59,32 @@ class App extends Component {
     renderContainer() {
         const {
             isConnected,
-            isFinished,
+            showFeedback,
             isInfoPanelOpen,
             infoPanels,
-            activePanelIndex
+            isTranscriptOpen,
+            activePanelIndex,
+            showWayfinders,
+            wayfinder
         } = this.props;
 
         return (
-            <Container isInfoPanelOpen={ isConnected && isInfoPanelOpen }>
-                {/* { !isConnected && !isFinished && <IntroVideo /> } */}
+            <Container>
+                { !isConnected && <IntroVideo /> }
 
                 <PersonaVideo />
 
                 <Header />
 
-                { !isConnected /* && !isFinished */ && <IntroPanel /> }
+                { !isConnected && <IntroPanel /> }
 
                 <Transcript />
 
-                <Wayfinder />
+                <Wayfinder { ...wayfinder } isOpen={ showWayfinders && !isTranscriptOpen } isStandAlone={ true } />
 
                 <Footer />
 
-                {/* <Feedback isVisible={ !isConnected && isFinished } /> */}
+                <Feedback isVisible={ isConnected && showFeedback } />
 
                 { isConnected && infoPanels.length > 0 && <FooterInfoPanel
                     panel={ infoPanels[activePanelIndex] }
@@ -117,10 +102,13 @@ function mapStateToProps(state) {
     return {
         isVideoEnabled: state.isVideoEnabled,
         isConnected: state.isConnected,
-        isFinished: state.isFinished,
+        showFeedback: state.showFeedback,
         isInfoPanelOpen: state.isInfoPanelOpen,
         infoPanels: state.infoPanels,
-        activePanelIndex: state.activePanelIndex
+        activePanelIndex: state.activePanelIndex,
+        wayfinder: state.wayfinder,
+        showWayfinders: state.showWayfinders,
+        isTranscriptOpen: state.isTranscriptOpen
     };
 }
 
@@ -128,12 +116,12 @@ function mapDispatchToProps(dispatch) {
     return {
         setFeatures: (features) => dispatch({
             type: ActionTypes.SET_FEATURES,
-            features: features
+            features
         }),
 
         changePanel: (direction) => dispatch({
             type: ActionTypes.CHANGE_PANEL,
-            direction: direction
+            direction
         })
     };
 }

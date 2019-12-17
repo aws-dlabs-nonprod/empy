@@ -1,3 +1,7 @@
+// Polyfills
+import 'core-js/features/promise';
+import 'core-js/features/array/from';
+
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';

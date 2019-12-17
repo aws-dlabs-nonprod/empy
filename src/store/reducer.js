@@ -1,126 +1,25 @@
 import * as ActionTypes from '@constants/ActionTypes';
 import * as PersonaState from '@constants/PersonaState';
 import Source from '@constants/Source';
-import { isMobile } from '@utils/helpers';
+import { isDesktop } from '@utils/helpers';
+import * as ComponentType from '@constants/ComponentType';
 
 export const initialState = {
     isTranscriptOpen: false,
-    transcript: [
-        /*
-        {
-            source: Source.ME,
-            content: 'Labore ipsum anim ut laboris eu nulla in aute eu mollit commodo culpa.',
-        },
-        {
-            source: Source.PERSONA,
-            content: 'Labore ipsum anim ut laboris eu nulla in aute eu mollit commodo culpa.',
-        },
-        {
-            source: Source.ME,
-            content: 'Labore ipsum anim ut laboris eu nulla in aute eu mollit commodo culpa.',
-        },
-        {
-            source: Source.PERSONA,
-            content: 'Labore ipsum anim ut laboris eu nulla in aute eu mollit commodo culpa.',
-        },
-        {
-            source: Source.ME,
-            content: 'Labore ipsum anim ut laboris eu nulla in aute eu mollit commodo culpa.',
-        },
-        {
-            source: Source.PERSONA,
-            content: 'Labore ipsum anim ut laboris eu nulla in aute eu mollit commodo culpa.',
-        },
-        {
-            source: Source.ME,
-            content: 'Labore ipsum anim ut laboris eu nulla in aute eu mollit commodo culpa.',
-        },
-        {
-            source: Source.PERSONA,
-            content: 'Labore ipsum anim ut laboris eu nulla in aute eu mollit commodo culpa.',
-        },
-        {
-            source: Source.ME,
-            content: 'Labore ipsum anim ut laboris eu nulla in aute eu mollit commodo culpa.',
-        },
-        {
-            source: Source.PERSONA,
-            content: 'Labore ipsum anim ut laboris eu nulla in aute eu mollit commodo culpa.',
-        },
-        {
-            source: Source.ME,
-            content: 'Labore ipsum anim ut laboris eu nulla in aute eu mollit commodo culpa.',
-        },
-        {
-            source: Source.PERSONA,
-            content: 'Labore ipsum anim ut laboris eu nulla in aute eu mollit commodo culpa.',
-        },
-        {
-            source: Source.ME,
-            content: 'Labore ipsum anim ut laboris eu nulla in aute eu mollit commodo culpa.',
-        },
-        {
-            source: Source.PERSONA,
-            panel: {
-                index: 0,
-                type: 'text',
-                data: {
-                    text: 'Hello World'
-                }
-            }
-        },
-        {
-            source: Source.PERSONA,
-            panel: {
-                index: 1,
-                type: 'image',
-                data: {
-                    url: 'https://images.unsplash.com/photo-1572105519405-7d5dbafe2d26?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max'
-                }
-            }
-        },
-        {
-            source: Source.PERSONA,
-            panel: {
-                index: 2,
-                type: 'image',
-                data: {
-                    url: 'https://images.unsplash.com/photo-1571578236457-311828cfb129?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max'
-                }
-            }
-        }
-        */
-    ],
+    isPersonaVideoShrunk: false,
+    transcript: [],
     isInfoPanelOpen: false,
-    infoPanels: [
-        /*
-        {
-            type: 'text',
-            data: {
-                text: 'Hello World'
-            }
-        },
-        {
-            type: 'image',
-            data: {
-                url: 'https://images.unsplash.com/photo-1572105519405-7d5dbafe2d26?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max'
-            }
-        },
-        {
-            type: 'image',
-            data: {
-                url: 'https://images.unsplash.com/photo-1571578236457-311828cfb129?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max'
-            }
-        }
-        */
-    ],
-    wayfinders: [],
+    infoPanels: [],
+    wayfinder: {
+        title: '',
+        options: []
+    },
     showWayfinders: false,
     activePanelIndex: 0,
     personaState: PersonaState.STATE_IDLE,
     userMessage: '',
     isConnected: false,
-    isFinished: false,
+    showFeedback: false,
     isLoading: false,
     isMuted: false,
     isPaused: false,
@@ -128,30 +27,37 @@ export const initialState = {
     hasCamera: false,
     hasMicrophone: false,
     isBrowserSupported: true,
-    isSafari: false,
+    allowAudioOnly: false,
     isVideoCollapsed: false,
     isVideoEnabled: false,
     hasSeenMicrophonePrompt: false,
     hasSeenDontUnderstandPrompt: false,
     isNotUnderstanding: false,
-    videoWidth: 0,
-    videoHeight: 0,
     cameraPosition: 0.5 // Horizontal percentage
 };
 
+const generateKey = () => {
+    return `${new Date().getTime()}-${Math.floor(Math.random() * 1000)}`;
+};
+
 const rootReducer = (state = initialState, action) => {
-    let transcript = state.transcript;
-    let infoPanels = state.infoPanels;
     let message = {};
-    let activePanelIndex = state.activePanelIndex;
-    let isInfoPanelOpen = state.isInfoPanelOpen;
-    let isTranscriptOpen = state.isTranscriptOpen;
+
+    let {
+        transcript,
+        infoPanels,
+        activePanelIndex,
+        isInfoPanelOpen,
+        isTranscriptOpen,
+        isPersonaVideoShrunk,
+        showWayfinders
+    } = state;
 
     switch (action.type) {
         case ActionTypes.TRANSCRIPT_TOGGLE:
             return {
                 ...state,
-                isTranscriptOpen: !state.isTranscriptOpen,
+                isTranscriptOpen: action.isToggled,
                 isInfoPanelOpen: false,
 
                 // Don't show transcript prompts after its been opened
@@ -162,7 +68,8 @@ const rootReducer = (state = initialState, action) => {
         case ActionTypes.TRANSCRIPT_SEND_MESSAGE:
             message = {
                 source: Source.ME,
-                content: action.message
+                content: action.message,
+                key: generateKey()
             };
 
             const thinker = { loading: true };
@@ -182,27 +89,41 @@ const rootReducer = (state = initialState, action) => {
             message = action.message;
             transcript = state.transcript;
 
+            // Assign a key
+            message.key = generateKey();
+
+            // Remove any existing wayfinder messages
+            transcript = transcript.filter((message) => {
+                if (message.panel && message.panel.type === ComponentType.WAYFINDER) {
+                    return false;
+                }
+                
+                return true;
+            });
+
             // Remove any existing thinking placeholders
             if (!action.thinking) {
                 transcript = transcript.filter((message) =>
                     !message.loading);
             }
 
-            // Message comes with a panel, assign an index and make it active
-            if (message.panel) {
+            // Message comes with a panel, assign an index and make it active.
+            // Wayfinder panels shouldn't go into the separate info panel drawer
+            if (message.panel && message.panel.type !== ComponentType.WAYFINDER) {
                 message.panel.index = state.infoPanels.length;
                 activePanelIndex = message.panel.index;
 
                 infoPanels.push(message.panel);
 
                 // On desktop, if the transcript is closed, open the info panel
-                if (!state.isTranscriptOpen && !isMobile()) {
+                if (!state.isTranscriptOpen && isDesktop()) {
                     isInfoPanelOpen = true;
                 }
 
                 // On mobile, open the transcript to view the panel
-                if (!state.isTranscriptOpen && isMobile()) {
+                if (!state.isTranscriptOpen && !isDesktop()) {
                     isTranscriptOpen = true;
+                    isPersonaVideoShrunk = true;
                 }
             }
 
@@ -210,7 +131,7 @@ const rootReducer = (state = initialState, action) => {
 
             // Add a new thinking placeholder
             if (action.thinking) {
-                transcript.push({ loading: true });
+                transcript.push({ loading: true, key: generateKey() });
             }
 
             return {
@@ -220,7 +141,8 @@ const rootReducer = (state = initialState, action) => {
                 infoPanels: [...infoPanels],
                 isInfoPanelOpen,
                 isTranscriptOpen,
-                showWayfinders: false
+                isPersonaVideoShrunk,
+                showWayfinders: showWayfinders && !action.hideWayfinder
             };
 
         case ActionTypes.TRANSCRIPT_RESET_MESSAGE:
@@ -233,13 +155,6 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 personaState: action.state
-            };
-
-        case ActionTypes.SET_VIDEO_BOUNDS:
-            return {
-                ...state,
-                videoWidth: action.width,
-                videoHeight: action.height
             };
 
         case ActionTypes.SCENE_START_VIDEO:
@@ -266,12 +181,13 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 isConnected: false,
                 isTranscriptOpen: false,
+                showWayfinders: false,
+                isPersonaVideoShrunk: false,
                 transcript: [],
                 infoPanels: [],
                 hasSeenMicrophonePrompt: false,
                 hasSeenDontUnderstandPrompt: false,
-                isMuted: false,
-                isFinished: action.isFinished
+                isMuted: false
             };
 
         case ActionTypes.SET_FEATURES:
@@ -318,10 +234,18 @@ const rootReducer = (state = initialState, action) => {
                 isLoading: false
             };
 
-        case ActionTypes.FEEDBACK_SUBMIT:
+        case ActionTypes.HIDE_FEEDBACK:
             return {
                 ...state,
-                isFinished: false
+                showFeedback: false,
+                isMuted: false
+            };
+
+        case ActionTypes.SHOW_FEEDBACK:
+            return {
+                ...state,
+                showFeedback: true,
+                isMuted: true // Stop listening if we're ending the session
             };
 
         case ActionTypes.CHANGE_PANEL:
@@ -340,17 +264,12 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 activePanelIndex: nextPanel
             };
-
-        case ActionTypes.ANIMATE_CAMERA:
-            return {
-                ...state,
-                camera: action.camera
-            };
-
+    
         case ActionTypes.NOT_UNDERSTANDING:
             return {
                 ...state,
-                isNotUnderstanding: true
+                isNotUnderstanding: true,
+                hasSeenDontUnderstandPrompt: false
             };
 
         case ActionTypes.TOGGLE_VIDEO_COLLAPSE:
@@ -372,10 +291,27 @@ const rootReducer = (state = initialState, action) => {
             };
 
         case ActionTypes.SHOW_WAYFINDER:
+            // On mobile devices the wayfinder is only visible in the transcript
+            if (!isDesktop()) {
+                isTranscriptOpen = true;
+                isPersonaVideoShrunk = true;
+            }
+
             return {
                 ...state,
                 showWayfinders: true,
-                wayfinders: action.wayfinders
+                isTranscriptOpen,
+                isPersonaVideoShrunk,
+                wayfinder: {
+                    title: action.title,
+                    options: action.options
+                }
+            };
+
+        case ActionTypes.TOGGLE_PERSONA_SHRINK:
+            return {
+                ...state,
+                isPersonaVideoShrunk: action.isToggled
             };
     }
 

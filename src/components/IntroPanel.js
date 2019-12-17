@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import * as ActionTypes from '@constants/ActionTypes';
 import Media from '@style/media';
 
-import Button, { SecondaryButton } from '@components/Button';
+import Button, { SecondaryButton, SecondaryButtonSmall } from '@components/Button';
 import Loader from '@components/Loader';
 import { SoulMachinesContext } from '@contexts/SoulMachines';
 
@@ -47,7 +47,7 @@ class InfoPanel extends Component {
     }
 
     render() {
-        const { hasCamera, hasMicrophone, isLoading, isBrowserSupported, isSafari } = this.props;
+        const { hasCamera, hasMicrophone, isLoading, isBrowserSupported, allowAudioOnly } = this.props;
         const { isVideoStarted, isAudioStarted } = this.state;
 
         if (!isBrowserSupported) {
@@ -70,15 +70,15 @@ class InfoPanel extends Component {
                                 <Button disabled={ isLoading } onClick={ this.handleVideoStart }>
                                     { isLoading && isVideoStarted ? <Loader /> : 'Start a video chat' }
                                 </Button>
-                                { !isSafari &&
-                                <SecondaryButton disabled={ isLoading } secondary={ true } onClick={ this.handleAudioStart }>
+                                { allowAudioOnly &&
+                                <SecondaryButton disabled={ isLoading } onClick={ this.handleAudioStart }>
                                     { isLoading && isAudioStarted ? <Loader /> : 'Start a voice chat' }
                                 </SecondaryButton>
                                 }
                             </Fragment>
                         }
 
-                        { !hasCamera && hasMicrophone && !isSafari &&
+                        { !hasCamera && hasMicrophone && allowAudioOnly &&
                             <Button disabled={ isLoading } onClick={ this.handleAudioStart }>
                                 { isLoading ? <Loader /> : 'Start a voice chat' }
                             </Button>
@@ -88,11 +88,14 @@ class InfoPanel extends Component {
                         Safari doesn't support webrtc video streams if you've not given webcam permissions
                         https://stackoverflow.com/a/53914556
                         */}
-                        { ((!hasCamera && !hasMicrophone) || (!hasCamera && isSafari)) &&
+                        { ((!hasCamera && !hasMicrophone) || (!hasCamera && !allowAudioOnly)) &&
                             <p>It looks like you don't have a camera or microphone connected. Please connect one and try again.</p>
                         }
+
                     </div>
                 </div>
+
+                <SecondaryButtonSmall href="https://www.westpac.com.au/privacy/full-privacy-policy/" target="_blank">View privacy statement</SecondaryButtonSmall>
             </StyledInfoPanel>
         );
     }
@@ -116,9 +119,10 @@ const StyledInfoPanel = styled.div`
     align-items: flex-start;
     box-sizing: border-box;
     display: flex;
-    height: 100vh;
     padding: 7rem 0 0 0;
-    position: relative;
+    position: absolute;
+    top: 0;
+    bottom: 0;
     width: 100%;
     z-index: 3;
     overflow: auto;
@@ -138,7 +142,7 @@ const StyledInfoPanel = styled.div`
         border-top: 0.1rem solid ${props => props.theme.colourDivider};
         bottom: 0;
         left: 0;
-        padding: 1.5rem;
+        padding: 1.5rem 1.5rem 6rem 1.5rem;
         position: fixed;
         right: 0;
         z-index: 2;
@@ -152,6 +156,10 @@ const StyledInfoPanel = styled.div`
             position: relative;
             padding: 3rem 0 0 0;
             margin: 0;
+
+            ${SecondaryButtonSmall} {
+                display: none;
+            }
         `}
     }
 
@@ -160,7 +168,7 @@ const StyledInfoPanel = styled.div`
         display: flex;
         flex-direction: column;
         margin: 0 1.5rem;
-        padding: 2.5rem 0 13rem 0;
+        padding: 0 0 13rem 0;
 
         ${Media.tablet`
             flex-basis: calc(41.6666666667% - 4.5rem);
@@ -181,6 +189,18 @@ const StyledInfoPanel = styled.div`
     p:last-of-type {
         margin-bottom: 3rem;
     }
+
+    ${SecondaryButtonSmall} {
+        position: fixed;
+        left: 1.5rem;
+        bottom: 1.5rem;
+        max-width: 20rem;
+        margin: 0;
+
+        ${Media.desktop`
+            position: absolute;
+        `}
+    }
 `;
 
 function mapStateToProps(state) {
@@ -189,7 +209,7 @@ function mapStateToProps(state) {
         hasMicrophone: state.hasMicrophone,
         isLoading: state.isLoading,
         isBrowserSupported: state.isBrowserSupported,
-        isSafari: state.isSafari
+        allowAudioOnly: state.allowAudioOnly
     };
 }
 

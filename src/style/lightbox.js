@@ -16,7 +16,7 @@ export default css`
         width: 4.8rem;
         margin: 0;
 
-        ${Media.tablet`
+        ${Media.desktop`
             left: 3rem;
             bottom: 3rem;
         `}
@@ -70,7 +70,7 @@ export default css`
         transform: none !important;
         width: 100%;
 
-        ${Media.tablet`
+        ${Media.desktop`
             bottom: 9.3rem;
             height: calc(100% - 18.6rem);
             top: 9.3rem;

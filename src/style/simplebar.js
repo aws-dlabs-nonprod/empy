@@ -13,7 +13,7 @@ export default css`
         align-items: flex-start;
         height: calc(100% - 7.8rem);
         
-        ${Media.tablet`
+        ${Media.desktop`
             height: 100%;
         `}
     }

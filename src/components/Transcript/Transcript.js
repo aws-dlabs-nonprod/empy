@@ -5,7 +5,6 @@ import Media from '@style/media';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import SimpleBar from 'simplebar-react';
 import * as ActionTypes from '@constants/ActionTypes';
-import { CameraPosition } from '@utils/camera';
 import SimpleBarCSS from '@style/simplebar';
 import animateScrollTo from 'animated-scroll-to';
 
@@ -16,6 +15,8 @@ import { SoulMachinesContext } from '@contexts/SoulMachines';
 import { Indicator, StyledIndicator } from '@components/Indicator';
 
 const iconClose = require('@svg/icon-close.svg');
+const iconMic = require('@svg/icon-mic.svg');
+const iconMicMute = require('@svg/icon-mic-mute.svg');
 
 class Transcript extends Component {
 
@@ -32,6 +33,7 @@ class Transcript extends Component {
         this.handlePanelChange = this.handlePanelChange.bind(this);
         this.handleScrollToBottom = this.handleScrollToBottom.bind(this);
         this.handleToggleTranscript = this.handleToggleTranscript.bind(this);
+        this.handleToggleMute = this.handleToggleMute.bind(this);
     }
 
     bindScrollRef(instance) {
@@ -40,8 +42,18 @@ class Transcript extends Component {
         }
     }
 
+    handleToggleMute() {
+        this.props.toggleMute();
+    }
+
     handleToggleTranscript() {
-        this.props.toggleTranscript();
+        const { isOpen } = this.props;
+
+        this.props.toggleShrinkPersona(!isOpen);
+
+        setTimeout(() => {
+            this.props.toggleTranscript(!isOpen);
+        }, 200);
     }
 
     handleScroll() {
@@ -126,26 +138,36 @@ class Transcript extends Component {
 
     componentDidUpdate(prevProps) {
         const { isOpen } = this.props;
+        const { eventBus } = this.context;
 
-        // Transcript toggled, move the avatar
+        // Transcript toggled
         if (prevProps.isOpen !== isOpen) {
-            this.props.animateCamera(
-                isOpen ? CameraPosition.RIGHT : CameraPosition.CENTER
-            );
+            if (isOpen) {
+                eventBus.emit('scroll:bottom');
+            }
         }
     }
 
     render() {
-        const { isConnected, isOpen, personaState } = this.props;
+        const { isConnected, isOpen, isMuted, personaState } = this.props;
 
         return (
-            <CSSTransition in={ isOpen && isConnected } timeout={ 300 } unmountOnExit classNames="transcript">
+            <CSSTransition in={ isOpen && isConnected } timeout={ 1000 } unmountOnExit classNames="transcript">
                 <StyledTranscript ref={ this.transcriptRef } { ...this.props }>
                     <IconButton
                         isToggled={ true }
                         className="close"
                         icon={ iconClose }
                         onClick={ this.handleToggleTranscript }
+                    />
+
+                    <IconButton
+                        className="mute"
+                        icon={ iconMic }
+                        toggleIcon={ iconMicMute }
+                        tipPosition="center"
+                        onClick={ this.handleToggleMute }
+                        isToggled={ isMuted }
                     />
 
                     <Indicator personaState={ personaState } />
@@ -193,17 +215,20 @@ class Transcript extends Component {
 
 const StyledTranscript = styled.div`
     background: ${props => props.theme.colourBackground};
+    border-top: 0.1rem solid ${props => props.theme.colourDivider};
     bottom: 0;
+    height: ${props => props.theme.splitHeight};
     left: 0;
+    opacity: 0;
     position: absolute;
     top: auto;
-    height: ${props => props.isOpen ? props.theme.splitHeight : '0vh'};
+    transform: translateY(130%);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     width: 100%;
-    transition: opacity 1s ease-in-out;
     z-index: 2;
-    border-top: 0.1rem solid ${props => props.theme.colourDivider};
 
-    ${Media.tablet`
+    ${Media.desktop`
+        transition-duration: 0.5s, 0s;
         background: transparent;
         border: none;
         bottom: 10rem;
@@ -214,7 +239,11 @@ const StyledTranscript = styled.div`
     `}
 
     ${StyledChatInput} {
-        ${Media.tablet`
+        opacity: 0;
+        transform: translateY(2rem);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+        ${Media.desktop`
             display: none;
         `}
     }
@@ -227,7 +256,7 @@ const StyledTranscript = styled.div`
         top: -6.4rem;
         height: 4.8rem;
 
-        ${Media.tablet`
+        ${Media.desktop`
             display: none;
         `}
     }
@@ -242,7 +271,22 @@ const StyledTranscript = styled.div`
         padding: 1.3rem;
         margin: 0;
 
-        ${Media.tablet`
+        ${Media.desktop`
+            display: none;
+        `}
+    }
+    
+    /* Mute toggle button */
+    .mute {
+        position: absolute;
+        right: 1.5rem;
+        top: -6.4rem;
+        width: 4.8rem;
+        height: 4.8rem;
+        padding: 1.3rem;
+        margin: 0;
+
+        ${Media.desktop`
             display: none;
         `}
     }
@@ -265,11 +309,11 @@ const StyledTranscript = styled.div`
     &:before {
         display: none;
 
-        ${Media.tablet`
+        ${Media.desktop`
             display: block;
-            top: 11rem;
+            top: 0;
             width: 43.3rem;
-            left: 3rem;
+            left: 0;
         `}
     }
     
@@ -277,9 +321,9 @@ const StyledTranscript = styled.div`
         bottom: 7.7rem;
         top: auto;
 
-        ${Media.tablet`
-            bottom: 10rem;
-            left: 3rem;
+        ${Media.desktop`
+            bottom: 0;
+            left: 0;
             width: 43.3rem;
         `}
     }
@@ -299,7 +343,7 @@ const StyledTranscript = styled.div`
         padding: 0 1.5rem;
         position: absolute;
 
-        ${Media.tablet`
+        ${Media.desktop`
             width: 100%;
             height: calc(100% - 1rem);
             padding: 0;
@@ -309,7 +353,7 @@ const StyledTranscript = styled.div`
     .transcript-content {
         padding: 1.5rem 0 0 1.5rem;
 
-        ${Media.tablet`
+        ${Media.desktop`
             padding: 3rem 2rem 0 0;
         `}
     }
@@ -317,20 +361,61 @@ const StyledTranscript = styled.div`
     /* Enter/Exit animation */
     &.transcript-enter {
         opacity: 0;
+        transform: translateY(130%);
+
+        ${StyledChatInput} {
+            opacity: 0;
+            transform: translateY(2rem);
+        }
+
+        ${Media.desktop`
+            transform: translateY(0);
+        `}
     }
 
     &.transcript-enter-done,
     &.transcript-enter-active {
         opacity: 1;
+        transform: translateY(0);
+
+        ${StyledChatInput} {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.5s;
+        }
+
+        ${Media.desktop`
+            transform: translateY(0);
+        `}
     }
 
     &.transcript-exit {
         opacity: 1;
+        transform: translateY(0);
+
+        ${StyledChatInput} {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        ${Media.desktop`
+            transform: translateY(0);
+        `}
     }
 
     &.transcript-exit-done,
     &.transcript-exit-active {
         opacity: 0;
+        transform: translateY(130%);
+
+        ${StyledChatInput} {
+            opacity: 0;
+            transform: translateY(2rem);
+        }
+
+        ${Media.desktop`
+            transform: translateY(0);
+        `}
     }
 
     ${SimpleBarCSS};
@@ -339,6 +424,7 @@ const StyledTranscript = styled.div`
 function mapStateToProps(state) {
     return {
         isOpen: state.isTranscriptOpen,
+        isMuted: state.isMuted,
         isConnected: state.isConnected,
         transcript: state.transcript,
         infoPanels: state.infoPanels,
@@ -351,16 +437,21 @@ function mapDispatchToProps(dispatch) {
     return {
         changePanel: (newIndex) => dispatch({
             type: ActionTypes.CHANGE_PANEL,
-            newIndex: newIndex
+            newIndex
         }),
 
-        animateCamera: (position) => dispatch({
-            type: ActionTypes.ANIMATE_CAMERA,
-            camera: position
+        toggleTranscript: (isToggled) => dispatch({
+            type: ActionTypes.TRANSCRIPT_TOGGLE,
+            isToggled
         }),
 
-        toggleTranscript: () => dispatch({
-            type: ActionTypes.TRANSCRIPT_TOGGLE
+        toggleShrinkPersona: (isToggled) => dispatch({
+            type: ActionTypes.TOGGLE_PERSONA_SHRINK,
+            isToggled
+        }),
+
+        toggleMute: () => dispatch({
+            type: ActionTypes.TOGGLE_MUTE
         })
     };
 }

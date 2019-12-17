@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import 'whatwg-fetch';
 import * as ActionTypes from '@constants/ActionTypes';
 import * as PersonaState from '@constants/PersonaState';
+import * as ComponentType from '@constants/ComponentType';
 import Source from '@constants/Source';
-import { calculateCameraPosition } from '@utils/camera';
 import retryOperation from '@utils/retry';
 import { smwebsdk } from '@soulmachines/smwebsdk';
 import nanobus from 'nanobus';
-import { isMobile } from '@utils/helpers';
+import { isDesktop } from '@utils/helpers';
+import { NeuralPosition } from '@utils/camera';
 
 const SoulMachinesContext = React.createContext();
 
@@ -27,13 +28,17 @@ class SoulMachinesProvider extends Component {
             createScene: this.createScene,
             disconnect: this.disconnect,
             updateVideoSize: this.updateVideoSize,
-            animateCamera: this.animateCamera,
+            animateCamera: this.animateCamera.bind(this),
+            resizeCamera: this.resizeCamera.bind(this),
             sendMessage: this.sendMessage,
             videoStart: this.videoStart
         };
 
         this.contextData = {};
         this.eventBus = nanobus();
+        this.checkInterval = null;
+        this.checkIterations = 0;
+        this.focusTimeout = null;
 
         this.handleMessage = this.handleMessage.bind(this);
         this.handleState = this.handleState.bind(this);
@@ -43,44 +48,32 @@ class SoulMachinesProvider extends Component {
         this.handleSpeechMarker = this.handleSpeechMarker.bind(this);
         this.sendMessage = this.sendMessage.bind(this);
         this.videoStart = this.videoStart.bind(this);
+        this.handleVisiblityChange = this.handleVisiblityChange.bind(this);
+        this.handleBlur = this.handleBlur.bind(this);
+        this.handleFocus = this.handleFocus.bind(this);
     }
 
     componentDidMount() {
         this.proxyVideo = document.createElement('video');
+
+        document.addEventListener('visibilitychange', this.handleVisiblityChange);
+        window.addEventListener('blur', this.handleBlur);
+        window.addEventListener('focus', this.handleFocus);
     }
 
     componentDidUpdate(prevProps) {
-        const { videoWidth, videoHeight, isMuted, camera } = this.props;
-        const { videoWidth: oldWidth, videoHeight: oldHeight } = prevProps;
-
-        // Video resize
-        if (videoWidth !== oldWidth || videoHeight !== oldHeight) {
-            if (this.scene) {
-                this.scene.sendVideoBounds(videoWidth, videoHeight);
-            }
-        }
+        const { isMuted } = this.props;
 
         // Mute toggled
         if (isMuted !== prevProps.isMuted) {
             this.handleRecognizeToggle();
-        }
-
-        // Camera updated
-        if (camera !== prevProps.camera) {
-            const cameraPosition = calculateCameraPosition(
-                videoWidth,
-                videoHeight,
-                camera
-            );
-
-            this.animateCamera(cameraPosition);
         }
     }
 
     /**
      * A typed message is received from the UI, send to the persona
      */
-    sendMessage = (message) => {
+    sendMessage = (message, hideWayfinder = false) => {
         message = message.trim();
 
         if (!message) {
@@ -95,19 +88,94 @@ class SoulMachinesProvider extends Component {
                 content: message,
             };
 
-            this.props.pushMessage(transcriptEntry, true);
+            this.props.pushMessage(transcriptEntry, true, true);
 
             // Send the message to the persona
             retryOperation(() => {
                 return this.persona.conversationSend(message);
             }, 1000, 3);
 
-
             // Wait for the transcript to redraw,
             // then scroll to the bottom to see the new message
             setTimeout(() => {
                 this.eventBus.emit('scroll:bottom');
             }, 100);
+
+            if (hideWayfinder) {
+                this.props.hideWayfinder();
+            }
+        }
+    }
+
+    /**
+     * Triggered when the user returns to our browser window
+     */
+    handleFocus(event) {
+        // Reset our disconnection timer
+        clearTimeout(this.focusTimeout);
+    }
+
+    /**
+     * Triggered when the user minimises the browser or switches to another app
+     */
+    handleBlur(event) {
+        const { target: { document } } = event;
+
+        // We don't want to disconnect if we're clicking into the feedback iframe
+        if (document.activeElement.getAttribute('id') === 'feedback-frame') {
+            return;
+        }
+
+        // Clear any existing timers
+        if (this.focusTimeout) {
+            clearTimeout(this.focusTimeout);
+        }
+
+        // Disconnect the session if we don't regain focus within 30 seconds
+        this.focusTimeout = setTimeout(() => {
+            this.disconnect();
+        }, 30000);
+    }
+
+    /**
+     * Triggered when the user changes tabs
+     */
+    handleVisiblityChange() {
+        /*
+         * This poll loop is to solve a race condition where you can click the
+         * start button then cause the page to loose focus. If we disconnected
+         * immediately, it would be reinstated once the connection request
+         * completed in the background.
+         *
+         * Here we are waiting until we are connected before we perform a
+         * disconnection, giving up after 20 attempts (10 seconds).
+         */
+        const checkConnection = () => {
+            const { isConnected } = this.props;
+
+            if (this.checkIterations > 20) {
+                clearInterval(this.checkInterval);
+            }
+
+            if (isConnected) {
+                clearInterval(this.checkInterval);
+
+                this.disconnect();
+
+                this.props.showFeedback();
+            }
+
+            this.checkIterations++;
+        };
+
+        // We've lost focus to the page, so disconnect
+        if (document.visibilityState === 'hidden') {
+            clearInterval(this.checkInterval);
+            this.checkInterval = setInterval(checkConnection.bind(this), 500);
+        } else {
+            // We've come back, so reset the counter
+            clearInterval(this.checkInterval);
+            this.checkIterations = 0;
         }
     }
 
@@ -149,14 +217,11 @@ class SoulMachinesProvider extends Component {
     }
 
     /**
-     * When the video source has buffered enough to start playing.	
-     * Should be when the persona is first 'visible' to the user.	
+     * When the video source has buffered enough to start playing.
+     * Should be when the persona is first 'visible' to the user.
      */
     videoStart = () => {
-        // Send a welcome message
-        retryOperation(() => {	
-            return this.persona.conversationSend('Hello');
-        }, 1000, 3);
+
     }
 
     /**
@@ -176,6 +241,17 @@ class SoulMachinesProvider extends Component {
             const content = this.contextData[key];
 
             if (content) {
+                const isWayfinder = content.component
+                    === ComponentType.WAYFINDER;
+
+                // Content is a wayfinder
+                if (isWayfinder) {
+                    const { title, options } = content.data;
+                    
+                    this.props.showWayfinder(title, options);
+                }
+
+                // Content is an info panel
                 const transcriptEntry = {
                     source: Source.PERSONA,
                     panel: {
@@ -184,7 +260,7 @@ class SoulMachinesProvider extends Component {
                     }
                 };
 
-                this.props.pushMessage(transcriptEntry, false);
+                this.props.pushMessage(transcriptEntry, false, !isWayfinder);
 
                 this.eventBus.emit('scroll:bottom');
             }
@@ -196,7 +272,12 @@ class SoulMachinesProvider extends Component {
      * Handle it as a trigger in the UI somehow.
      */
     handleMarkerPrompt(key) {
-        // Not in use currently
+        switch (key) {
+            // Persona doesn't understand what you've said
+            case 'dont-understand':
+                this.props.setNotUnderstanding();
+                break;
+        }
     }
 
     /**
@@ -230,7 +311,7 @@ class SoulMachinesProvider extends Component {
                     content: result.alternatives[0].transcript,
                 };
 
-                this.props.pushMessage(transcriptEntry, true);
+                this.props.pushMessage(transcriptEntry, true, true);
 
                 // Stop the UI speech indicator
                 this.props.setUserSpeaking(false);
@@ -337,9 +418,9 @@ class SoulMachinesProvider extends Component {
             return;
         }
 
-        // There's no horizontal movement on mobile
-        if (isMobile()) {
-            return;
+        // There's no horizontal movement on mobile, reset position
+        if (!isDesktop()) {
+            options = NeuralPosition;
         }
 
         this.scene.sendRequest('animateToNamedCamera', {
@@ -348,6 +429,17 @@ class SoulMachinesProvider extends Component {
             time: duration,
             ...options
         });
+    }
+
+    /**
+     * Update the video size on the persona server
+     */
+    resizeCamera(width, height) {
+        if (!this.scene) {
+            return;
+        }
+
+        this.scene.sendVideoBounds(Math.ceil(width), Math.ceil(height));
     }
 
     /**
@@ -433,8 +525,6 @@ class SoulMachinesProvider extends Component {
      * Scene has connected, we're ready to go!
      */
     onConnected() {
-        this.scene.sendVideoBounds(window.innerWidth, window.innerHeight);
-
         this.setState({
             isConnected: true,
             personaVideoObject: this.proxyVideo.srcObject
@@ -449,8 +539,8 @@ class SoulMachinesProvider extends Component {
      * Scene has been disconnected, this could be because it was manually ended
      * by the user, or it has timed out due to inactivity.
      */
-    disconnect = (showFeedback = true) => {
-        this.props.sceneDisconnected(showFeedback);
+    disconnect = () => {
+        this.props.sceneDisconnected();
 
         // Delay the actual disconnection until we've transitioned the video out
         // See <PersonaVideo />
@@ -484,16 +574,18 @@ function mapStateToProps(state) {
         videoWidth: state.videoWidth,
         videoHeight: state.videoHeight,
         isMuted: state.isMuted,
-        camera: state.camera
+        camera: state.camera,
+        isConnected: state.isConnected
     };
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        pushMessage: (message, thinking) => dispatch({
+        pushMessage: (message, thinking, hideWayfinder) => dispatch({
             type: ActionTypes.TRANSCRIPT_PUSH_MESSAGE,
-            message: message,
-            thinking: thinking
+            message,
+            thinking,
+            hideWayfinder
         }),
 
         resetMessage: () => dispatch({
@@ -509,9 +601,8 @@ function mapDispatchToProps(dispatch) {
             type: ActionTypes.SCENE_CONNECTED
         }),
 
-        sceneDisconnected: (showFeedback) => dispatch({
-            type: ActionTypes.SCENE_DISCONNECTED,
-            isFinished: showFeedback
+        sceneDisconnected: () => dispatch({
+            type: ActionTypes.SCENE_DISCONNECTED
         }),
 
         setFeatures: (features) => dispatch({
@@ -530,6 +621,20 @@ function mapDispatchToProps(dispatch) {
         setUserSpeaking: (isUserSpeaking) => dispatch({
             type: ActionTypes.SET_USER_SPEAKING,
             isUserSpeaking
+        }),
+
+        showWayfinder: (title, options) => dispatch({
+            type: ActionTypes.SHOW_WAYFINDER,
+            title,
+            options
+        }),
+
+        hideWayfinder: () => dispatch({
+            type: ActionTypes.HIDE_WAYFINDER
+        }),
+
+        showFeedback: () => dispatch({
+            type: ActionTypes.SHOW_FEEDBACK
         })
     };
 }

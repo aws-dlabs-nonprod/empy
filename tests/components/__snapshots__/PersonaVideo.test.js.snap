@@ -7,8 +7,8 @@ exports[`PersonaVideo handles connection 1`] = `
   position: absolute;
   right: 0;
   top: 0;
-  -webkit-transition: opacity 0.5s ease-in-out;
-  transition: opacity 0.5s ease-in-out;
+  -webkit-transition: opacity 0.5s 0s ease-in-out;
+  transition: opacity 0.5s 0s ease-in-out;
   z-index: 0;
 }
 
@@ -35,7 +35,7 @@ exports[`PersonaVideo handles connection 1`] = `
   opacity: 0;
 }
 
-@media (min-width:768px) and (min-height:0px) {
+@media (min-width:992px) and (min-height:0px) {
   .c0 {
     bottom: 0;
   }
@@ -64,6 +64,7 @@ exports[`PersonaVideo handles connection 1`] = `
   }
 >
   <PersonaVideo
+    animateCamera={[Function]}
     isConnected={true}
     setVideoBounds={[Function]}
     theme={
@@ -109,6 +110,7 @@ exports[`PersonaVideo handles connection 1`] = `
         unmountOnExit={true}
       >
         <PersonaVideo__StyledPersonaVideo
+          animateCamera={[Function]}
           isConnected={true}
           setVideoBounds={[Function]}
           theme={
@@ -133,6 +135,7 @@ exports[`PersonaVideo handles connection 1`] = `
           }
         >
           <StyledComponent
+            animateCamera={[Function]}
             forwardedComponent={
               Object {
                 "$$typeof": Symbol(react.forward_ref),
@@ -144,9 +147,9 @@ exports[`PersonaVideo handles connection 1`] = `
                   "rules": Array [
                     "bottom:",
                     [Function],
-                    ";left:0;position:absolute;right:0;top:0;transition:opacity 0.5s ease-in-out;z-index:0;video{width:100%;height:100%;}",
+                    ";left:0;position:absolute;right:0;top:0;transition:opacity 0.5s 0s ease-in-out;z-index:0;video{width:100%;height:100%;}",
                     "@media (min-width:",
-                    "768",
+                    "992",
                     "px) and (min-height:",
                     "0",
                     "px){",
@@ -233,6 +236,7 @@ exports[`PersonaVideo renders correctly 1`] = `
   }
 >
   <PersonaVideo
+    animateCamera={[Function]}
     setVideoBounds={[Function]}
     theme={
       Object {
