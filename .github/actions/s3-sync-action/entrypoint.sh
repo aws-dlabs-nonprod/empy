@@ -47,21 +47,21 @@ echo "//registry.npmjs.org/:_authToken=\"$NPM_TOKEN\"" > "./.npmrc"
 sh -c "npm install"
 
 # dev 
-TOKEN_ISSUER="/auth/authorize"
-FEEDBACK_FORM="https://sit03.www.westpac.com.au/wendy-feedback-form/"
-DIST_PATH="dev"
+export TOKEN_ISSUER="/auth/authorize"
+export FEEDBACK_FORM="https://sit03.www.westpac.com.au/wendy-feedback-form/"
+export DIST_PATH="dev"
 sh -c "npm run build:ci"
 
 # uat
-TOKEN_ISSUER="/auth/authorize"
-FEEDBACK_FORM="https://uat01.www.westpac.com.au/wendy-feedback-form/"
-DIST_PATH="uat"
+export TOKEN_ISSUER="/auth/authorize"
+export FEEDBACK_FORM="https://uat01.www.westpac.com.au/wendy-feedback-form/"
+export DIST_PATH="uat"
 sh -c "npm run build:ci"
 
 # prod
-TOKEN_ISSUER="/auth/authorize"
-FEEDBACK_FORM="https://www.westpac.com.au/wendy-feedback-form/"
-DIST_PATH="prod"
+export TOKEN_ISSUER="/auth/authorize"
+export FEEDBACK_FORM="https://www.westpac.com.au/wendy-feedback-form/"
+export DIST_PATH="prod"
 sh -c "npm run build:ci"
 
 # Sync using our dedicated profile and suppress verbose messages.
