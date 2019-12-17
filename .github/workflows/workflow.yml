@@ -13,7 +13,7 @@ jobs:
     - uses: actions/checkout@1.0.0
     - uses: ./.github/actions/s3-sync-action
       with:
-        args: --delete --exclude 'node_modules/*' '.git/*'
+        args: --delete --exclude 'node_modules/* .git/*'
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         AWS_S3_BUCKET: 'ghost-wendy-uat' # ${{ secrets.AWS_S3_BUCKET }}
