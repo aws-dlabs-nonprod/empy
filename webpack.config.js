@@ -10,7 +10,7 @@ const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 module.exports = (env, argv) => {
     argv.env = { ...argv.env };
-    const dist_path = JSON.stringify(argv.env.DIST_PATH || process.env.DIST_PATH)
+    const dist_path = argv.env.DIST_PATH || process.env.DIST_PATH
     const config = {
         entry: './src/index.js',
         output: {

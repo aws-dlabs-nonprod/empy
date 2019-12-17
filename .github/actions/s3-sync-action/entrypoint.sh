@@ -47,19 +47,19 @@ echo "//registry.npmjs.org/:_authToken=\"$NPM_TOKEN\"" > "./.npmrc"
 sh -c "npm install"
 
 # dev 
-export TOKEN_ISSUER="/auth/authorize"
+export TOKEN_ISSUER="https://dev.wendy.westpac.com.au/auth/authorize"
 export FEEDBACK_FORM="https://sit03.www.westpac.com.au/wendy-feedback-form/"
 export DIST_PATH="dev"
 sh -c "npm run build:ci"
 
 # uat
-export TOKEN_ISSUER="/auth/authorize"
+export TOKEN_ISSUER="https://uat.wendy.westpac.com.au/auth/authorize"
 export FEEDBACK_FORM="https://uat01.www.westpac.com.au/wendy-feedback-form/"
 export DIST_PATH="uat"
 sh -c "npm run build:ci"
 
 # prod
-export TOKEN_ISSUER="/auth/authorize"
+export TOKEN_ISSUER="https://wendy.westpac.com.au/auth/authorize"
 export FEEDBACK_FORM="https://www.westpac.com.au/wendy-feedback-form/"
 export DIST_PATH="prod"
 sh -c "npm run build:ci"
