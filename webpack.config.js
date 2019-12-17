@@ -10,13 +10,14 @@ const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 module.exports = (env, argv) => {
     argv.env = { ...argv.env };
-    const dist_path = argv.env.DIST_PATH || process.env.DIST_PATH
+    let dist_path = argv.env.DIST_PATH || process.env.DIST_PATH
+    dist_path = dist_path ? path.resolve(__dirname, `dist/${dist_path}` ) : path.resolve(__dirname, 'dist')
     const config = {
         entry: './src/index.js',
         output: {
             filename: 'assets/js/app.[hash:8].js',
             chunkFilename: 'assets/js/[name].[hash:8].bundle.js',
-            path: dist_path ? path.resolve(__dirname, `dist/${dist_path}` ) : path.resolve(__dirname, 'dist')
+            path: dist_path
         },
         resolve: {
             alias: {
@@ -117,7 +118,7 @@ module.exports = (env, argv) => {
                 }
             }),
             new HtmlWebpackHarddiskPlugin(),
-            new CleanWebpackPlugin(['dist']),
+            new CleanWebpackPlugin([dist_path]),
             new webpack.DefinePlugin({
                 PERSONA_ID: JSON.stringify('1'),
                 CAMERA_ID: JSON.stringify('CloseUp'),
@@ -125,7 +126,6 @@ module.exports = (env, argv) => {
                 TOKEN_ISSUER: JSON.stringify(argv.env.TOKEN_ISSUER || process.env.TOKEN_ISSUER),
                 VERSION: JSON.stringify(process.env.npm_package_version),
                 FEEDBACK: JSON.stringify(argv.env.FEEDBACK_FORM || process.env.FEEDBACK_FORM) 
-                        //JSON.stringify('https://sit03.www.westpac.com.au/wendy-feedback-form/')
             }),
             new SpriteLoaderPlugin()
         ],
